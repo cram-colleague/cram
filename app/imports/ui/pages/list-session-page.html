@@ -1,0 +1,35 @@
+<template name="List_Session_Page">
+  {{#If_Logged_In}}
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Time</th>
+            <th>Place</th>
+            <th>Sensei</th>
+            <th>Join</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each session in sessionList}}
+            <tr>
+              <td>{{session.name}}</td>
+              <td>{{session.time}}</td>
+              <td>{{session.place}}</td>
+              <td>{{session.sensei}}</td>
+              <td><button class="ui button" type="submit">Going</button></td>
+              <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>

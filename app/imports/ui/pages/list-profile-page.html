@@ -1,0 +1,37 @@
+<template name="List_Profile_Page">
+  {{#If_Logged_In}}
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Previous Course</th>
+            <th>Courses you want to teach</th>
+            <th>Current Course</th>
+            <th>Courses you want to be taught</th>
+            <th>Description of yourself</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each profile in profileList}}
+            <tr>
+              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a></td>
+              <td>{{profile.preCourse}}</td>
+              <td>{{profile.sensei}}</td>
+              <td>{{profile.currCourse}}</td>
+              <td>{{profile.grasshopper}}</td>
+              <td>{{profile.description}}</td>
+              <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>

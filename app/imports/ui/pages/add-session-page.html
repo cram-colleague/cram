@@ -1,0 +1,49 @@
+<template name="Add_Session_Page">
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form session-data-form {{ errorClass }}">
+      <h4 class="ui dividing header">Add Study Session</h4>
+      <div class="field">
+        <label>Name of the course</label>
+        <input type="text" name="name" id="name" placeholder="Name of the course">
+        {{#if displayFieldError 'name' }}
+          <div class="ui error message">
+            <p>You must specify your name of the course.</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <div class="field">
+        <label>What time?</label>
+        <input type="text" name="time" id="time" placeholder="YYYY-MM-DD 12:00:00">
+        {{#if displayFieldError 'time' }}
+          <div class="ui error message">
+            <p>You must specify the time</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <div class="field">
+        <label>Where?</label>
+        <input type="text" name="place" id="place" placeholder="Where?">
+        {{#if displayFieldError 'place' }}
+          <div class="ui error message">
+            <p>You must specify the time</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <div class="field">
+        <label>Who will be teaching?</label>
+        <input type="text" name="sensei" id="sensei" placeholder="Who will be teaching?">
+        {{#if displayFieldError 'sensei' }}
+          <div class="ui error message">
+            <p>You must specify the time</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <button class="ui button" type="submit">Submit</button>
+
+    </form>
+  </div>
+</template>

@@ -1,0 +1,29 @@
+<template name="List_Course_Page">
+  {{#If_Logged_In}}
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Sensei</th>
+            <th>Grasshopper</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each course in courseList}}
+            <tr>
+              <td>{{course.name}}</td>
+              <td><a href="{{pathFor 'Profile_Page' _id=course._id }}">{{course.sensei}}</a></td>
+              <td>{{course.grasshopper}}</td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>

@@ -1,14 +1,17 @@
 <template name="Home_Page">
-  <div class="ui middle aligned centered grid text container">
+  <div class="ui container">
+    <div style="margin-top: 20px" class="ui piled segment">
+      <h1 class="ui centered header">DO YOU WANT TO STUDY WITH SOMEONE?</h1>
+      <h3 class="ui header">If you want to find someone to study together, use this site!</h3>
+      <h3 class="ui header">ICS students often spend more time than they need on their homework and don’t learn the material as effectively as they could, because they study alone and do not leverage the power of face-to-face study groups with peer mentors.</h3>
+      <h3 class="ui header">So, this website, Study Buddy is a website for UHM ICS students to self-organize face-to-face study groups around a course and/or specific homework or project topic!</h3>
 
-    <div class="four wide column">
-      <img class="ui small circular image" src="/images/meteor-logo.png"/>
+    {{#if currentUser}}
+      <h2 class="ui centered header">Thank you for using our page! <br>
+      Create your profile and find study buddy!!</h2>
+      {{else}}
+      <h2 class="ui centered header">To use this site, please log-in with @hawaii.edu address :)</h2>
+    {{/if}}
     </div>
-
-    <div class="eight wide column">
-      <h1>Welcome to this template</h1>
-      <p>Now get to work and modify this app!</p>
-    </div>
-
   </div>
 </template>
