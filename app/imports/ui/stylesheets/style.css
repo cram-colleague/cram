@@ -1,4 +1,5 @@
 body {
+  background-color: #fffcfc;
 }
 
 .ui.inverted.menu {
@@ -7,4 +8,8 @@ body {
 
 #login-buttons a, .accounts-dialog a {
   color: blue;
+}
+
+.ui.piled.segment {
+  background-color: #fffefe;
 }
