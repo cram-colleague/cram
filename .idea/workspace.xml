@@ -20,7 +20,30 @@
     <favorites_list name="cram" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="cas-login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/imports/ui/layouts/cas-login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cas-login.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/imports/ui/layouts/cas-login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,6 +61,7 @@
         <option value="$PROJECT_DIR$/app/imports/ui/layouts/header.html" />
         <option value="$PROJECT_DIR$/app/imports/ui/pages/home-page.html" />
         <option value="$PROJECT_DIR$/app/imports/ui/layouts/footer.html" />
+        <option value="$PROJECT_DIR$/config/settings.development.json" />
       </list>
     </option>
   </component>
@@ -398,12 +422,12 @@
       <updated>1478222370433</updated>
       <workItem from="1478222373573" duration="163000" />
       <workItem from="1478422322484" duration="71000" />
-      <workItem from="1478422399789" duration="3036000" />
+      <workItem from="1478422399789" duration="6041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3270000" />
+    <option name="totallyTimeSpent" value="6275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="589" y="23" width="851" height="807" extended-state="0" />
@@ -545,6 +569,32 @@
         <state relative-caret-position="195">
           <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/layouts/cas-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/settings.development.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/layouts/cas-login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
