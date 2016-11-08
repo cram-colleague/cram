@@ -221,6 +221,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.3.14_1/web.browser/runtime-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.3.14_1/web.browser/runtime.js" />
         <item url="file://$USER_HOME$/.meteor/packages/fabienb4_autoform-semantic-ui/0.9.3/web.browser/templates/semantic-ui/semantic-ui.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/atoy40_accounts-cas/0.0.2/web.browser/packages/atoy40:accounts-cas.js" />
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_autoform/5.8.1/web.browser/templates/plain/components/quickForm/quickForm.js" />
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_autoform/5.8.1/web.browser/templates/plain/components/afObjectField/afObjectField.js" />
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_autoform/5.8.1/web.browser/templates/bootstrap3/components/quickForm/quickForm.js" />
@@ -527,6 +528,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.3.14_1/web.browser/runtime-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.3.14_1/web.browser/runtime.js" />
       <root url="file://$USER_HOME$/.meteor/packages/fabienb4_autoform-semantic-ui/0.9.3/web.browser/templates/semantic-ui/semantic-ui.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/atoy40_accounts-cas/0.0.2/web.browser/packages/atoy40:accounts-cas.js" />
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_autoform/5.8.1/web.browser/templates/plain/components/quickForm/quickForm.js" />
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_autoform/5.8.1/web.browser/templates/plain/components/afObjectField/afObjectField.js" />
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_autoform/5.8.1/web.browser/templates/bootstrap3/components/quickForm/quickForm.js" />

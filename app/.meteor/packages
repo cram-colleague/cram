@@ -30,7 +30,7 @@ aldeed:autoform
 sacha:spin
 
 # Account management
-accounts-password@1.3.0
+accounts-password
 accounts-ui
 
 # Routing
@@ -46,9 +46,8 @@ less
 fabienb4:autoform-semantic-ui
 
 # For prototyping purposes, enable autopublish and insecure
-autopublish
 insecure
-
 
 atoy40:accounts-cas
 random
+npm-bcrypt
