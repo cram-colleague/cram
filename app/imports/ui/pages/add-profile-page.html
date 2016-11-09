@@ -1,0 +1,89 @@
+<template name="Add_Profile_Page">
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form profile-data-form {{ errorClass }}">
+      <h4 class="ui dividing header">Add Profile</h4>
+      <div class="field">
+        <label>Name</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="first" id="first" placeholder="First Name">
+            {{#if displayFieldError 'first' }}
+              <div class="ui error message">
+                <p>You must specify your name.</p>
+              </div>
+            {{/if}}
+          </div>
+          <div class="field">
+            <input type="text" name="last" id="last" placeholder="Last Name">
+            {{#if displayFieldError 'last' }}
+              <div class="ui error message">
+                <p>You must specify your last name</p>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <label>Previous Course</label>
+            <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course">
+            {{#if displayFieldError 'preCourse' }}
+              <div class="ui error message">
+                <p>You must specify your previous course.</p>
+              </div>
+            {{/if}}
+          </div>
+
+          <div class="field">
+            <label>Courses you want to teach</label>
+            <input type="text" name="sensei" id="sensei" placeholder="Courses you want to teach">
+            {{#if displayFieldError 'sensei' }}
+              <div class="ui error message">
+                <p>You must specify your courses you want to teach</p>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <label>Current Course</label>
+            <input type="text" name="currCourse" id="currCourse" placeholder="Current Course">
+            {{#if displayFieldError 'currCourse' }}
+              <div class="ui error message">
+                <p>You must specify your current course.</p>
+              </div>
+            {{/if}}
+          </div>
+
+          <div class="field">
+            <label>Courses you want to be taught</label>
+            <input type="text" name="grasshopper" id="grasshopper" placeholder="Courses you want to be taught">
+            {{#if displayFieldError 'grasshopper' }}
+              <div class="ui error message">
+                <p>You must specify your courses you want to be taught</p>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Description of yourself</label>
+        <input type="text" name="description" id="description" placeholder="Description of yourself">
+        {{#if displayFieldError 'description' }}
+          <div class="ui error message">
+            <p>You must specify description of yourself</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <button class="ui button" type="submit">Submit</button>
+
+    </form>
+  </div>
+</template>

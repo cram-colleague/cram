@@ -1,0 +1,51 @@
+<template name="Edit_Session_Page">
+  {{#if Template.subscriptionsReady}}
+    <div style="margin-top: 20px" class="ui container">
+      <form class="ui form session-data-form {{ errorClass }}">
+        <h4 class="ui dividing header">Edit Study Session</h4>
+        <div class="field">
+          <label>Name of the course</label>
+          <input type="text" name="name" id="name" placeholder="Name of the course" value="{{ sessionField 'name' }}">
+          {{#if displayFieldError 'name' }}
+            <div class="ui error message">
+              <p>You must specify your name of the course.</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="field">
+          <label>What time?</label>
+          <input type="text" name="time" id="time" placeholder="YYYY-MM-DD 12:00:00" value="{{ sessionField 'time' }}">
+          {{#if displayFieldError 'time' }}
+            <div class="ui error message">
+              <p>You must specify the time</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="field">
+          <label>Where?</label>
+          <input type="text" name="place" id="place" placeholder="Where?" value="{{ sessionField 'place' }}">
+          {{#if displayFieldError 'place' }}
+            <div class="ui error message">
+              <p>You must specify the time</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="field">
+          <label>Who will be teaching?</label>
+          <input type="text" name="sensei" id="sensei" placeholder="Who will be teaching?" value="{{ sessionField 'sensei' }}">
+          {{#if displayFieldError 'sensei' }}
+            <div class="ui error message">
+              <p>You must specify the time</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <button class="ui button" type="submit">Update</button>
+        <button class="ui button delete" type="button">Delete</button>
+      </form>
+    </div>
+  {{/if}}
+</template>

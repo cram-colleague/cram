@@ -1,0 +1,30 @@
+<template name="Header">
+
+  <img style="max-height: 400px" class="ui fluid image" src="/images/studyBuddy.jpg">
+
+  <div style="margin: 0px; border-radius: 0px" class="ui borderless inverted menu">
+    <div class="ui container">
+      <a class="item" style="font-family: 'Diwan Thuluth',serif;" href="{{pathFor 'Home_Page'}}"><h1>CRAM</h1></a>
+      {{#if currentUser}}
+        <a class="item">My Profile</a>
+        <a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a>
+        <a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a>
+        <div class="ui dropdown item">
+          List of
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item {{ isActiveRoute 'List_Profile_Page'}}" href="{{ pathFor 'List_Profile_Page' }}">List of Profiles</a>
+            <a class="item {{ isActiveRoute 'List_Course_Page'}}" href="{{ pathFor 'List_Course_Page' }}">List of Courses</a>
+            <a class="item {{ isActiveRoute 'List_Session_Page'}}" href="{{ pathFor 'List_Session_Page' }}">List of Study Session</a>
+          </div>
+        </div>
+
+        <a class="item">
+          <i class="icon mail"></i> Messages
+          <div class="floating ui red label">3</div>
+        </a>
+      {{/if}}
+      {{> Cas_Login }}
+    </div>
+  </div>
+</template>
