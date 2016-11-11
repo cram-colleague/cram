@@ -30,4 +30,6 @@ import './list-course-page.js';
 import './list-session-page.html';
 import './list-session-page.js';
 
+import './user-profile-page.html'; //added by LL need a js
+
 //import './calendar.html';
