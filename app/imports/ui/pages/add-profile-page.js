@@ -56,6 +56,7 @@ Template.Add_Profile_Page.events({
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile added!');
       FlowRouter.go('Home_Page');
+      // change to user profile
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }
