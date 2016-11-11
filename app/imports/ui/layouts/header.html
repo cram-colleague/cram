@@ -6,14 +6,14 @@
     <div class="ui container">
       <a class="item" style="font-family: 'Diwan Thuluth',serif;" href="{{pathFor 'Home_Page'}}"><h1>CRAM</h1></a>
       {{#if currentUser}}
-      <div class="ui simple dropdown item">
+      <!--div class="ui simple dropdown item">
         <div class="text">My Profile</div>
         <i class="dropdown icon"></i>
         <div class="menu">
           <a class="item">View</a>
           <div class="{{ isActiveRoute 'Edit_Profile_Page'}} item" href="{{ pathFor 'Edit_Profile_Page' }}">Edit</div>
         </div>
-      </div>
+      </div-->
 
         <!--<a class="item">My Profile</a>-->
         <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">User Profile</a>
