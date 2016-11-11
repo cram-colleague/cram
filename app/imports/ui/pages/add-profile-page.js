@@ -54,8 +54,8 @@ Template.Add_Profile_Page.events({
     if (instance.context.isValid()) {
       Profile.insert(newProfile);
       instance.messageFlags.set(displayErrorMessages, false);
-      window.alert('Thank you! Your profile added!');
-      FlowRouter.go('Home_Page');
+      window.alert('Thank you! Your profile updated!');
+      FlowRouter.go('User_Profile_Page');
       // change to user profile
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
