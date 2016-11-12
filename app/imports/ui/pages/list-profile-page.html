@@ -11,7 +11,8 @@
             <th>Current Course</th>
             <th>Courses you want to be taught</th>
             <th>Description of yourself</th>
-            <th>Edit</th>
+            <!-- if statement should come? -->
+            <!--<th>Edit</th>-->
           </tr>
           </thead>
 
@@ -24,7 +25,8 @@
               <td>{{profile.currCourse}}</td>
               <td>{{profile.grasshopper}}</td>
               <td>{{profile.description}}</td>
-              <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
+              <!-- if statement should come? -->
+              <!--<td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>-->
             </tr>
           {{/each}}
           </tbody>
