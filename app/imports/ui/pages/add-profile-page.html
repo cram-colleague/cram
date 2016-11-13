@@ -6,7 +6,9 @@
         <label>Name</label>
         <div class="two fields">
           <div class="field">
-            <input type="text" name="first" id="first" placeholder="First Name">
+            <p>Currently logged in user: {{user}}</p>
+            <p>First name is: {{profileField 'first' }} {{first}}{{firstName}}</p>
+            <input type="text" name="first" id="first" placeholder="First Name" value="{{ profileField 'first' }}">
             {{#if displayFieldError 'first' }}
               <div class="ui error message">
                 <p>You must specify your name.</p>

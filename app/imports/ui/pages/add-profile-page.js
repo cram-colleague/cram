@@ -9,12 +9,22 @@ import { Profile, ProfileSchema } from '../../api/profile/profile.js';
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Add_Profile_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Profile');
+  });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = ProfileSchema.namedContext('Add_Profile_Page');
 });
 
 Template.Add_Profile_Page.helpers({
+
+  //???
+  profileField(fieldName) {
+    const profile = Profile.findOne(FlowRouter.getParam);
+    // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
+    return profile && profile[fieldName];
+  },
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
@@ -22,6 +32,14 @@ Template.Add_Profile_Page.helpers({
     const errorKeys = Template.instance().context.invalidKeys();
     return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
   },
+
+  //Get username
+  user: function user() {
+    return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
+  },
+  firstName: function() {
+    return Meteor.user().profile.cramprofile.first;
+  }
 });
 
 // Template.Add_Contact_Page.onRendered(function enableSemantic() {
@@ -46,19 +64,19 @@ Template.Add_Profile_Page.events({
     const description = event.target.description.value;
     const newProfile = { first, last, preCourse, sensei, currCourse, grasshopper, description };
     // Clear out any old validation errors.
-    instance.context.resetValidation();
+    //instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
-    ProfileSchema.clean(newProfile);
+    //ProfileSchema.clean(newProfile);
     // Determine validity.
-    instance.context.validate(newProfile);
-    if (instance.context.isValid()) {
-      Profile.insert(newProfile);
+    //instance.context.validate(newProfile);
+    //if (instance.context.isValid()) {
+    Meteor.users.update(Meteor.userId(),{$set: {profile: {data: newData, name: Meteor.user().profile.name}}});
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile added!');
       FlowRouter.go('Home_Page');
-    } else {
-      instance.messageFlags.set(displayErrorMessages, true);
-    }
+    //} else {
+     // instance.messageFlags.set(displayErrorMessages, true);
+    //}
   },
 });
 
