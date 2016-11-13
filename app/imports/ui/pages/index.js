@@ -17,6 +17,7 @@ import './profile-page.html';
 import './profile-page.js';
 
 import './home-page.html';
+import './home-page.js';
 
 import './list-stuff-page.html';
 import './list-stuff-page.js';
@@ -31,5 +32,6 @@ import './list-session-page.html';
 import './list-session-page.js';
 
 import './user-profile-page.html'; //added by LL need a js
+import './user-profile-page.js';   //js page created
 
 //import './calendar.html';

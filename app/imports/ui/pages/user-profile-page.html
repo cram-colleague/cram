@@ -11,18 +11,18 @@
         <img class="ui medium circular image" src="/images/user.png">
       </div>
       <div class="twelve wide column">
-        <h1 style="margin-top: 10px;">Users Name</h1>
-
+        <h1 style="margin-top: 10px;">{{user}}</h1>
+        <h1>{{ profileField 'first' }} {{ profileField 'last' }}</h1>
         <div class="ui text container">
           <h2>About Me</h2>
-          <p>Thier description...will be added</p>
+          <p>{{ profileField 'description' }}</p>
         </div>
 
         <br>
 
         <div class="ui text container">
           <h2>Previous classes</h2>
-          <p>List of previous classes...will be added</p>
+          <p>{{ profileField 'preCourse' }}</p>
         </div>
 
       </div>

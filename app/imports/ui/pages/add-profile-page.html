@@ -1,6 +1,7 @@
 <template name="Add_Profile_Page">
   <div style="margin-top: 20px" class="ui container">
     <form class="ui form profile-data-form {{ errorClass }}">
+      <p>Currently logged in user: {{user}}</p>
       <h4 class="ui dividing header">Edit Profile</h4>
       <button style="margin-bottom: 10px" class="ui basic button"><i class="upload icon"></i>Upload Image</button>
       <!--upload image function-->
@@ -8,7 +9,7 @@
         <label>Name</label>
         <div class="two fields">
           <div class="field">
-            <input type="text" name="first" id="first" placeholder="First Name">
+            <input type="text" name="first" id="first" placeholder="First Name" value="{{ profileField 'first' }}">
             {{#if displayFieldError 'first' }}
               <div class="ui error message">
                 <p>You must specify your name.</p>
@@ -16,7 +17,7 @@
             {{/if}}
           </div>
           <div class="field">
-            <input type="text" name="last" id="last" placeholder="Last Name">
+            <input type="text" name="last" id="last" placeholder="Last Name" value="{{ profileField 'last' }}">
             {{#if displayFieldError 'last' }}
               <div class="ui error message">
                 <p>You must specify your last name</p>
@@ -30,7 +31,7 @@
         <div class="two fields">
           <div class="field">
             <label>Previous Course</label>
-            <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course">
+            <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course" value="{{ profileField 'preCourse' }}">
             {{#if displayFieldError 'preCourse' }}
               <div class="ui error message">
                 <p>You must specify your previous course.</p>
@@ -40,7 +41,7 @@
 
           <div class="field">
             <label>Courses you want to teach</label>
-            <input type="text" name="sensei" id="sensei" placeholder="Courses you want to teach">
+            <input type="text" name="sensei" id="sensei" placeholder="Courses you want to teach" value="{{ profileField 'sensei' }}">
             {{#if displayFieldError 'sensei' }}
               <div class="ui error message">
                 <p>You must specify your courses you want to teach</p>
@@ -54,7 +55,7 @@
         <div class="two fields">
           <div class="field">
             <label>Current Course</label>
-            <input type="text" name="currCourse" id="currCourse" placeholder="Current Course">
+            <input type="text" name="currCourse" id="currCourse" placeholder="Current Course" value="{{ profileField 'currCourse' }}">
             {{#if displayFieldError 'currCourse' }}
               <div class="ui error message">
                 <p>You must specify your current course.</p>
@@ -64,7 +65,7 @@
 
           <div class="field">
             <label>Courses you want to be taught</label>
-            <input type="text" name="grasshopper" id="grasshopper" placeholder="Courses you want to be taught">
+            <input type="text" name="grasshopper" id="grasshopper" placeholder="Courses you want to be taught" value="{{ profileField 'grasshopper' }}">
             {{#if displayFieldError 'grasshopper' }}
               <div class="ui error message">
                 <p>You must specify your courses you want to be taught</p>
@@ -76,7 +77,7 @@
 
       <div class="field">
         <label>Description of yourself</label>
-        <input type="text" name="description" id="description" placeholder="Description of yourself">
+        <input type="text" name="description" id="description" placeholder="Description of yourself" value="{{ profileField 'description' }}">
         {{#if displayFieldError 'description' }}
           <div class="ui error message">
             <p>You must specify description of yourself</p>
