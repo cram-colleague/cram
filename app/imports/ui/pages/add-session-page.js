@@ -52,7 +52,7 @@ Template.Add_Session_Page.events({
       SSession.insert(newSession);
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your study session added!');
-      FlowRouter.go('Home_Page');
+      FlowRouter.go('List_Session_Page');
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }
