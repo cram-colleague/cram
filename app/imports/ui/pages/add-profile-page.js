@@ -69,14 +69,14 @@ Template.Add_Profile_Page.events({
     //ProfileSchema.clean(newProfile);
     // Determine validity.
     //instance.context.validate(newProfile);
-    //if (instance.context.isValid()) {
+    if (instance.context.isValid()) {
     Meteor.users.update(Meteor.userId(),{$set: {profile: {data: newData, name: Meteor.user().profile.name}}});
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile added!');
-      FlowRouter.go('Home_Page');
-    //} else {
-     // instance.messageFlags.set(displayErrorMessages, true);
-    //}
+      FlowRouter.go('User_Profile_Page');
+    } else {
+      instance.messageFlags.set(displayErrorMessages, true);
+    }
   },
 });
 

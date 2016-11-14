@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fabb952-086b-4cbe-9466-fb0b39c79252" name="Default" comment="" />
+    <list default="true" id="9fabb952-086b-4cbe-9466-fb0b39c79252" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.js" afterPath="$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.js" />
+    </list>
     <ignored path="cram.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,21 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/ui/layouts/header.html">
+      <file leaf-file-name="profile-page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/profile-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add-profile-page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+            <state relative-caret-position="-66">
+              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -45,96 +38,63 @@
       <file leaf-file-name="add-profile-page.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            <state relative-caret-position="187">
+              <caret line="11" column="115" selection-start-line="11" selection-start-column="115" selection-end-line="11" selection-end-column="115" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile-page.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/profile-page.html">
+      <file leaf-file-name="user-profile-page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/user-profile-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+            <state relative-caret-position="340">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list-profile-page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/list-profile-page.js">
+      <file leaf-file-name="user-profile-page.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/user-profile-page.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list-profile-page.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/list-profile-page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile-page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/profile-page.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
               <folding>
-                <element signature="e#0#52#0" expanded="true" />
+                <element signature="e#0#45#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/startup/client/router.js">
+      <file leaf-file-name="add-profile-page.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="470">
+              <caret line="80" column="3" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
               <folding>
-                <marker date="1478911333000" expanded="true" signature="7:113" ph="..." />
-                <marker date="1478911333000" expanded="true" signature="137:238" ph="{&quot;name&quot;: 'Home_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="268:381" ph="{&quot;name&quot;: 'List_Stuff_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="419:536" ph="{&quot;name&quot;: 'List_Profile_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="573:688" ph="{&quot;name&quot;: 'List_Course_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="726:843" ph="{&quot;name&quot;: 'List_Session_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="872:983" ph="{&quot;name&quot;: 'Add_Stuff_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="1020:1135" ph="{&quot;name&quot;: 'Add_Profile_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="1327:1442" ph="{&quot;name&quot;: 'Add_Session_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="1478:1591" ph="{&quot;name&quot;: 'Edit_Stuff_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="1634:1751" ph="{&quot;name&quot;: 'Edit_Profile_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="1789:1896" ph="{&quot;name&quot;: 'Profile_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="1939:2056" ph="{&quot;name&quot;: 'Edit_Session_Page'...}" />
-                <marker date="1478911333000" expanded="true" signature="2060:2219" ph="//..." />
-                <marker date="1478911333000" expanded="true" signature="2256:2324" ph="{...}" />
+                <marker date="1479083925127" expanded="true" signature="417:426" ph="{...}" />
+                <marker date="1479083925127" expanded="true" signature="2986:2987" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="accounts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/startup/server/accounts.js">
+      <file leaf-file-name="edit-profile-page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/edit-profile-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+            <state relative-caret-position="155">
+              <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/startup/client/index.js">
+      <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/imports/api/profile/profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="617">
+              <caret line="41" column="13" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -177,12 +137,12 @@
         <option value="$PROJECT_DIR$/app/imports/ui/pages/add-session-page.js" />
         <option value="$PROJECT_DIR$/app/imports/ui/pages/index.js" />
         <option value="$PROJECT_DIR$/app/imports/startup/client/router.js" />
-        <option value="$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.js" />
         <option value="$PROJECT_DIR$/app/imports/ui/layouts/header.html" />
         <option value="$PROJECT_DIR$/app/imports/ui/pages/user-profile-page.html" />
         <option value="$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.html" />
         <option value="$PROJECT_DIR$/app/imports/ui/pages/profile-page.html" />
         <option value="$PROJECT_DIR$/app/imports/ui/pages/list-profile-page.html" />
+        <option value="$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.js" />
       </list>
     </option>
   </component>
@@ -196,10 +156,10 @@
     <handled-path value="$PROJECT_DIR$/app/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="621" />
-    <option name="y" value="23" />
-    <option name="width" value="814" />
-    <option name="height" value="797" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -242,6 +202,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -427,12 +389,40 @@
               <option name="myItemId" value="imports" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,8 +436,10 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../final-project-mockup" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/node_modules/eslint" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="js.eslint.eslintPackage" value="C:\Users\lam\Documents\GitHub\cram\app\node_modules\eslint" />
+    <property name="js.eslint.nodeInterpreter" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -522,9 +514,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -583,31 +572,31 @@
     <option name="totallyTimeSpent" value="29664000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="621" y="23" width="814" height="797" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20278184" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34766585" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -626,20 +615,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/.meteor/packages">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/.meteor/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -693,13 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/edit-profile-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -794,24 +762,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/api/profile/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/api/session/session.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/startup/server/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -847,7 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,16 +825,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/ui/layouts/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="255">
           <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -909,25 +854,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/startup/client/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
+        <state relative-caret-position="986">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <marker date="1478911333000" expanded="true" signature="7:113" ph="..." />
-            <marker date="1478911333000" expanded="true" signature="137:238" ph="{&quot;name&quot;: 'Home_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="268:381" ph="{&quot;name&quot;: 'List_Stuff_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="419:536" ph="{&quot;name&quot;: 'List_Profile_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="573:688" ph="{&quot;name&quot;: 'List_Course_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="726:843" ph="{&quot;name&quot;: 'List_Session_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="872:983" ph="{&quot;name&quot;: 'Add_Stuff_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="1020:1135" ph="{&quot;name&quot;: 'Add_Profile_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="1327:1442" ph="{&quot;name&quot;: 'Add_Session_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="1478:1591" ph="{&quot;name&quot;: 'Edit_Stuff_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="1634:1751" ph="{&quot;name&quot;: 'Edit_Profile_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="1789:1896" ph="{&quot;name&quot;: 'Profile_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="1939:2056" ph="{&quot;name&quot;: 'Edit_Session_Page'...}" />
-            <marker date="1478911333000" expanded="true" signature="2060:2219" ph="//..." />
-            <marker date="1478911333000" expanded="true" signature="2256:2324" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -945,14 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/startup/server/accounts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/startup/client/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -961,36 +882,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/user-profile-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/profile-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="952">
           <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/profile-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,9 +902,94 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/list-profile-page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+        <state relative-caret-position="403">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/profile-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/api/profile/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/startup/server/accounts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/edit-profile-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/startup/server/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/api/profile/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="115" selection-start-line="11" selection-start-column="115" selection-end-line="11" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/user-profile-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/user-profile-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/pages/add-profile-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="80" column="3" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+          <folding>
+            <marker date="1479083925127" expanded="true" signature="417:426" ph="{...}" />
+            <marker date="1479083925127" expanded="true" signature="2986:2987" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
