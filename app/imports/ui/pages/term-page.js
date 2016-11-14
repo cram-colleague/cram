@@ -11,16 +11,18 @@ Template.Term_Page.helpers({
    */
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
-  }
+  },
 });
 
 Template.Term_Page.events({
-  'change #checker': function() {
-    if(document.getElementById('checker').checked)
+  'change #checker': function () {
+    if (document.getElementById('checker').checked) {
       Session.set('key', true);
-    else
+    }
+    else {
       Session.set('key', false);
-  }
+    }
+  },
 });
 
 Template.check.helpers({
