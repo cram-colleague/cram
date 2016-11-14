@@ -6,28 +6,38 @@
     <div class="ui container">
       <a class="item" style="font-family: 'Diwan Thuluth',serif;" href="{{pathFor 'Home_Page'}}"><h1>CRAM</h1></a>
       {{#if currentUser}}
-      <div class="ui simple dropdown item">
+      <!--div class="ui simple dropdown item">
         <div class="text">My Profile</div>
         <i class="dropdown icon"></i>
         <div class="menu">
           <a class="item">View</a>
           <div class="{{ isActiveRoute 'Edit_Profile_Page'}} item" href="{{ pathFor 'Edit_Profile_Page' }}">Edit</div>
         </div>
-      </div>
+      </div-->
 
         <!--<a class="item">My Profile</a>-->
-        <a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a>
-        <a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a>
-        <div class="ui simple dropdown item">
-          <div class="text">List of</div>
+        <!--a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a-->
+
+      <div class="ui simple dropdown item">
+        <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">User Profile</a>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="{{ isActiveRoute 'List_Course_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Edit Profile</a>
+          <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="#">Personal Calendar</a>
+        </div>
+      </div>
+
+      <div class="ui simple dropdown item">
+          <a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a>
           <i class="dropdown icon"></i>
           <div class="menu">
-            <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="{{ pathFor 'List_Profile_Page' }}">Profiles</a>
+            <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="#">Calendar</a>
             <a class="{{ isActiveRoute 'List_Course_Page'}} item" href="{{ pathFor 'List_Course_Page' }}">Courses</a>
             <a class="{{ isActiveRoute 'List_Session_Page'}} item" href="{{ pathFor 'List_Session_Page' }}">Study Session</a>
           </div>
         </div>
-        <a class="item">Calendar</a>
+
+        <a class="item">Leaderboard</a>
 
 
 
@@ -41,10 +51,10 @@
           <!--</div>-->
         <!--</div>-->
 
-        <a class="item">
+        <!--a class="item">
           <i class="icon mail"></i> Messages
           <div class="floating ui red label">3</div>
-        </a>
+        </a-->
         {{> Cas_Login }}
       {{/if}}
       <!--{{> Cas_Login }}-->

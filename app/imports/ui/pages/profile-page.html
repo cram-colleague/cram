@@ -2,7 +2,7 @@
   {{#if Template.subscriptionsReady}}
     <div style="margin-top: 20px" class="ui container">
       <!--<form class="ui form contact-data-form {{ errorClass }}">-->
-      <h4 class="ui dividing header">Profile</h4>
+      <h3 class="ui dividing header">Profile</h3>
         <div class="ui three column grid container">
           <div class="column">
             <div class="ui fluid card">
@@ -47,6 +47,24 @@
                 </td>
                 <td>{{ profileField 'description' }}</td>
               </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="column">
+            <table class="ui single line table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Sensei</th>
+                  <th>Grasshopper</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ICS314</td>
+                  <td></td>
+                  <td><i class="large green checkmark icon"></i></td>
+                </tr>
               </tbody>
             </table>
           </div>

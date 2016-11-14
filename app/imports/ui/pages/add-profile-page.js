@@ -9,6 +9,9 @@ import { Profile, ProfileSchema } from '../../api/profile/profile.js';
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Add_Profile_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Profile');
+  });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = ProfileSchema.namedContext('Add_Profile_Page');
@@ -22,6 +25,14 @@ Template.Add_Profile_Page.helpers({
     const errorKeys = Template.instance().context.invalidKeys();
     return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
   },
+
+  //Get username
+  user: function user() {
+    return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
+  },
+  profileField(fieldName) {
+    return Meteor.user().profile.Cprofile[fieldName];
+  }
 });
 
 // Template.Add_Contact_Page.onRendered(function enableSemantic() {
@@ -50,13 +61,22 @@ Template.Add_Profile_Page.events({
     // Invoke clean so that newStudentData reflects what will be inserted.
     ProfileSchema.clean(newProfile);
     // Determine validity.
+//<<<<<<< HEAD
+    //instance.context.validate(newProfile);
+    if (instance.context.isValid()) {
+      Meteor.users.update(Meteor.userId(), { $set: { profile: { data: newData, name: Meteor.user().profile.name } } });
+      instance.messageFlags.set(displayErrorMessages, false);
+      window.alert('Thank you! Your profile added!');
+      FlowRouter.go('User_Profile_Page');
+    }
+//=======
     instance.context.validate(newProfile);
     if (instance.context.isValid()) {
-      Profile.insert(newProfile);
+      Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile added!');
       FlowRouter.go('Home_Page');
-      // change to user profile
+//>>>>>>> origin/master
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

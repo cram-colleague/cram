@@ -1,0 +1,40 @@
+<template name="User_Profile_Page">
+  <div style="margin-top: 20px; padding: 10px 0;">
+
+  </div>
+
+  <br>
+
+  <div class="ui container">
+    <div class="ui grid">
+      <div class="four wide column">
+        <img class="ui medium circular image" src="/images/user.png">
+      </div>
+      <div class="twelve wide column">
+        <h1 style="margin-top: 10px;">{{user}}</h1>
+        <h1>{{ profileField 'first' }} {{ profileField 'last' }}</h1>
+        <div class="ui text container">
+          <h2>About Me</h2>
+          <p>{{ profileField 'description' }}</p>
+        </div>
+
+        <br>
+
+        <div class="ui text container">
+          <h2>Previous classes</h2>
+          <p>{{ profileField 'preCourse' }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <div style="text-align: center;">
+    <a class="{{ isActiveRoute 'Add_Profile_Page'}} item"
+       href="{{ pathFor 'Add_Profile_Page' }}">
+      <button class="ui button">Edit Profile</button>
+    </a>
+  </div>
+
+</template>
