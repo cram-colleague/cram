@@ -1,0 +1,23 @@
+<template name="Term_Page">
+  <div class="ui container">
+    <div style="margin-top: 20px" class="ui piled segment">
+      <h1 class="ui centered header">Thank you for using CRAM :)</h1>
+
+      <h3 class="ui centerd header">Before log in, please agree on the term of use</h3>
+
+    {{#if currentUser}}
+      <h2 class="ui centered header">Thank you for using our page! <br>
+      Create your profile and find study buddy!!</h2>
+      {{else}}
+      <h2 class="ui centered header">To use this site, please log-in with @hawaii.edu address :) <br />
+      and agree to our term of use.</h2>
+
+      <div class="ui one column center aligned page grid">
+        <div class="column twelve wide">
+          <button class="ui button start">GET START</button>
+        </div>
+      </div>
+    {{/if}}
+    </div>
+  </div>
+</template>
