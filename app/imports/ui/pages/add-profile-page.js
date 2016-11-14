@@ -18,13 +18,6 @@ Template.Add_Profile_Page.onCreated(function onCreated() {
 });
 
 Template.Add_Profile_Page.helpers({
-
-  //???
-  profileField(fieldName) {
-    const profile = Profile.findOne(FlowRouter.getParam);
-    // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
-    return profile && profile[fieldName];
-  },
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
@@ -37,8 +30,8 @@ Template.Add_Profile_Page.helpers({
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
-  firstName: function() {
-    return Meteor.user().profile.cramprofile.first;
+  profileField(fieldName) {
+    return Meteor.user().profile.Cprofile[fieldName];
   }
 });
 
@@ -64,19 +57,19 @@ Template.Add_Profile_Page.events({
     const description = event.target.description.value;
     const newProfile = { first, last, preCourse, sensei, currCourse, grasshopper, description };
     // Clear out any old validation errors.
-    //instance.context.resetValidation();
+    instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
-    //ProfileSchema.clean(newProfile);
+    ProfileSchema.clean(newProfile);
     // Determine validity.
-    //instance.context.validate(newProfile);
-    //if (instance.context.isValid()) {
-    Meteor.users.update(Meteor.userId(),{$set: {profile: {data: newData, name: Meteor.user().profile.name}}});
+    instance.context.validate(newProfile);
+    if (instance.context.isValid()) {
+      Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile added!');
       FlowRouter.go('Home_Page');
-    //} else {
-     // instance.messageFlags.set(displayErrorMessages, true);
-    //}
+    } else {
+      instance.messageFlags.set(displayErrorMessages, true);
+    }
   },
 });
 
