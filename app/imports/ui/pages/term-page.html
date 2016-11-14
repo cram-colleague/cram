@@ -10,16 +10,12 @@
       <div class="ui one column center aligned page grid">
         <div class="column twelve wide">
           <div class="ui checkbox">
-            <!--<input type="checkbox" id="checker">-->
-            <input type="checkbox" {{isChecked}}>
+            <input type="checkbox" id="checker">
             <label>Agree to the term of use</label>
           </div>
           <br />
           <br />
-          {{#if isChecked}}
-            {{> Cas_Login}}
-          {{/if}}
-          <!--{{> check}}-->
+          {{> check}}
         </div>
       </div>
     </div>
@@ -27,9 +23,10 @@
 </template>
 
 <template name="check">
-  <!--{{#if isTrue}}-->
-    <!--Hi-->
-    {{> Cas_Login}}
-  <!--{{/if}}-->
+  {{#if isTrue}}
+    <div class="ui compact menu">
+      {{> Cas_Login}}
+    </div>
+  {{/if}}
 </template>
 
