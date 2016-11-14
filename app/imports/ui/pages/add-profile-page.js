@@ -61,12 +61,22 @@ Template.Add_Profile_Page.events({
     // Invoke clean so that newStudentData reflects what will be inserted.
     ProfileSchema.clean(newProfile);
     // Determine validity.
+//<<<<<<< HEAD
+    //instance.context.validate(newProfile);
+    if (instance.context.isValid()) {
+      Meteor.users.update(Meteor.userId(), { $set: { profile: { data: newData, name: Meteor.user().profile.name } } });
+      instance.messageFlags.set(displayErrorMessages, false);
+      window.alert('Thank you! Your profile added!');
+      FlowRouter.go('User_Profile_Page');
+    }
+//=======
     instance.context.validate(newProfile);
     if (instance.context.isValid()) {
       Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile added!');
       FlowRouter.go('Home_Page');
+//>>>>>>> origin/master
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }
