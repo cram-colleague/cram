@@ -1,0 +1,32 @@
+<template name="Term_Page">
+  <div class="ui container">
+    <div style="margin-top: 20px" class="ui piled segment">
+      <h1 class="ui centered header">Thank you for using CRAM :)</h1>
+
+      <h3 class="ui centerd header">Before log in, please agree on the term of use</h3>
+
+      <p><em>This application has been developed by students at the University of Hawaii. It is provided on a pilot basis and there are no guarantees regarding future access to this system.   All users are expected to adhere to the principles specified in the <a href="http://studentaffairs.manoa.hawaii.edu/policies/conduct_code/proscribed_conduct.php">University of Hawaii Systemwide Student Conduct Code</a>. The developers reserve the right to ban access to this system by any students who violate this code of conduct or otherwise display inappropriate behavior on the site.</em></p>
+
+      <div class="ui one column center aligned page grid">
+        <div class="column twelve wide">
+          <div class="ui checkbox">
+            <input type="checkbox" id="checker">
+            <label>Agree to the term of use</label>
+          </div>
+          <br />
+          <br />
+          {{> check}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="check">
+  {{#if isTrue}}
+    <div class="ui compact menu">
+      {{> Cas_Login}}
+    </div>
+  {{/if}}
+</template>
+

@@ -4,5 +4,13 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <orderEntry type="library" name="meteor-packages-auto-import-browser" level="project" />
+    <orderEntry type="library" name="meteor-packages-auto-import-npm" level="project" />
+=======
+>>>>>>> master
+>>>>>>> Minako
   </component>
 </module>
