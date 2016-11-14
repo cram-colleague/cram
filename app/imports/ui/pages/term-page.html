@@ -5,19 +5,20 @@
 
       <h3 class="ui centerd header">Before log in, please agree on the term of use</h3>
 
-    {{#if currentUser}}
-      <h2 class="ui centered header">Thank you for using our page! <br>
-      Create your profile and find study buddy!!</h2>
-      {{else}}
-      <h2 class="ui centered header">To use this site, please log-in with @hawaii.edu address :) <br />
-      and agree to our term of use.</h2>
+      <p><em>This application has been developed by students at the University of Hawaii. It is provided on a pilot basis and there are no guarantees regarding future access to this system.   All users are expected to adhere to the principles specified in the <a href="http://studentaffairs.manoa.hawaii.edu/policies/conduct_code/proscribed_conduct.php">University of Hawaii Systemwide Student Conduct Code</a>. The developers reserve the right to ban access to this system by any students who violate this code of conduct or otherwise display inappropriate behavior on the site.</em></p>
 
       <div class="ui one column center aligned page grid">
         <div class="column twelve wide">
-          <button class="ui button start">GET START</button>
+          <div class="ui checkbox">
+            <input type="checkbox" name="agree">
+            <label>Agree to the term of use</label>
+          </div>
+          <br />
+          <br />
+            {{> Cas_Login }}
         </div>
       </div>
-    {{/if}}
     </div>
   </div>
 </template>
+

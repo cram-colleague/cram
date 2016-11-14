@@ -17,6 +17,10 @@ import './profile-page.html';
 import './profile-page.js';
 
 import './home-page.html';
+import './home-page.js';
+
+import './term-page.html';
+import './term-page.js';
 
 import './list-stuff-page.html';
 import './list-stuff-page.js';
