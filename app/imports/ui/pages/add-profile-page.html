@@ -29,9 +29,7 @@
 
       <div class="field">
         <label>Description of yourself</label>
-        <textarea input type="text" name="description" id="description" placeholder="Description of yourself"
-                  value="{{ profileField 'description' }}">
-        </textarea>
+        <input type="text" name="description" id="description" placeholder="Description of yourself" value="{{ profileField 'description' }}">
         {{#if displayFieldError 'description' }}
         <div class="ui error message">
           <p>You must specify description of yourself</p>

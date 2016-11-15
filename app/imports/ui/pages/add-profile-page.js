@@ -50,36 +50,35 @@ Template.Add_Profile_Page.events({
     // Get name (text field)
     const first = event.target.first.value;
     const last = event.target.last.value;
-    const preCourse = event.target.preCourse.value;
-    const sensei = event.target.sensei.value;
-    const currCourse = event.target.currCourse.value;
-    const grasshopper = event.target.sensei.value;
+    //const preCourse = event.target.preCourse.value;
+    //const sensei = event.target.sensei.value;
+    //const currCourse = event.target.currCourse.value;
+    //const grasshopper = event.target.sensei.value;
     const description = event.target.description.value;
-    const newProfile = { first, last, preCourse, sensei, currCourse, grasshopper, description };
+   // const newProfile = { first, last, preCourse, sensei, currCourse, grasshopper, description };
+
+    //Testing
+    const newProfile = { first, last, description};
+
     // Clear out any old validation errors.
     instance.context.resetValidation();
-    // Invoke clean so that newStudentData reflects what will be inserted.
+    // Invoke clean
     ProfileSchema.clean(newProfile);
-    // Determine validity.
-//<<<<<<< HEAD
-    //instance.context.validate(newProfile);
-    if (instance.context.isValid()) {
-      Meteor.users.update(Meteor.userId(), { $set: { profile: { data: newData, name: Meteor.user().profile.name } } });
-      instance.messageFlags.set(displayErrorMessages, false);
-      window.alert('Thank you! Your profile added!');
-      FlowRouter.go('User_Profile_Page');
-    }
-//=======
+    //determine validity
     instance.context.validate(newProfile);
-    if (instance.context.isValid()) {
+
+    /////////////////////////////////////////////////
+    //Figure out why valdation doesnt work anymore
+    /////////////////////////////////////////////////
+
+    //if (instance.context.isValid()) {
       Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile added!');
       FlowRouter.go('Home_Page');
-//>>>>>>> origin/master
-    } else {
+    //} else {
       instance.messageFlags.set(displayErrorMessages, true);
-    }
+    //}
   },
 });
 
