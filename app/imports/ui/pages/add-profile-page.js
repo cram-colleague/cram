@@ -75,7 +75,7 @@ Template.Add_Profile_Page.events({
       Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile added!');
-      FlowRouter.go('Home_Page');
+      FlowRouter.go('User_Profile_Page');
     //} else {
       instance.messageFlags.set(displayErrorMessages, true);
     //}

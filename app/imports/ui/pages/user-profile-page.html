@@ -6,28 +6,61 @@
   <br>
 
   <div class="ui container">
-    <div class="ui grid">
-      <div class="four wide column">
-        <img class="ui medium circular image" src="/images/user.png">
-      </div>
-      <div class="twelve wide column">
-        <h1 style="margin-top: 10px;">{{user}}</h1>
-        <h1>{{ profileField 'first' }} {{ profileField 'last' }}</h1>
-        <div class="ui text container">
-          <h2>About Me</h2>
-          <p>{{ profileField 'description' }}</p>
+    <!--<div class="ui grid">-->
+      <!--<div class="four wide column">-->
+        <!--<img class="ui medium circular image" src="/images/user.png">-->
+      <!--</div>-->
+      <!--<div class="twelve wide column">-->
+        <!--<h1 style="margin-top: 10px;">{{user}}</h1>-->
+
+        <p>You are loger in as {{user}}</p>
+        <h3 class="ui dividing header">My Profile</h3>
+
+        <div class="ui three column grid container">
+          <div class="column">
+            <div class="ui fluid card">
+              <div class="ui image">
+                <img src="/images/user.png">
+              </div>
+              <div class="content">
+                <div class="ui header">{{ profileField 'first' }} {{ profileField 'last' }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui column">
+            <table class="ui blue celled structured table">
+              <thead>
+                <tr>
+                  <th>About me</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="4">{{ profileField 'description' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <br>
 
-        <div class="ui text container">
-          <h2>Previous classes</h2>
-          <p>{{ profileField 'preCourse' }}</p>
-        </div>
+        <!--<h1>{{ profileField 'first' }} {{ profileField 'last' }}</h1>-->
+        <!--<div class="ui text container">-->
+          <!--<h2>About Me</h2>-->
+          <!--<p>{{ profileField 'description' }}</p>-->
+        <!--</div>-->
+
+        <!--<br>-->
+
+        <!--<div class="ui text container">-->
+          <!--<h2>Previous classes</h2>-->
+          <!--<p>{{ profileField 'preCourse' }}</p>-->
+        <!--</div>-->
 
       </div>
-    </div>
-  </div>
+    <!--</div>-->
+  <!--</div>-->
 
   <br />
   <div style="text-align: center;">
