@@ -1,14 +1,21 @@
 <template name="Home_Page">
   <div class="ui container">
     <div style="margin-top: 20px" class="ui piled segment">
+
+      <div class="ui blue ribbon label">logged in user: {{user}}</div>
+
       <h1 class="ui centered header">DO YOU WANT TO STUDY WITH SOMEONE?</h1>
       <h2 class="ui centered header">If you want to find someone to study together, use CRAM!</h2>
-      <h4 style="padding-left: 2em; padding-right: 2em" class="ui header">Working on a project or studying for a test and wishing you could get some help? As young college students majoring in computer science, we've all been there. We know that everyone has their own strengths and weaknesses and believe collaboration, in the form of study groups, will help to strengthen student’s weaknesses by drawing on the strengths of the group. At times school can be stressful and overwhelming and gathering others contact information and arranging times to study is the last thing on a student’s mind. We at cram seek to facilitate the formation of study groups via our app. It is our hope that our app allows students to collaborate, learn, and succeed!</h4>
+      <div class="ui internally celled centered grid">
+        <div class="ten wide column">
+          <h4>Working on a project or studying for a test and wishing you could get some help? As young college students majoring in computer science, we've all been there. We know that everyone has their own strengths and weaknesses and believe collaboration, in the form of study groups, will help to strengthen student’s weaknesses by drawing on the strengths of the group. At times school can be stressful and overwhelming and gathering others contact information and arranging times to study is the last thing on a student’s mind. We at cram seek to facilitate the formation of study groups via our app. It is our hope that our app allows students to collaborate, learn, and succeed!</h4>
+        </div>
+      </div>
 
     {{#if currentUser}}
       <h2 class="ui centered header">Thank you for using our page! <br>
       Create your profile and find study buddy!!</h2>
-      <p>Currently logged in user: {{user}}</p>
+      <!--<div class="centered grid"><p>Currently logged in user: {{user}}</p></div>-->
 
       {{else}}
       <h2 class="ui centered header">To use this site, please log-in with @hawaii.edu address :) <br />
