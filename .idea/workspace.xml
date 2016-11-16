@@ -396,17 +396,25 @@
       <workItem from="1479178214149" duration="4102000" />
 =======
       <updated>1479200177808</updated>
+<<<<<<< HEAD
+      <workItem from="1479200182163" duration="1455000" />
+=======
       <workItem from="1479200182163" duration="1417000" />
 >>>>>>> master
+>>>>>>> Minako
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+    <option name="totallyTimeSpent" value="1455000" />
+=======
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="4507000" />
 =======
     <option name="totallyTimeSpent" value="1417000" />
 >>>>>>> master
+>>>>>>> Minako
   </component>
   <component name="ToolWindowManager">
     <frame x="716" y="23" width="724" height="810" extended-state="0" />
