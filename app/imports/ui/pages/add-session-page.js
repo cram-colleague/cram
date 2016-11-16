@@ -9,9 +9,12 @@ import { SSession, SessionSchema } from '../../api/session/session.js';
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Add_Session_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('SSession');
+  });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = SessionSchema.namedContext('Add_Sessione_Page');
+  this.context = SessionSchema.namedContext('Add_Session_Page');
 });
 
 Template.Add_Session_Page.helpers({
@@ -52,7 +55,7 @@ Template.Add_Session_Page.events({
       SSession.insert(newSession);
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your study session added!');
-      FlowRouter.go('List_Session_Page');
+      FlowRouter.go('Home_Page');
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }
