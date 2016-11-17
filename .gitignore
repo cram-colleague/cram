@@ -6,6 +6,8 @@ config/settings.json
 # Ignore IntelliJ Project files.
 *.iml
 .idea/
+.idea/workspace.xml
+npm-debug.log
 
 # If on a Mac, ignore DS_Store.
 .DS_Store
