@@ -28,7 +28,7 @@ Template.Cas_Login.events({
       }
     };
     Meteor.loginWithCas(callback);
-    FlowRouter.go('User_Profile_Page');
+    FlowRouter.go('Term_Page');
     return false;
   },
 });

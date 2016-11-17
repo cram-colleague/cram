@@ -23,7 +23,11 @@
 
       <div class="ui one column center aligned page grid">
         <div class="column twelve wide">
-          <button class="ui button" ><a class="{{ isActiveRoute 'Term_Page'}} item" href="{{ pathFor 'Term_Page' }}">Start</a></button>
+          <div class="ui brown compact menu">
+            {{> Cas_Login}}
+          </div>
+          <!--<button class="ui button" ><a class="{{ isActiveRoute 'Term_Page'}} item" href="{{ pathFor 'Term_Page' }}">Start</a></button>-->
+          <br />
         </div>
       </div>
     {{/if}}
