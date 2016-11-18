@@ -58,7 +58,7 @@ Template.Add_Profile_Page.events({
    // const newProfile = { first, last, preCourse, sensei, currCourse, grasshopper, description };
 
     //Testing
-    const newProfile = { first, last, description};
+    const newProfile = { first, last, description };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
@@ -66,7 +66,7 @@ Template.Add_Profile_Page.events({
     ProfileSchema.clean(newProfile);
     //determine validity
     instance.context.validate(newProfile);
-
+    Profile.insert(newProfile);
     /////////////////////////////////////////////////
     //Figure out why valdation doesnt work anymore
     /////////////////////////////////////////////////

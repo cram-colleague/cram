@@ -55,8 +55,7 @@ Template.Edit_Profile_Page.events({
     if (r === true) {
       Profile.remove(FlowRouter.getParam('_id'));
       FlowRouter.go('Home_Page');
-    }
-    else {
+    } else {
       FlowRouter.go('Home_Page');
     }
   },
