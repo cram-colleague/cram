@@ -6,10 +6,10 @@
           <thead>
           <tr>
             <th>Name</th>
-            <th>Previous Course</th>
-            <th>Courses you want to teach</th>
-            <th>Current Course</th>
-            <th>Courses you want to be taught</th>
+            <!--<th>Previous Course</th>-->
+            <!--<th>Courses you want to teach</th>-->
+            <!--<th>Current Course</th>-->
+            <!--<th>Courses you want to be taught</th>-->
             <th>Description of yourself</th>
             <!-- if statement should come? -->
             <!--<th>Edit</th>-->
@@ -20,10 +20,10 @@
           {{#each profile in profileList}}
             <tr>
               <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a></td>
-              <td>{{profile.preCourse}}</td>
-              <td>{{profile.sensei}}</td>
-              <td>{{profile.currCourse}}</td>
-              <td>{{profile.grasshopper}}</td>
+              <!--<td>{{profile.preCourse}}</td>-->
+              <!--<td>{{profile.sensei}}</td>-->
+              <!--<td>{{profile.currCourse}}</td>-->
+              <!--<td>{{profile.grasshopper}}</td>-->
               <td>{{profile.description}}</td>
               <!-- if statement should come? -->
               <!--<td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>-->
