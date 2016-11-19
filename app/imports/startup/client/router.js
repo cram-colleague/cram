@@ -99,6 +99,15 @@ FlowRouter.route('/edit-session/:_id', {
   },
 });
 
+
+FlowRouter.route('/admin', {
+  name: 'Admin_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Admin_Page' });
+  },
+});
+
+
 // FlowRouter.route('/calendar', {
 //   name: 'Calendar_Page',
 //   action() {
