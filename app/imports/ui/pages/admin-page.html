@@ -1,0 +1,54 @@
+<template name="Admin_Page">
+  <div class="ui container">
+    <div style="padding-top: 20px" class="ui two column grid">
+      <div   class="ui column">
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>User</th>
+            <th>Make Admin</th>
+            <th>Ban</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr>
+            <td>Test User</td>
+            <td><i class="add user icon"></i></td>
+            <td><i class="remove user icon"></i></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ui column">
+        <div class="ui text container">
+          {{#if Template.subscriptionsReady}}
+          <table style="margin-top: 20px" class="ui celled table">
+            <thead>
+            <tr>
+              <th>Name of the course</th>
+              <th>Sensei</th>
+              <th>Grasshopper</th>
+              <th>Remove</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each course in courseList}}
+            <tr>
+              <td>{{course.name}}</td>
+              <td><a href="{{pathFor 'Profile_Page' _id=course._id }}">{{course.sensei}}</a></td>
+              <td>{{course.grasshopper}}</td>
+              <td><i class="ban icon"></i></td>
+            </tr>
+            {{/each}}
+            </tbody>
+          </table>
+          {{else}}
+          {{> Loading}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

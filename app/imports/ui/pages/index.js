@@ -37,5 +37,8 @@ import './list-session-page.js';
 import './user-profile-page.html'; // added by LL need a js
 import './user-profile-page.js';   // js page created
 
+
+import './admin-page.html';
+import './admin-page.js';
 // import './calendar.html';
 
