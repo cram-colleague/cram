@@ -1,0 +1,36 @@
+<template name="calendar">
+  <div style="margin-top: 20px; padding: 10px 0;">
+
+  </div>
+  <head>
+    <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
+    <script src='lib/jquery.min.js'></script>
+    <script src='lib/moment.min.js'></script>
+    <script src='fullcalendar/fullcalendar.js'></script>
+    <script>
+      $(document).ready(function () {
+
+        // page is now ready, initialize the calendar...
+
+        $('#calendar').fullCalendar({
+          // put your options and callbacks here
+        })
+
+      });
+    </script>
+  </head>
+
+
+
+  <div class="ui container">
+    <div id='calendar'></div>
+  </div>
+
+  <!--div style="text-align: center;">
+    <a class="{{ isActiveRoute 'Add_Profile_Page'}} item"
+       href="{{ pathFor 'Add_Profile_Page' }}">
+      <button class="ui button">Button to add Profile</button>
+    </a>
+  </div-->
+
+</template>

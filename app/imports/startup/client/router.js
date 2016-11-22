@@ -1,5 +1,5 @@
-import { FlowRouter } from 'meteor/kadira:flow-router';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import {FlowRouter} from 'meteor/kadira:flow-router';
+import {BlazeLayout} from 'meteor/kadira:blaze-layout';
 
 FlowRouter.route('/', {
   name: 'Home_Page',
@@ -99,12 +99,12 @@ FlowRouter.route('/edit-session/:_id', {
   },
 });
 
-// FlowRouter.route('/calendar', {
-//   name: 'Calendar_Page',
-//   action() {
-//     BlazeLayout.render('App_Body', { main: 'Calendar_Page' });
-//   },
-// });
+FlowRouter.route('/calendar', {
+  name: 'calendar',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'calendar' });
+  },
+});
 
 FlowRouter.notFound = {
   action() {
