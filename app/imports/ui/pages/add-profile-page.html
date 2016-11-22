@@ -9,7 +9,7 @@
         <label>Name</label>
         <div class="two fields">
           <div class="field">
-            <input type="text" name="first" id="first" placeholder="First Name" value="{{ profileField 'first' }}">
+            <input type="text" name="first" id="first" placeholder="First Name">
             {{#if displayFieldError 'first' }}
             <div class="ui error message">
               <p>You must specify your name.</p>
@@ -17,7 +17,7 @@
             {{/if}}
           </div>
           <div class="field">
-            <input type="text" name="last" id="last" placeholder="Last Name" value="{{ profileField 'last' }}">
+            <input type="text" name="last" id="last" placeholder="Last Name">
             {{#if displayFieldError 'last' }}
             <div class="ui error message">
               <p>You must specify your last name</p>
@@ -29,7 +29,7 @@
 
       <div class="field">
         <label>Description of yourself</label>
-        <input type="text" name="description" id="description" placeholder="Description of yourself" value="{{ profileField 'description' }}">
+        <input type="text" name="description" id="description" placeholder="Description of yourself">
         {{#if displayFieldError 'description' }}
         <div class="ui error message">
           <p>You must specify description of yourself</p>
@@ -73,8 +73,7 @@
 
           <div class="field">
             <label>Courses Taken</label>
-            <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course"
-                   value="{{ profileField 'preCourse' }}">
+            <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course">
             {{#if displayFieldError 'preCourse' }}
             <div class="ui error message">
               <p>You must specify your previous course.</p>
@@ -100,8 +99,7 @@
         <!--<div class="two fields">-->
           <div class="field">
             <label>Current Course</label>
-            <input type="text" name="currCourse" id="currCourse" placeholder="Current Course"
-                   value="{{ profileField 'currCourse' }}">
+            <input type="text" name="currCourse" id="currCourse" placeholder="Current Course">
             {{#if displayFieldError 'currCourse' }}
             <div class="ui error message">
               <p>You must specify your current course.</p>
