@@ -40,3 +40,6 @@ import './user-profile-page.js';   // js page created
 import './calendar.html';
 import './calendar.js';
 
+import './personal-calendar.html';
+import './personal-calendar.js';
+

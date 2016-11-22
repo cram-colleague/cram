@@ -105,6 +105,12 @@ FlowRouter.route('/calendar', {
     BlazeLayout.render('App_Body', { main: 'calendar' });
   },
 });
+FlowRouter.route('/personal-calendar', {
+  name: 'personal_calendar',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'personal_calendar' });
+  },
+});
 
 FlowRouter.notFound = {
   action() {
