@@ -32,11 +32,13 @@
               <thead>
                 <tr>
                   <th>About me</th>
+                  <!--<th>Curses Taken</th>-->
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td rowspan="4">{{ profileField 'description' }}</td>
+                  <!--<td>{{ profileField 'preCourse' }}</td>-->
                 </tr>
               </tbody>
             </table>
@@ -63,11 +65,10 @@
 
   <br />
   <div style="text-align: center;">
+    <!--<button class="ui button"><a href="{{pathFor 'Edit_Profile_Page' _id=userId }}">Edit Profile</a></button>-->
     <a class="{{ isActiveRoute 'Add_Profile_Page'}} item"
        href="{{ pathFor 'Add_Profile_Page' }}">
-      <button class="ui button">Edit Profile</button>
-
-    </a>
+      <button class="ui button">Edit Profile</button></a>
   </div>
 
 </template>

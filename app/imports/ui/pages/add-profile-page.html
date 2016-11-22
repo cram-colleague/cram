@@ -39,40 +39,40 @@
 
       <div class="field">
         <div class="two fields">
+          <!--<div class="field">-->
+            <!--<label>Courses Taken</label>-->
+            <!--<select class="ui fluid dropdown">-->
+              <!--<option value="">Select Course</option>-->
+              <!--<option value="111">ICS 111</option>-->
+              <!--<option value="141">ICS 141</option>-->
+              <!--<option value="211">ICS 211</option>-->
+              <!--<option value="212">ICS 212</option>-->
+              <!--<option value="241">ICS 241</option>-->
+              <!--<option value="311">ICS 311</option>-->
+              <!--<option value="314">ICS 314</option>-->
+              <!--<option value="321">ICS 321</option>-->
+              <!--<option value="414">ICS 414</option>-->
+            <!--</select>-->
+          <!--</div>-->
+
+          <!--<div class="field">-->
+            <!--<label>Current Courses</label>-->
+            <!--<select class="ui fluid dropdown">-->
+              <!--<option value="">Select Course</option>-->
+              <!--<option value="111">ICS 111</option>-->
+              <!--<option value="141">ICS 141</option>-->
+              <!--<option value="211">ICS 211</option>-->
+              <!--<option value="212">ICS 212</option>-->
+              <!--<option value="241">ICS 241</option>-->
+              <!--<option value="311">ICS 311</option>-->
+              <!--<option value="314">ICS 314</option>-->
+              <!--<option value="321">ICS 321</option>-->
+              <!--<option value="414">ICS 414</option>-->
+            <!--</select>-->
+          <!--</div>-->
+
           <div class="field">
             <label>Courses Taken</label>
-            <select class="ui fluid dropdown">
-              <option value="">Select Course</option>
-              <option value="111">ICS 111</option>
-              <option value="141">ICS 141</option>
-              <option value="211">ICS 211</option>
-              <option value="212">ICS 212</option>
-              <option value="241">ICS 241</option>
-              <option value="311">ICS 311</option>
-              <option value="314">ICS 314</option>
-              <option value="321">ICS 321</option>
-              <option value="414">ICS 414</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label>Current Courses</label>
-            <select class="ui fluid dropdown">
-              <option value="">Select Course</option>
-              <option value="111">ICS 111</option>
-              <option value="141">ICS 141</option>
-              <option value="211">ICS 211</option>
-              <option value="212">ICS 212</option>
-              <option value="241">ICS 241</option>
-              <option value="311">ICS 311</option>
-              <option value="314">ICS 314</option>
-              <option value="321">ICS 321</option>
-              <option value="414">ICS 414</option>
-            </select>
-          </div>
-
-          <!--div class="field">
-            <label>Previous Course</label>
             <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course"
                    value="{{ profileField 'preCourse' }}">
             {{#if displayFieldError 'preCourse' }}
@@ -82,22 +82,22 @@
             {{/if}}
           </div>
 
-          <div class="field">
-            <label>Courses you want to teach</label>
-            <input type="text" name="sensei" id="sensei" placeholder="Courses you want to teach" value="{{ profileField 'sensei' }}">
-            {{#if displayFieldError 'sensei' }}
-              <div class="ui error message">
-                <p>You must specify your courses you want to teach</p>
-              </div>
-            {{/if}}
-          </div-->
-        </div>
-      </div>
+          <!--<div class="field">-->
+            <!--<label>Courses you want to teach</label>-->
+            <!--<input type="text" name="sensei" id="sensei" placeholder="Courses you want to teach" value="{{ profileField 'sensei' }}">-->
+            <!--{{#if displayFieldError 'sensei' }}-->
+              <!--<div class="ui error message">-->
+                <!--<p>You must specify your courses you want to teach</p>-->
+              <!--</div>-->
+            <!--{{/if}}-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
 
 
 
-      <!--div class="field">
-        <div class="two fields">
+      <!--<div class="field">-->
+        <!--<div class="two fields">-->
           <div class="field">
             <label>Current Course</label>
             <input type="text" name="currCourse" id="currCourse" placeholder="Current Course"
@@ -109,17 +109,17 @@
             {{/if}}
           </div>
 
-          <div class="field">
-            <label>Courses you want to be taught</label>
-            <input type="text" name="grasshopper" id="grasshopper" placeholder="Courses you want to be taught" value="{{ profileField 'grasshopper' }}">
-            {{#if displayFieldError 'grasshopper' }}
-              <div class="ui error message">
-                <p>You must specify your courses you want to be taught</p>
-              </div>
-            {{/if}}
-          </div>
+          <!--<div class="field">-->
+            <!--<label>Courses you want to be taught</label>-->
+            <!--<input type="text" name="grasshopper" id="grasshopper" placeholder="Courses you want to be taught" value="{{ profileField 'grasshopper' }}">-->
+            <!--{{#if displayFieldError 'grasshopper' }}-->
+              <!--<div class="ui error message">-->
+                <!--<p>You must specify your courses you want to be taught</p>-->
+              <!--</div>-->
+            <!--{{/if}}-->
+          <!--</div>-->
         </div>
-      </div-->
+      </div>
 
       <button class="ui button" type="submit">Submit</button>
       <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">

@@ -32,7 +32,7 @@ Template.Add_Profile_Page.helpers({
   },
   profileField(fieldName) {
     return Meteor.user().profile.Cprofile[fieldName];
-  }
+  },
 });
 
 // Template.Add_Contact_Page.onRendered(function enableSemantic() {
@@ -50,15 +50,15 @@ Template.Add_Profile_Page.events({
     // Get name (text field)
     const first = event.target.first.value;
     const last = event.target.last.value;
-    //const preCourse = event.target.preCourse.value;
+    const preCourse = event.target.preCourse.value;
     //const sensei = event.target.sensei.value;
-    //const currCourse = event.target.currCourse.value;
+    const currCourse = event.target.currCourse.value;
     //const grasshopper = event.target.sensei.value;
     const description = event.target.description.value;
    // const newProfile = { first, last, preCourse, sensei, currCourse, grasshopper, description };
 
     //Testing
-    const newProfile = { first, last, description };
+    const newProfile = { first, last, preCourse, currCourse, description };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
