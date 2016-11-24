@@ -9,19 +9,23 @@ const profileSeeds = [
   {
     first: 'Minako',
     last: 'Doi',
-    // preCourse: 'ICS311',
+    preCourse: 'ICS311',
     // sensei: 'ICS311',
-    // currCourse: 'ICS314',
+    currCourse: 'ICS314',
     // grasshopper: 'ICS314',
-    description: 'Hello, I am a Senior majoring in ICS.' },
+    description: 'Hello, I am a Senior majoring in ICS.',
+    // owner: }),
+  },
   {
     first: 'Chad',
     last: 'Naka',
-    // preCourse: 'PHYS151',
+    preCourse: 'PHYS151',
     // sensei: 'PHYS151',
-    // currCourse: 'PHYS152',
+    currCourse: 'PHYS152',
     // grasshopper: 'PHYS152',
-    description: 'Hi, I am a freshman.' },
+    description: 'Hi, I am a freshman.',
+    // owner: Meteor.users.findOne({ user: Meteor.user.services.cas.id }),
+  },
 ];
 
 /**

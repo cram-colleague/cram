@@ -51,6 +51,10 @@ export const ProfileSchema = new SimpleSchema({
     optional: false,
     max: 1000,
   },
+  owner: {
+    label: 'owner',
+    type: String,
+  },
 });
 
 Profile.attachSchema(ProfileSchema);

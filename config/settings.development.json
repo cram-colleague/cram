@@ -14,5 +14,8 @@
   "allowed_users": [
     "johnson",
     "minakod"
-  ]
+  ],
+  "defaultAccount": {
+    "username": "minakod", "passwpord": "changeme"
+  }
 }
