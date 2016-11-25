@@ -85,6 +85,7 @@ FlowRouter.route('/edit-profile/:_id', {
   },
 });
 
+// change it later
 FlowRouter.route('/profile/:_id', {
   name: 'Profile_Page',
   action() {

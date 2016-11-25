@@ -2,6 +2,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
+import { Meteor } from 'meteor/meteor';
 import { Profile, ProfileSchema } from '../../api/profile/profile.js';
 
 /* eslint-disable object-shorthand, no-unused-vars */
@@ -20,6 +21,7 @@ Template.Profile_Page.onCreated(function onCreated() {
 
 Template.Profile_Page.helpers({
   profileField(fieldName) {
+    // change it later
     const profile = Profile.findOne(FlowRouter.getParam('_id'));
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
@@ -55,8 +57,7 @@ Template.Profile_Page.events({
     if (r === true) {
       Profile.remove(FlowRouter.getParam('_id'));
       FlowRouter.go('Home_Page');
-    }
-    else {
+    } else {
       FlowRouter.go('Home_Page');
     }
   },

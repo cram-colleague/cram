@@ -40,6 +40,9 @@ Template.Cas_Login.events({
       if (!ok) {
         Meteor.logout();
         FlowRouter.go('');
+      } else {
+        // let user = Meteor.userId();
+        // if()
       }
       // ok is true if the user clicked on "ok", false otherwise
     });
