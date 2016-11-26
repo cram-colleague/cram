@@ -28,7 +28,7 @@ Template.Cas_Login.events({
       }
     };
     Meteor.loginWithCas(callback);
-    FlowRouter.go('User_Profile_Page');
+    FlowRouter.go('User_Page');
     new Confirmation({
       message: 'This application has been developed by students at the University of Hawaii. It is provided on a pilot basis and there are no guarantees regarding future access to this system. All users are expected to adhere to the principles specified in the University of Hawaii Systemwide Student Conduct Code. The developers reserve the right to ban access to this system by any students who violate this code of conduct or otherwise display inappropriate behavior on the site.',
       title: 'Terms of use',

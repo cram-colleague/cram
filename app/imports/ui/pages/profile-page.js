@@ -2,7 +2,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
-import { Meteor } from 'meteor/meteor';
+// import { Meteor } from 'meteor/meteor';
 import { Profile, ProfileSchema } from '../../api/profile/profile.js';
 
 /* eslint-disable object-shorthand, no-unused-vars */
@@ -51,42 +51,46 @@ Template.Profile_Page.helpers({
 // });
 
 Template.Profile_Page.events({
-  'click .delete'(event, instance) {
-    event.preventDefault();
-    const r = window.confirm('Do you really want to delete this entry?');
-    if (r === true) {
-      Profile.remove(FlowRouter.getParam('_id'));
-      FlowRouter.go('Home_Page');
-    } else {
-      FlowRouter.go('Home_Page');
-    }
-  },
-  'submit .contact-data-form'(event, instance) {
-    event.preventDefault();
-    // Get name (text field)
-    const first = event.target.first.value;
-    const last = event.target.last.value;
-    const preCourse = event.target.preCourse.value;
-    const sensei = event.target.sensei.value;
-    const currCourse = event.target.currCourse.value;
-    const grasshopper = event.target.grasshopper.value;
-    const description = event.target.description.value;
-    const owner = Meteor.userId();
-    const updateProfile = { first, last, preCourse, currCourse, sensei, grasshopper, description };
-    // Clear out any old validation errors.
-    instance.context.resetValidation();
-    // Invoke clean so that newStudentData reflects what will be inserted.
-    ProfileSchema.clean(updateProfile);
-    // Determine validity.
-    instance.context.validate(updateProfile);
-    if (instance.context.isValid()) {
-      Profile.update(FlowRouter.getParam('_id'), { $set: updateProfile });
-      instance.messageFlags.set(displayErrorMessages, false);
-      window.alert('Your profile updated!');
-      FlowRouter.go('List_Profile_Page');
-    } else {
-      instance.messageFlags.set(displayErrorMessages, true);
-    }
-  },
+  // 'click back'(event) {
+  //   event.preventDefault();
+  //   history.go(-1);
+  // },
+  // 'click .delete'(event, instance) {
+  //   event.preventDefault();
+  //   const r = window.confirm('Do you really want to delete this entry?');
+  //   if (r === true) {
+  //     Profile.remove(FlowRouter.getParam('_id'));
+  //     FlowRouter.go('Home_Page');
+  //   } else {
+  //     FlowRouter.go('Home_Page');
+  //   }
+  // },
+  // 'submit .contact-data-form'(event, instance) {
+  //   event.preventDefault();
+  //   // Get name (text field)
+  //   const first = event.target.first.value;
+  //   const last = event.target.last.value;
+  //   const preCourse = event.target.preCourse.value;
+  //   const sensei = event.target.sensei.value;
+  //   const currCourse = event.target.currCourse.value;
+  //   const grasshopper = event.target.grasshopper.value;
+  //   const description = event.target.description.value;
+  //   const owner = Meteor.userId();
+  //   const updateProfile = { first, last, preCourse, currCourse, sensei, grasshopper, description, owner };
+  //   // Clear out any old validation errors.
+  //   instance.context.resetValidation();
+  //   // Invoke clean so that newStudentData reflects what will be inserted.
+  //   ProfileSchema.clean(updateProfile);
+  //   // Determine validity.
+  //   instance.context.validate(updateProfile);
+  //   if (instance.context.isValid()) {
+  //     Profile.update(FlowRouter.getParam('_id'), { $set: updateProfile });
+  //     instance.messageFlags.set(displayErrorMessages, false);
+  //     window.alert('Your profile updated!');
+  //     FlowRouter.go('List_Profile_Page');
+  //   } else {
+  //     instance.messageFlags.set(displayErrorMessages, true);
+  //   }
+  // },
 });
 
