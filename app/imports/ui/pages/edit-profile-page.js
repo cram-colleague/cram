@@ -60,7 +60,7 @@ Template.Edit_Profile_Page.events({
       FlowRouter.go('Home_Page');
     }
   },
-  'submit .contact-data-form'(event, instance) {
+  'submit .profile-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
     const first = event.target.first.value;
@@ -71,15 +71,17 @@ Template.Edit_Profile_Page.events({
     // const grasshopper = event.target.grasshopper.value;
     const description = event.target.description.value;
     const owner = Meteor.userId();
-    const updateProfile = { first, last, preCourse, currCourse, description };
+    const updateProfile = { first, last, preCourse, currCourse, description, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
     ProfileSchema.clean(updateProfile);
     // Determine validity.
+    Profile.update(FlowRouter.getParam('_id'), { $set: updateProfile });
     instance.context.validate(updateProfile);
     if (instance.context.isValid()) {
       Profile.update(FlowRouter.getParam('_id'), { $set: updateProfile });
+      console.log('test');
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Your profile updated!');
       FlowRouter.go('User_Page');
