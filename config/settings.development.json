@@ -16,6 +16,6 @@
     "minakod"
   ],
   "defaultAccount": {
-    "username": "minakod", "passwpord": "changeme"
+    "username": "minakod", "password": "changeme"
   }
 }

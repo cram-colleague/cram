@@ -55,6 +55,10 @@ export const ProfileSchema = new SimpleSchema({
     label: 'owner',
     type: String,
   },
+  // user: {
+  //   label: 'user',
+  //   type: String,
+  // },
 });
 
 Profile.attachSchema(ProfileSchema);

@@ -50,7 +50,6 @@ Template.Add_Profile_Page.events({
   'submit .profile-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
-    const user = Meteor.user().profile.name;
     const first = event.target.first.value;
     const last = event.target.last.value;
     const preCourse = event.target.preCourse.value;
@@ -58,7 +57,8 @@ Template.Add_Profile_Page.events({
     const currCourse = event.target.currCourse.value;
     //const grasshopper = event.target.sensei.value;
     const description = event.target.description.value;
-    const newProfile = { user, first, last, preCourse, currCourse, description };
+    const owner = Meteor.userId();
+    const newProfile = { first, last, preCourse, currCourse, description, owner };
 
     //Testing
     // const newProfile = { first, last, preCourse, currCourse, description };
@@ -75,12 +75,12 @@ Template.Add_Profile_Page.events({
     /////////////////////////////////////////////////
 
     if (instance.context.isValid()) {
-      const _id = Meteor.user().profile.name;
+      // const _id = Meteor.user().profile.name;
       Profile.insert(newProfile);
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile updated!');
       FlowRouter.go('User_Profile_Page');
-      // Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
+    // Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

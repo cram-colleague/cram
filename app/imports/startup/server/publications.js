@@ -4,6 +4,8 @@ import { SSession } from '../../api/session/session.js';
 import { Meteor } from 'meteor/meteor';
 
 Meteor.publish('Profile', function publishProfileData() {
+  // const owner = this.userId;
+  // return owner ? Profile.find({ owner }) : this.ready();
   return Profile.find();
 });
 

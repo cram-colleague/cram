@@ -22,7 +22,7 @@ Template.Profile_Page.onCreated(function onCreated() {
 Template.Profile_Page.helpers({
   profileField(fieldName) {
     // change it later
-    const profile = Profile.findOne(FlowRouter.getParam('_id'));
+    const profile = Profile.findOne({ user: FlowRouter.getParam('user') });
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
   },
@@ -64,7 +64,6 @@ Template.Profile_Page.events({
   'submit .contact-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
-    const user = Meteor.user().profile.name;
     const first = event.target.first.value;
     const last = event.target.last.value;
     const preCourse = event.target.preCourse.value;
@@ -72,7 +71,8 @@ Template.Profile_Page.events({
     const currCourse = event.target.currCourse.value;
     const grasshopper = event.target.grasshopper.value;
     const description = event.target.description.value;
-    const updateProfile = { user, first, last, preCourse, currCourse, sensei, grasshopper, description };
+    const owner = Meteor.userId();
+    const updateProfile = { first, last, preCourse, currCourse, sensei, grasshopper, description };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
