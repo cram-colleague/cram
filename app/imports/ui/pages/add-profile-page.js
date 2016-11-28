@@ -70,16 +70,12 @@ Template.Add_Profile_Page.events({
     //determine validity
     instance.context.validate(newProfile);
 
-    /////////////////////////////////////////////////
-    //Figure out why valdation doesnt work anymore
-    /////////////////////////////////////////////////
-
     if (instance.context.isValid()) {
       // const _id = Meteor.user().profile.name;
       Profile.insert(newProfile);
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your profile updated!');
-      FlowRouter.go('User_Profile_Page');
+      FlowRouter.go('User_Page');
     // Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
     } else {
       instance.messageFlags.set(displayErrorMessages, true);

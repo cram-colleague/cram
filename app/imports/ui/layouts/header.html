@@ -22,7 +22,11 @@
         <a class="{{ isActiveRoute 'User_Page'}} item" href="{{ pathFor 'User_Page' }}">User Profile</a>
         <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="{{ isActiveRoute 'List_Course_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Edit Profile</a>
+          {{#if canShow}}
+            <!--<a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Add Profile</a>-->
+          {{else}}
+            <a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Add Profile</a>
+          {{/if}}
           <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="#">Personal Calendar</a>
         </div>
       </div>
