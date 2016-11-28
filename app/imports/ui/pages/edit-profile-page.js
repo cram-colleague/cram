@@ -66,9 +66,7 @@ Template.Edit_Profile_Page.events({
     const first = event.target.first.value;
     const last = event.target.last.value;
     const preCourse = event.target.preCourse.value;
-    // const sensei = event.target.sensei.value;
     const currCourse = event.target.currCourse.value;
-    // const grasshopper = event.target.grasshopper.value;
     const description = event.target.description.value;
     const owner = Meteor.userId();
     const updateProfile = { first, last, preCourse, currCourse, description, owner };
@@ -77,11 +75,9 @@ Template.Edit_Profile_Page.events({
     // Invoke clean so that newStudentData reflects what will be inserted.
     ProfileSchema.clean(updateProfile);
     // Determine validity.
-    Profile.update(FlowRouter.getParam('_id'), { $set: updateProfile });
     instance.context.validate(updateProfile);
     if (instance.context.isValid()) {
       Profile.update(FlowRouter.getParam('_id'), { $set: updateProfile });
-      console.log('test');
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Your profile updated!');
       FlowRouter.go('User_Page');
