@@ -4,6 +4,11 @@
       <form class="ui form profile-data-form {{ errorClass }}">
         <h4 class="ui dividing header">Edit Profile</h4>
         <div class="field">
+          <label>Picture</label>
+          <input type="text" name="pic" id="pic" placeholder="picture url" value="{{ profileField 'pic' }}">
+          <p>Copy and paste your image url here.  If none is picked or link is broken, default picture will be placed</p>
+        </div>
+        <div class="field">
           <label>Name</label>
           <div class="two fields">
             <div class="field">
