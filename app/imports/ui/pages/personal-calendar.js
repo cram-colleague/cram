@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { SSession } from '../../api/session/session.js';
 
-Template.List_Session_Page.helpers({
+Template.personal_calendar.helpers({
 
   /**
    * @returns {*} All of the Profile documents.
@@ -11,7 +11,7 @@ Template.List_Session_Page.helpers({
   },
 });
 
-Template.List_Session_Page.onCreated(function onCreated() {
+Template.personal_calendar.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('SSession');
   });
