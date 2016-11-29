@@ -11,3 +11,9 @@ Template.Home_Page.helpers({
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
 });
+
+Template.Home_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Session');
+  });
+});

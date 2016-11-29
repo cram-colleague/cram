@@ -3,7 +3,7 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 /* eslint-disable object-shorthand */
 
-export const SSession = new Mongo.Collection('SSession');
+export const Session = new Mongo.Collection('Session');
 
 /**
  * Create the schema for Stuff
@@ -21,14 +21,8 @@ export const SessionSchema = new SimpleSchema({
     optional: false,
     max: 200,
   },
-  place: {
-    label: 'place',
-    type: String,
-    optional: false,
-    max: 200,
-  },
-  sensei: {
-    label: 'sensei',
+  skill: {
+    label: 'skill',
     type: String,
     optional: false,
     max: 200,

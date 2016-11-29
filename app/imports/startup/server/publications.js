@@ -1,5 +1,6 @@
 import { Profile } from '../../api/profile/profile.js';
 import { Course } from '../../api/course/course.js';
+import { Session } from '../../api/session/session.js';
 import { Meteor } from 'meteor/meteor';
 
 Meteor.publish('Profile', function publishProfileData() {
@@ -8,4 +9,8 @@ Meteor.publish('Profile', function publishProfileData() {
 
 Meteor.publish('Course', function publishCourseData() {
   return Course.find();
+});
+
+Meteor.publish('Session', function publishSessionData() {
+  return Session.find();
 });

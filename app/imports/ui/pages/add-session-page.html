@@ -22,28 +22,31 @@
         {{/if}}
       </div>
 
-      <div class="field">
-        <label>Where?</label>
-        <input type="text" name="place" id="place" placeholder="Where?">
-        {{#if displayFieldError 'place' }}
-          <div class="ui error message">
-            <p>You must specify the place</p>
+
+
+          <div class="field">
+            <label>Skill Level</label>
+            <select class="ui fluid dropdown" name="skill">
+              <option value="">Select Skill Level</option>
+              <option value="0">Sensei</option>
+              <option value="1">Grasshopper</option>
+            </select>
           </div>
-        {{/if}}
+      <div class="field">
+        <input type="text" name="skill"  placeholder="Grasshopper">
       </div>
 
-      <div class="field">
-        <label>Who will be teaching?</label>
-        <input type="text" name="sensei" id="sensei" placeholder="Who will be teaching?">
-        {{#if displayFieldError 'sensei' }}
-          <div class="ui error message">
-            <p>You must specify the course you want to teach</p>
-          </div>
-        {{/if}}
-      </div>
 
       <button class="ui button" type="submit">Submit</button>
 
     </form>
   </div>
+  <tbody>
+  {{#each contact in sessionList}}
+  <tr>
+    <td>{{session.name}}</td>
+    <td>{{session.time}}</td>
+    <td>{{session.skill}}</td>
+  </tr>
+  {{/each}}
 </template>
