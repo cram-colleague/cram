@@ -1,4 +1,4 @@
-<template name="calendar">
+<!--template-- name="calendar">
   <div style="margin-top: 20px; padding: 10px 0;">
 
   </div>
@@ -31,6 +31,13 @@
        href="{{ pathFor 'Add_Profile_Page' }}">
       <button class="ui button">Button to add Profile</button>
     </a>
+    {{> addEditEventModal }}
   </div-->
 
+<!--/template-->
+<template name="calendar">
+
+  <div class="ui container">
+    <div id="calendar-calendar"></div>
+  </div>
 </template>
