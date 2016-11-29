@@ -27,20 +27,8 @@ export const ProfileSchema = new SimpleSchema({
     optional: false,
     max: 200,
   },
-  sensei: {
-    label: 'sensei',
-    type: String,
-    optional: false,
-    max: 200,
-  },
   currCourse: {
     label: 'currCourse',
-    type: String,
-    optional: false,
-    max: 200,
-  },
-  grasshopper: {
-    label: 'grasshopper',
     type: String,
     optional: false,
     max: 200,
@@ -50,6 +38,10 @@ export const ProfileSchema = new SimpleSchema({
     type: String,
     optional: false,
     max: 1000,
+  },
+  owner: {
+    label: 'owner',
+    type: String,
   },
 });
 

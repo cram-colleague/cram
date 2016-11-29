@@ -9,9 +9,12 @@ import { SSession, SessionSchema } from '../../api/session/session.js';
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Add_Session_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('SSession');
+  });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = SessionSchema.namedContext('Add_Sessione_Page');
+  this.context = SessionSchema.namedContext('Add_Session_Page');
 });
 
 Template.Add_Session_Page.helpers({

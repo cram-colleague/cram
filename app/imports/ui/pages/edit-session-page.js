@@ -54,10 +54,9 @@ Template.Edit_Session_Page.events({
     const r = window.confirm('Do you really want to delete this entry?');
     if (r === true) {
       SSession.remove(FlowRouter.getParam('_id'));
-      FlowRouter.go('Home_Page');
-    }
-    else {
-      FlowRouter.go('Home_Page');
+      FlowRouter.go('List_Session_Page');
+    } else {
+      FlowRouter.go('List_Session_Page');
     }
   },
   'submit .session-data-form'(event, instance) {

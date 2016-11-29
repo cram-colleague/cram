@@ -1,5 +1,6 @@
 import { Profile } from '../../api/profile/profile.js';
 import { _ } from 'meteor/underscore';
+// import { Meteor } from 'meteor/meteor';
 
 /**
  * A list of Stuff to pre-fill the Collection.
@@ -10,18 +11,26 @@ const profileSeeds = [
     first: 'Minako',
     last: 'Doi',
     preCourse: 'ICS311',
-    sensei: 'ICS311',
+    // sensei: 'ICS311',
     currCourse: 'ICS314',
-    grasshopper: 'ICS314',
-    description: 'Hello, I am a Senior majoring in ICS.'},
+    // grasshopper: 'ICS314',
+    description: 'Hello, I am a Senior majoring in ICS.',
+    // user: Meteor.user.username,
+    owner: 'temp',
+    // owner: Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id,
+  },
   {
     first: 'Chad',
     last: 'Naka',
     preCourse: 'PHYS151',
-    sensei: 'PHYS151',
+    // sensei: 'PHYS151',
     currCourse: 'PHYS152',
-    grasshopper: 'PHYS152',
-    description: 'Hi, I am a freshman.'},
+    // grasshopper: 'PHYS152',
+    description: 'Hi, I am a freshman.',
+    // user: Meteor.user.username,
+    owner: 'temp',
+    // owner: Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id,
+  },
 ];
 
 /**
