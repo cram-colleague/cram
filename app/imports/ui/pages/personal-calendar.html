@@ -1,0 +1,69 @@
+<template name="personal_calendar">
+  <div style="margin-top: 20px; padding: 10px 0;">
+
+  </div>
+  <head>
+    <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
+    <script src='lib/jquery.min.js'></script>
+    <script src='lib/moment.min.js'></script>
+    <script src='fullcalendar/fullcalendar.js'></script>
+    <script>
+      $(document).ready(function () {
+
+        // page is now ready, initialize the calendar...
+
+        $('#calendar').fullCalendar({
+          // put your options and callbacks here
+        })
+
+      });
+    </script>
+  </head>
+
+
+  <div class="ui grid">
+    <div style="padding-left: 50px" class="eight wide column">
+      <div class="ui container">
+        <div id='calendar'></div>
+      </div>
+    </div>
+    <div style="padding-left: 50px" class="eight wide column">
+      {{#If_Logged_In}}
+      <div class="ui container">
+        {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Time</th>
+            <th>Place</th>
+            <th>Sensei</th>
+            <th>Still Going?</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each session in sessionList}}
+          <tr>
+            <td>{{session.name}}</td>
+            <td>{{session.time}}</td>
+            <td>{{session.place}}</td>
+            <td>{{session.sensei}}</td>
+            <td>
+              <button class="ui button" type="submit">Remove</button>
+            </td>
+
+          </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        {{else}}
+        {{> Loading}}
+        {{/if}}
+      </div>
+      {{/If_Logged_In}}
+    </div>
+  </div>
+
+
+</template>
