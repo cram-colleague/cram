@@ -9,7 +9,9 @@ const sessionSeeds = [
   { name: 'ISC314',
     time: '2016-10-25 12:00:00',
     place: 'ICSpace',
-    sensei: 'Minako Doi' },
+    sensei: 'Minako Doi',
+    owner: 'temp',
+  },
 ];
 
 /**

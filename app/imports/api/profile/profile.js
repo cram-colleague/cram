@@ -47,7 +47,7 @@ export const ProfileSchema = new SimpleSchema({
     label: 'pic',
     type: String,
     max: 200,
-  }
+  },
 });
 
 Profile.attachSchema(ProfileSchema);

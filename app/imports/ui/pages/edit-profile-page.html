@@ -1,8 +1,9 @@
 <template name="Edit_Profile_Page">
   {{#if Template.subscriptionsReady}}
+    <br />
     <div style="margin-top: 20px" class="ui container">
       <form class="ui form profile-data-form {{ errorClass }}">
-        <h4 class="ui dividing header">Edit Profile</h4>
+        <h3 class="ui dividing header"><i class="user icon"></i>  Edit Profile</h3>
         <div class="field">
           <label>Picture</label>
           <input type="text" name="pic" id="pic" placeholder="picture url" value="{{ profileField 'pic' }}">

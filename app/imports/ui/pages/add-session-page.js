@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
+import { Meteor } from 'meteor/meteor';
 import { SSession, SessionSchema } from '../../api/session/session.js';
 
 /* eslint-disable no-param-reassign */
@@ -44,7 +45,8 @@ Template.Add_Session_Page.events({
     const time = event.target.time.value;
     const place = event.target.place.value;
     const sensei = event.target.sensei.value;
-    const newSession = { name, time, place, sensei };
+    const owner = Meteor.userId();
+    const newSession = { name, time, place, sensei, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

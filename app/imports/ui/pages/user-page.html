@@ -2,6 +2,15 @@
   {{#If_Logged_In}}
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
+        <br />
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            User Page
+            <div class="sub header">View and edit your profile</div>
+          </div>
+        </h2>
+        <br />
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
           <tr>
@@ -32,6 +41,33 @@
               <!-- if statement should come? -->
               <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
               <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <br /><br />
+        <h3 class="ui horizontal divider header">
+          <i class="calendar icon"></i>
+          Schedule
+        </h3>
+        <br />
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Time</th>
+            <th>Place</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each session in sessionList}}
+            <tr>
+              <td>{{session.name}}</td>
+              <td>{{session.time}}</td>
+              <td>{{session.place}}</td>
+              <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
             </tr>
           {{/each}}
           </tbody>
