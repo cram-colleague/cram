@@ -3,6 +3,7 @@
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
         <br />
+      {{#if canShowP}}
         <h2 class="ui header">
           <i class="settings icon"></i>
           <div class="content">
@@ -52,6 +53,7 @@
           Schedule
         </h3>
         <br />
+        {{#if canShowS}}
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
           <tr>
@@ -73,6 +75,19 @@
           {{/each}}
           </tbody>
         </table>
+          {{else}}
+          <h3 class="ui centered header">You haven't create any study session yet</h3>
+          <h4 class="ui centered header">Do you want to create session? <br /><br /> <button class="ui button" ><a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Profile</a></button></h4>
+          {{/if}}
+      {{else}}
+        <h1 class="ui centered header">Thank you for logged in!!</h1>
+        <h2 class="ui centered header">Let's create your profile so that you can study with fellows :)</h2>
+        <div class="ui internally celled centered grid">
+          <div class="ten wide column">
+            <button class="ui button" ><a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a></button>
+          </div>
+        </div>
+      {{/if}}
       {{else}}
         {{> Loading}}
       {{/if}}
