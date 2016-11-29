@@ -19,7 +19,7 @@ Template.Header.helpers({
   canShow: function canShow() {
     let find = false;
     const owner = Meteor.userId();
-    console.log(Profile.find({ owner }).count());
+    // console.log(Profile.find({ owner }).count());
     if (Profile.find({ owner }).count() > 0) {
       find = true;
     }
