@@ -2,6 +2,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
+import { Meteor } from 'meteor/meteor';
 import { Profile, ProfileSchema } from '../../api/profile/profile.js';
 
 /* eslint-disable object-shorthand, no-unused-vars */
@@ -20,6 +21,7 @@ Template.Profile_Page.onCreated(function onCreated() {
 
 Template.Profile_Page.helpers({
   profileField(fieldName) {
+    // change it later
     const profile = Profile.findOne(FlowRouter.getParam('_id'));
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
@@ -55,8 +57,7 @@ Template.Profile_Page.events({
     if (r === true) {
       Profile.remove(FlowRouter.getParam('_id'));
       FlowRouter.go('Home_Page');
-    }
-    else {
+    } else {
       FlowRouter.go('Home_Page');
     }
   },
@@ -66,11 +67,10 @@ Template.Profile_Page.events({
     const first = event.target.first.value;
     const last = event.target.last.value;
     const preCourse = event.target.preCourse.value;
-    const sensei = event.target.sensei.value;
     const currCourse = event.target.currCourse.value;
-    const grasshopper = event.target.grasshopper.value;
     const description = event.target.description.value;
-    const updateProfile = { first, last, preCourse, currCourse, sensei, grasshopper, description };
+    const owner = Meteor.userId();
+    const updateProfile = { first, last, preCourse, currCourse, description, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
@@ -81,7 +81,7 @@ Template.Profile_Page.events({
       Profile.update(FlowRouter.getParam('_id'), { $set: updateProfile });
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Your profile updated!');
-      FlowRouter.go('List_Profile_Page');
+      FlowRouter.go('User_Page');
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

@@ -1,4 +1,4 @@
-<template name="List_Profile_Page">
+<template name="User_Page">
   {{#If_Logged_In}}
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
@@ -13,7 +13,8 @@
             <th>Description of yourself</th>
             <!--<th>Owner</th>-->
             <!-- if statement should come? -->
-            <!--<th>Edit</th>-->
+            <th>View</th>
+            <th>Edit</th>
           </tr>
           </thead>
 
@@ -21,7 +22,7 @@
           {{#each profile in profileList}}
             <tr>
               <!--change it later-->
-              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a></td>
+              <td>{{profile.first}} {{profile.last}}</td>
               <!--<td>{{profile.preCourse}}</td>-->
               <!--<td>{{profile.sensei}}</td>-->
               <!--<td>{{profile.currCourse}}</td>-->
@@ -29,7 +30,8 @@
               <td>{{profile.description}}</td>
               <!--<td>{{profile.owner}}</td>-->
               <!-- if statement should come? -->
-              <!--<td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>-->
+              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
+              <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
             </tr>
           {{/each}}
           </tbody>
