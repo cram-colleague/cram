@@ -1,8 +1,9 @@
 <template name="List_Session_Page">
   {{#If_Logged_In}}
-<<<<<<< HEAD
   <div class="ui text container">
     {{#if Template.subscriptionsReady}}
+      <br />
+      <h2 class="ui header"><i class="calendar icon"></i>  List of Study Session</h2>
     <table style="margin-top: 20px" class="ui celled table">
       <thead>
       <tr>
@@ -11,7 +12,6 @@
         <th>Place</th>
         <th>Sensei</th>
         <th>Join</th>
-        <th>Edit</th>
       </tr>
       </thead>
 
@@ -25,7 +25,6 @@
         <td>
           <button class="ui button" type="submit">Going</button>
         </td>
-        <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
       </tr>
       {{/each}}
       </tbody>
@@ -34,39 +33,6 @@
     {{> Loading}}
     {{/if}}
   </div>
-=======
-    <div class="ui text container">
-      {{#if Template.subscriptionsReady}}
-        <br />
-      <h2 class="ui header"><i class="calendar icon"></i>  List of Study Session</h2>
-        <table style="margin-top: 20px" class="ui celled table">
-          <thead>
-          <tr>
-            <th>Name of the course</th>
-            <th>Time</th>
-            <th>Place</th>
-            <th>Sensei</th>
-            <th>Join</th>
-          </tr>
-          </thead>
-
-          <tbody>
-          {{#each session in sessionList}}
-            <tr>
-              <td>{{session.name}}</td>
-              <td>{{session.time}}</td>
-              <td>{{session.place}}</td>
-              <td>{{session.sensei}}</td>
-              <td><button class="ui button" type="submit">Going</button></td>
-            </tr>
-          {{/each}}
-          </tbody>
-        </table>
-      {{else}}
-        {{> Loading}}
-      {{/if}}
-    </div>
->>>>>>> Minako
   {{/If_Logged_In}}
 </template>
 
