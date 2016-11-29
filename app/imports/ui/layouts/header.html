@@ -22,11 +22,16 @@
         <a class="{{ isActiveRoute 'User_Page'}} item" href="{{ pathFor 'User_Page' }}">User Profile</a>
         <i class="dropdown icon"></i>
         <div class="menu">
+<<<<<<< HEAD
           <!--{{#if canShow}}-->
           <!--{{else}}-->
             <a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Add Profile</a>
           <!--{{/if}}-->
           <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="#">Personal Calendar</a>
+=======
+          <a class="{{ isActiveRoute 'List_Course_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Edit Profile</a>
+          <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="{{ pathFor 'personal_calendar' }}">Personal Calendar</a>
+>>>>>>> refs/remotes/origin/calendar
         </div>
       </div>
 
@@ -34,7 +39,7 @@
           <a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a>
           <i class="dropdown icon"></i>
           <div class="menu">
-            <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="#">Calendar</a>
+            <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="{{ pathFor 'calendar' }}">Calendar</a>
             <a class="{{ isActiveRoute 'List_Course_Page'}} item" href="{{ pathFor 'List_Course_Page' }}">Courses</a>
             <a class="{{ isActiveRoute 'List_Session_Page'}} item" href="{{ pathFor 'List_Session_Page' }}">List of Study Session</a>
           </div>

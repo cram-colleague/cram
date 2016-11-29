@@ -52,6 +52,10 @@ atoy40:accounts-cas
 random
 
 fullcalendar:fullcalendar
+<<<<<<< HEAD
 
 matdutour:popup-confirm
 
+=======
+momentjs:moment
+>>>>>>> refs/remotes/origin/calendar
