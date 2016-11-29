@@ -13,7 +13,6 @@
       <!--<div class="twelve wide column">-->
         <!--<h1 style="margin-top: 10px;">{{user}}</h1>-->
 
-        <p>You are loger in as {{user}}</p>
         <h3 class="ui dividing header">My Profile</h3>
 
         <div class="ui three column grid container">
@@ -33,11 +32,13 @@
               <thead>
                 <tr>
                   <th>About me</th>
+                  <!--<th>Curses Taken</th>-->
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td rowspan="4">{{ profileField 'description' }}</td>
+                  <!--<td>{{ profileField 'preCourse' }}</td>-->
                 </tr>
               </tbody>
             </table>
@@ -64,10 +65,14 @@
 
   <br />
   <div style="text-align: center;">
+    <!--<button class="ui button"><a href="{{pathFor 'Edit_Profile_Page' _id=userId }}">Edit Profile</a></button>-->
     <a class="{{ isActiveRoute 'Add_Profile_Page'}} item"
        href="{{ pathFor 'Add_Profile_Page' }}">
-      <button class="ui button">Edit Profile</button>
-    </a>
+      <button class="ui button">Edit Profile</button></a>
+
+    <!--<a class="{{ isActiveRoute 'Edit_Profile_Page'}} item"-->
+       <!--href="{{ pathFor 'Edit_Profile_Page' _id=_id}}">-->
+      <!--<button class="ui button">Edit Profile1</button></a>-->
   </div>
 
 </template>

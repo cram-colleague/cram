@@ -1,6 +1,7 @@
 <template name="Profile_Page">
   {{#if Template.subscriptionsReady}}
     <div style="margin-top: 20px" class="ui container">
+      <br />
       <!--<form class="ui form contact-data-form {{ errorClass }}">-->
       <h3 class="ui dividing header">Profile</h3>
         <div class="ui three column grid container">
@@ -10,7 +11,7 @@
                 <img src="/images/user.png">
               </div>
               <div class="content">
-                <div class="ui header">{{ profileField 'first' }} {{ profileField 'last' }}</div>
+                <div class="ui header">{{ profileField 'first' }} {{ profileField 'last' }} {{ profileField 'user' }}</div>
               </div>
             </div>
           </div>
@@ -31,18 +32,6 @@
               </tr>
               <tr>
                 <td>
-                  <div class="content">Teaching Courses</div>
-                </td>
-                <td>{{ profileField 'sensei' }}</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="content">Learning Courses</div>
-                </td>
-                <td>{{ profileField 'grasshopper' }}</td>
-              </tr>
-              <tr>
-                <td>
                   <div class="content">Description</div>
                 </td>
                 <td>{{ profileField 'description' }}</td>
@@ -55,8 +44,8 @@
               <thead>
                 <tr>
                   <th>Class</th>
-                  <th>Sensei</th>
-                  <th>Grasshopper</th>
+                  <th>Teacher</th>
+                  <th>Learner</th>
                 </tr>
               </thead>
               <tbody>
@@ -67,6 +56,17 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div class="ui one column center aligned page grid">
+          <div class="column twelve wide">
+            <button class="ui button" onclick="goBack()">Go Back</button>
+
+            <script>
+              function goBack() {
+                window.history.back();
+              }
+            </script>
           </div>
         </div>
     </div>

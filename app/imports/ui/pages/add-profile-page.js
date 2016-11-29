@@ -3,15 +3,16 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Profile, ProfileSchema } from '../../api/profile/profile.js';
+import { Meteor } from 'meteor/meteor';
 
 /* eslint-disable no-param-reassign */
 
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Add_Profile_Page.onCreated(function onCreated() {
-  this.autorun(() => {
-    this.subscribe('Profile');
-  });
+  // this.autorun(() => {
+  //   this.subscribe('Profile');
+  // });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = ProfileSchema.namedContext('Add_Profile_Page');
@@ -30,9 +31,10 @@ Template.Add_Profile_Page.helpers({
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
-  profileField(fieldName) {
-    return Meteor.user().profile.Cprofile[fieldName];
-  }
+  // profileField(fieldName) {
+  //   // return Meteor.user().profile.Cprofile[fieldName];
+  //   return Profile.find();
+  // },
 });
 
 // Template.Add_Contact_Page.onRendered(function enableSemantic() {
@@ -50,15 +52,16 @@ Template.Add_Profile_Page.events({
     // Get name (text field)
     const first = event.target.first.value;
     const last = event.target.last.value;
-    //const preCourse = event.target.preCourse.value;
+    const preCourse = event.target.preCourse.value;
     //const sensei = event.target.sensei.value;
-    //const currCourse = event.target.currCourse.value;
+    const currCourse = event.target.currCourse.value;
     //const grasshopper = event.target.sensei.value;
     const description = event.target.description.value;
-   // const newProfile = { first, last, preCourse, sensei, currCourse, grasshopper, description };
+    const owner = Meteor.userId();
+    const newProfile = { first, last, preCourse, currCourse, description, owner };
 
     //Testing
-    const newProfile = { first, last, description};
+    // const newProfile = { first, last, preCourse, currCourse, description };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
@@ -67,18 +70,15 @@ Template.Add_Profile_Page.events({
     //determine validity
     instance.context.validate(newProfile);
 
-    /////////////////////////////////////////////////
-    //Figure out why valdation doesnt work anymore
-    /////////////////////////////////////////////////
-
-    //if (instance.context.isValid()) {
-      Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
+    if (instance.context.isValid()) {
+      // const _id = Meteor.user().profile.name;
+      Profile.insert(newProfile);
       instance.messageFlags.set(displayErrorMessages, false);
-      window.alert('Thank you! Your profile added!');
-      FlowRouter.go('User_Profile_Page');
-    //} else {
+      window.alert('Thank you! Your profile updated!');
+      FlowRouter.go('User_Page');
+    // Meteor.users.update(Meteor.userId(),{$set: {profile: {Cprofile: newProfile, name: Meteor.user().profile.name}}});
+    } else {
       instance.messageFlags.set(displayErrorMessages, true);
-    //}
+    }
   },
 });
-

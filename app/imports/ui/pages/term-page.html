@@ -11,7 +11,7 @@
         <div class="column twelve wide">
           <div class="ui checkbox">
             <input type="checkbox" id="checker">
-            <label>Agree to the term of use</label>
+            <label>Agree to the terms of use</label>
           </div>
           <br />
           <br />
@@ -24,9 +24,7 @@
 
 <template name="check">
   {{#if isTrue}}
-    <div class="ui compact menu">
-      {{> Cas_Login}}
-    </div>
+    <button class="ui button" ><a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">Start</a></button>
   {{/if}}
 </template>
 

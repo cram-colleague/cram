@@ -57,10 +57,17 @@ FlowRouter.route('/add-profile', {
   },
 });
 
+// FlowRouter.route('/user-profile', {
+//   name: 'User_Profile_Page',
+//   action() {
+//     BlazeLayout.render('App_Body', { main: 'User_Profile_Page' });
+//   },
+// });
+
 FlowRouter.route('/user-profile', {
-  name: 'User_Profile_Page',
+  name: 'User_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'User_Profile_Page' });
+    BlazeLayout.render('App_Body', { main: 'User_Page' });
   },
 });
 
@@ -85,6 +92,7 @@ FlowRouter.route('/edit-profile/:_id', {
   },
 });
 
+// change it later
 FlowRouter.route('/profile/:_id', {
   name: 'Profile_Page',
   action() {
