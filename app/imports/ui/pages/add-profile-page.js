@@ -58,7 +58,8 @@ Template.Add_Profile_Page.events({
     //const grasshopper = event.target.sensei.value;
     const description = event.target.description.value;
     const owner = Meteor.userId();
-    const newProfile = { first, last, preCourse, currCourse, description, owner };
+    const pic = event.target.pic.value;
+    const newProfile = { first, last, preCourse, currCourse, description, owner, pic };
 
     //Testing
     // const newProfile = { first, last, preCourse, currCourse, description };
