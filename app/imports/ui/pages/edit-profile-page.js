@@ -69,7 +69,8 @@ Template.Edit_Profile_Page.events({
     const currCourse = event.target.currCourse.value;
     const description = event.target.description.value;
     const owner = Meteor.userId();
-    const updateProfile = { first, last, preCourse, currCourse, description, owner };
+    const pic = event.target.pic.value;
+    const updateProfile = { first, last, preCourse, currCourse, description, owner, pic};
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

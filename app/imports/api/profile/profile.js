@@ -43,6 +43,11 @@ export const ProfileSchema = new SimpleSchema({
     label: 'owner',
     type: String,
   },
+  pic: {
+    label: 'pic',
+    type: String,
+    max: 200,
+  }
 });
 
 Profile.attachSchema(ProfileSchema);
