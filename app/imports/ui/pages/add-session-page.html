@@ -1,10 +1,7 @@
 <template name="Add_Session_Page">
   <div style="margin-top: 20px" class="ui container">
     <form class="ui form session-data-form {{ errorClass }}">
-<<<<<<< HEAD
-=======
       <br />
->>>>>>> master
       <h3 class="ui dividing header"><i class="calendar outline icon"></i>  Add Study Session</h3>
       <div class="field">
         <label>Name of the course</label>
@@ -36,15 +33,17 @@
         {{/if}}
       </div>
 
+      {{#each profile in profileList}}
       <div class="field">
         <label>Who will be teaching?</label>
-        <input type="text" name="sensei" id="sensei" placeholder="Who will be teaching?">
+        <input type="text" name="sensei" id="sensei" placeholder="Who will be teaching?" value="{{profile.first}} {{profile.last}}">
         {{#if displayFieldError 'sensei' }}
           <div class="ui error message">
             <p>You must specify the teacher</p>
           </div>
         {{/if}}
       </div>
+      {{/each}}
 
       <button class="ui button" type="submit">Submit</button>
 
