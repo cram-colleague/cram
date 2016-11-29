@@ -33,6 +33,10 @@ export const SessionSchema = new SimpleSchema({
     optional: false,
     max: 200,
   },
+  owner: {
+    label: 'owner',
+    type: String,
+  },
 });
 
 SSession.attachSchema(SessionSchema);
