@@ -4,8 +4,14 @@
       <p>Currently logged in user: {{user}}</p>
       <h4 class="ui dividing header">Edit Profile</h4>
         <div class="field">
-          <input type="text" name="Picture" id="pic" placeholder="paste your picture url here">
-          <p>Copy and paste your image url here.  If none is picked or link is broken, default picture will be placed</p>
+          <label>Picture</label>
+          <input type="text" name="pic" id="pic" placeholder="paste your picture url here">
+          <p>Copy and paste your image url here.  If link is broken, default picture will be placed</p>
+          {{#if displayFieldError 'pic' }}
+          <div class="ui error message">
+            <p>You must put something.  If you dont want to put a picture just put a broken link</p>
+          </div>
+          {{/if}}
         </div>
       <!--upload image function-->
       <div class="field">

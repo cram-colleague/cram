@@ -6,7 +6,12 @@
         <div class="field">
           <label>Picture</label>
           <input type="text" name="pic" id="pic" placeholder="picture url" value="{{ profileField 'pic' }}">
-          <p>Copy and paste your image url here.  If none is picked or link is broken, default picture will be placed</p>
+          <p>Copy and paste your image url here.  If link is broken, default picture will be placed</p>
+          {{#if displayFieldError 'pic' }}
+          <div class="ui error message">
+            <p>You must put something.  If you dont want to put a picture just put a broken link</p>
+          </div>
+          {{/if}}
         </div>
         <div class="field">
           <label>Name</label>

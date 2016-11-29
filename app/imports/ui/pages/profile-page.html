@@ -8,7 +8,7 @@
           <div class="column">
             <div class="ui fluid card">
               <div class="ui image">
-                <img src="{{ profileField 'pic' }}" onerror="this.onerror=null; this.src='/images/user.png'">
+                <img src="{{ profileField 'pic' }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
               </div>
               <div class="content">
                 <div class="ui header">{{ profileField 'first' }} {{ profileField 'last' }} {{ profileField 'user' }}</div>
