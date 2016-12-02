@@ -33,6 +33,11 @@ export const SessionSchema = new SimpleSchema({
     optional: false,
     max: 200,
   },
+  students: {
+    label: 'students',
+    type: String,
+    optional: true,
+  },
   owner: {
     label: 'owner',
     type: String,

@@ -100,6 +100,13 @@ FlowRouter.route('/profile/:_id', {
   },
 });
 
+FlowRouter.route('/session/:_id', {
+  name: 'Session_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Session_Page' });
+  },
+});
+
 FlowRouter.route('/edit-session/:_id', {
   name: 'Edit_Session_Page',
   action() {

@@ -1,38 +1,44 @@
 <template name="List_Session_Page">
   {{#If_Logged_In}}
-  <div class="ui text container">
-    {{#if Template.subscriptionsReady}}
-      <br />
-      <h2 class="ui header"><i class="calendar icon"></i>  List of Study Session</h2>
-    <table style="margin-top: 20px" class="ui celled table">
-      <thead>
-      <tr>
-        <th>Name of the course</th>
-        <th>Time</th>
-        <th>Place</th>
-        <th>Sensei</th>
-        <th>Join</th>
-      </tr>
-      </thead>
+    <form class="ui form session-data-form {{ errorClass }}">
+      <div class="ui text container">
+        {{#if Template.subscriptionsReady}}
+          <br />
+          <h2 class="ui header"><i class="calendar icon"></i>  List of Study Session</h2>
+        <table style="margin-top: 20px" class="ui celled unstackable table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Time</th>
+            <th>Place</th>
+            <th class="three wide">Sensei</th>
+            <th>Students</th>
+            <th>Join</th>
+          </tr>
+          </thead>
 
-      <tbody>
-      {{#each session in sessionList}}
-      <tr>
-        <td>{{session.name}}</td>
-        <td>{{session.time}}</td>
-        <td>{{session.place}}</td>
-        <td>{{session.sensei}}</td>
-        <td>
-          <button class="ui button" type="submit">Going</button>
-        </td>
-      </tr>
-      {{/each}}
-      </tbody>
-    </table>
-    {{else}}
-    {{> Loading}}
-    {{/if}}
-  </div>
+          <tbody>
+          {{#each session in sessionList}}
+            {{#each profile in profileList}}
+          <tr>
+            <td><a href="{{pathFor 'Session_Page' _id=session._id }}">{{session.name}}</a></td>
+            <td>{{session.time}}</td>
+            <td>{{session.place}}</td>
+            <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{session.sensei}}</a></td>
+            <td>{{session.students}}</td>
+            <td>
+              <button class="ui button" type="submit">Going</button>
+            </td>
+          </tr>
+            {{/each}}
+          {{/each}}
+          </tbody>
+        </table>
+        {{else}}
+        {{> Loading}}
+        {{/if}}
+      </div>
+    </form>
   {{/If_Logged_In}}
 </template>
 
