@@ -1,9 +1,33 @@
 <template name="Session_Page">
   {{#if Template.subscriptionsReady}}
     <div style="margin-top: 20px" class="ui container">
+      <form class="ui form session-data-form {{ errorClass }}">
       <br />
       <!--<form class="ui form contact-data-form {{ errorClass }}">-->
-      <h2 class="ui dividing header"><i class="child icon"></i>  Study Session</h2>
+      <h2 class="ui dividing header"><i class="idea icon"></i>  Study Session</h2>
+
+      <div class="column">
+        <div class="ui raised segment">
+          <a class="ui olive ribbon big label">Name of the Course</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'name' }}</h3>
+          <p></p><p></p>
+          <a class="ui teal ribbon big label">Time</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'time' }}</h3>
+          <p></p><p></p>
+          <a class="ui olive ribbon big label">Place</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'place' }}</h3>
+          <p></p><p></p>
+          <a class="ui teal ribbon big label">Teacher</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'sensei' }}</h3>
+          <p></p><p></p>
+          <a class="ui teal ribbon big label">Students</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'students' }}</h3>
+          <p></p><p></p>
+          <a class="ui olive ribbon big label">Details of the session</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'detail' }}</h3>
+          <p></p><p></p>
+        </div>
+      </div>
 
       <!--<div class="field">-->
         <!--<div class="ui large header">Name of the course</div>-->
@@ -27,18 +51,21 @@
         <!--</div>-->
       <!--{{/each}}-->
 
-
-      <div class="ui one column center aligned page grid">
-          <div class="column twelve wide">
-            <button class="ui button" onclick="goBack()">Go Back</button>
-
-            <script>
-              function goBack() {
-                window.history.back();
-              }
-            </script>
-          </div>
+      <br /><br />
+      <div class="ui two column center aligned page grid">
+        <div class="column twelve wide">
+          <button class="ui button" type="submit">Going</button>
         </div>
+        <div class="column twelve wide">
+          <button class="ui button" onclick="goBack()">Go Back</button>
+          <script>
+            function goBack() {
+              window.history.back();
+            }
+          </script>
+        </div>
+      </div>
+      </form>
     </div>
       <!--</form>-->
   {{/if}}

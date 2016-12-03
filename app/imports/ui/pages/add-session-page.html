@@ -45,6 +45,16 @@
       </div>
       {{/each}}
 
+      <div class="field">
+        <label>What is going to be covered?</label>
+        <input type="text" name="detail" id="detail" placeholder="we will be covering...">
+        {{#if displayFieldError 'detail' }}
+          <div class="ui error message">
+            <p>You must specify the detail</p>
+          </div>
+        {{/if}}
+      </div>
+
       <button class="ui button" type="submit">Submit</button>
 
     </form>

@@ -11,6 +11,7 @@ const sessionSeeds = [
     place: 'ICSpace',
     sensei: 'Minako Doi',
     students: null,
+    detail: 'The sunject we will be covering is Meteor.',
     owner: 'temp',
   },
 ];

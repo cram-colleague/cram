@@ -71,27 +71,27 @@ Template.Session_Page.events({
   'submit .contact-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
-    const first = event.target.first.value;
-    const last = event.target.last.value;
-    const preCourse = event.target.preCourse.value;
-    const currCourse = event.target.currCourse.value;
-    const description = event.target.description.value;
-    const owner = Meteor.userId();
-    const updateProfile = { first, last, preCourse, currCourse, description, owner };
+    // const first = event.target.first.value;
+    // const last = event.target.last.value;
+    // const preCourse = event.target.preCourse.value;
+    // const currCourse = event.target.currCourse.value;
+    // const description = event.target.description.value;
+    const students = Meteor.userId();
+    // const updateProfile = { first, last, preCourse, currCourse, description, students };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
-    SessionSchema.clean(updateProfile);
+    // SessionSchema.clean(updateProfile);
     // Determine validity.
-    instance.context.validate(updateProfile);
-    if (instance.context.isValid()) {
-      SSession.update(FlowRouter.getParam('_id'), { $set: updateProfile });
+    // instance.context.validate(updateProfile);
+    // if (instance.context.isValid()) {
+      SSession.update(FlowRouter.getParam('_id'), { $set: {'SSession.students': students} });
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Your profile updated!');
       FlowRouter.go('List_Session_Page');
-    } else {
-      instance.messageFlags.set(displayErrorMessages, true);
-    }
+    // } else {
+    //   instance.messageFlags.set(displayErrorMessages, true);
+    // }
   },
 });
 

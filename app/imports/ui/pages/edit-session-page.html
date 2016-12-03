@@ -34,12 +34,24 @@
           {{/if}}
         </div>
 
+        {{#each profile in profileList}}
+          <div class="field">
+            <label>Who will be teaching?</label>
+            <input name="sensei" id="sensei" value="{{profile.first}} {{profile.last}}">
+            {{#if displayFieldError 'sensei' }}
+              <div class="ui error message">
+                <p>You must specify the teacher</p>
+              </div>
+            {{/if}}
+          </div>
+        {{/each}}
+
         <div class="field">
-          <label>Who will be teaching?</label>
-          <input type="text" name="sensei" id="sensei" placeholder="Who will be teaching?" value="{{ sessionField 'sensei' }}">
-          {{#if displayFieldError 'sensei' }}
+          <label>What is going to be covered?</label>
+          <input type="text" name="detail" id="detail" placeholder="we will be covering...">
+          {{#if displayFieldError 'detail' }}
             <div class="ui error message">
-              <p>You must specify the time</p>
+              <p>You must specify the detail</p>
             </div>
           {{/if}}
         </div>

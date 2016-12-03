@@ -76,8 +76,9 @@ Template.Edit_Session_Page.events({
     const time = event.target.time.value;
     const place = event.target.place.value;
     const sensei = event.target.sensei.value;
+    const detail = event.target.detail.value;
     const owner = Meteor.userId();
-    const updateSession = { name, time, place, sensei, owner };
+    const updateSession = { name, time, place, sensei, detail, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
