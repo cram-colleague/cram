@@ -3,9 +3,10 @@
     <br />
     <div style="margin-top: 20px" class="ui container">
       <form class="ui form profile-data-form {{ errorClass }}">
-        <h3 class="ui dividing header"><i class="user icon"></i>  Edit Profile</h3>
+        <h2 class="ui dividing header"><i class="user icon"></i>  Edit Profile</h2>
+        <br />
         <div class="field">
-          <label>Picture</label>
+          <label  style="font-size: large">Picture</label>
           <input type="text" name="pic" id="pic" placeholder="picture url" value="{{ profileField 'pic' }}">
           <p>Copy and paste your image url here.  If link is broken, default picture will be placed</p>
           {{#if displayFieldError 'pic' }}
@@ -14,8 +15,11 @@
           </div>
           {{/if}}
         </div>
+
+        <br />
+
         <div class="field">
-          <label>Name</label>
+          <label  style="font-size: large">Name</label>
           <div class="two fields">
             <div class="field">
               <input type="text" name="first" id="first" placeholder="First Name" value="{{ profileField 'first' }}">
@@ -36,10 +40,12 @@
           </div>
         </div>
 
+        <br />
+
         <div class="field">
           <div class="two fields">
             <div class="field">
-              <label>Previous Course</label>
+              <label  style="font-size: large">Previous Course</label>
               <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course" value="{{ profileField 'preCourse' }}">
               {{#if displayFieldError 'preCourse' }}
               <div class="ui error message">
@@ -60,10 +66,12 @@
           </div>
         </div>
 
+        <br />
+
         <div class="field">
           <div class="two fields">
             <div class="field">
-              <label>Current Course</label>
+              <label  style="font-size: large">Current Course</label>
               <input type="text" name="currCourse" id="currCourse" placeholder="Current Cours" value="{{ profileField 'currCourse' }}">
               {{#if displayFieldError 'currCourse' }}
                 <div class="ui error message">
@@ -84,8 +92,10 @@
           </div>
         </div>
 
+        <br />
+
         <div class="field">
-          <label>Description of yourself</label>
+          <label  style="font-size: large">Description of yourself</label>
           <input type="text" name="description" id="description" placeholder="Description of yourself" value="{{ profileField 'description' }}">
           {{#if displayFieldError 'description' }}
             <div class="ui error message">
@@ -93,6 +103,8 @@
             </div>
           {{/if}}
         </div>
+
+        <br />
 
         <button class="ui button" type="submit">Update</button>
         <button class="ui button delete" type="button">Delete</button>

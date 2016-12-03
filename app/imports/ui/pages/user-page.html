@@ -60,6 +60,7 @@
             <th>Name of the course</th>
             <th>Time</th>
             <th>Place</th>
+            <th>View</th>
             <th>Edit</th>
           </tr>
           </thead>
@@ -70,6 +71,7 @@
               <td>{{session.name}}</td>
               <td>{{session.time}}</td>
               <td>{{session.place}}</td>
+              <td><a href="{{pathFor 'Session_Page' _id=session._id }}">View</a></td>
               <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
             </tr>
           {{/each}}

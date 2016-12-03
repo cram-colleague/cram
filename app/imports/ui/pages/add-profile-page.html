@@ -1,10 +1,12 @@
 <template name="Add_Profile_Page">
   <div style="margin-top: 20px" class="ui container">
     <form class="ui form profile-data-form {{ errorClass }}">
-      <p>Currently logged in user: {{user}}</p>
-      <h3 class="ui dividing header"><i class="add user icon"></i>  Add Profile</h3>
+      <!--<p>Currently logged in user: {{user}}</p>-->
+      <br />
+      <h2 class="ui dividing header"><i class="add user icon"></i>  Add Profile</h2>
+      <br />
         <div class="field">
-          <label>Picture</label>
+          <label style="font-size: large">Picture</label>
           <input type="text" name="pic" id="pic" placeholder="paste your picture url here">
           <p>Copy and paste your image url here.  If link is broken, default picture will be placed</p>
           {{#if displayFieldError 'pic' }}
@@ -13,9 +15,12 @@
           </div>
           {{/if}}
         </div>
+
+      <br />
+
       <!--upload image function-->
       <div class="field">
-        <label>Name</label>
+        <label style="font-size: large">Name</label>
         <div class="two fields">
           <div class="field">
             <input type="text" name="first" id="first" placeholder="First Name">
@@ -36,8 +41,10 @@
         </div>
       </div>
 
+      <br />
+
       <div class="field">
-        <label>Description of yourself</label>
+        <label style="font-size: large">Description of yourself</label>
         <input type="text" name="description" id="description" placeholder="Description of yourself">
         {{#if displayFieldError 'description' }}
         <div class="ui error message">
@@ -45,6 +52,8 @@
         </div>
         {{/if}}
       </div>
+
+      <br />
 
       <div class="field">
         <div class="two fields">
@@ -81,7 +90,7 @@
           <!--</div>-->
 
           <div class="field">
-            <label>Courses Taken</label>
+            <label style="font-size: large">Courses Taken</label>
             <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course">
             {{#if displayFieldError 'preCourse' }}
             <div class="ui error message">
@@ -90,6 +99,7 @@
             {{/if}}
           </div>
 
+          <br />
           <!--<div class="field">-->
             <!--<label>Courses you want to teach</label>-->
             <!--<input type="text" name="sensei" id="sensei" placeholder="Courses you want to teach" value="{{ profileField 'sensei' }}">-->
@@ -107,7 +117,7 @@
       <!--<div class="field">-->
         <!--<div class="two fields">-->
           <div class="field">
-            <label>Current Course</label>
+            <label style="font-size: large">Current Course</label>
             <input type="text" name="currCourse" id="currCourse" placeholder="Current Course">
             {{#if displayFieldError 'currCourse' }}
             <div class="ui error message">
@@ -115,6 +125,8 @@
             </div>
             {{/if}}
           </div>
+
+          <br />
 
           <!--<div class="field">-->
             <!--<label>Courses you want to be taught</label>-->
@@ -127,6 +139,8 @@
           <!--</div>-->
         </div>
       </div>
+
+      <br />
 
       <button class="ui button" type="submit">Submit</button>
       <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">
