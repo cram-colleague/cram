@@ -6,8 +6,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "autoprefixer": "^6.5.3",
     "bcrypt": "^0.8.7",
-    "meteor-node-stubs": "~0.2.0"
+    "meteor-node-stubs": "~0.2.0",
+    "postcss-cli": "^2.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",

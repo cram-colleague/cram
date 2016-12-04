@@ -1,5 +1,7 @@
 import './app-body.html';
 import './app-body.js';
+import './app-home.html';
+import './app-home.js';
 import './cas-login.html';
 import './cas-login.js';
 import './app-not-found.html';
