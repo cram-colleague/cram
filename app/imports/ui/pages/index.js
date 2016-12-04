@@ -22,6 +22,9 @@ import './user-page.js';
 import './home-page.html';
 import './home-page.js';
 
+import './session-page.html';
+import './session-page.js';
+
 import './term-page.html';
 import './term-page.js';
 

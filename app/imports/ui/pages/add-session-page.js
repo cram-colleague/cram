@@ -4,6 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { SSession, SessionSchema } from '../../api/session/session.js';
+import { Profile } from '../../api/profile/profile.js';
 
 /* eslint-disable no-param-reassign */
 
@@ -16,6 +17,9 @@ Template.Add_Session_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = SessionSchema.namedContext('Add_Session_Page');
+  this.autorun(() => {
+    this.subscribe('Profile');
+  });
 });
 
 Template.Add_Session_Page.helpers({
@@ -25,6 +29,11 @@ Template.Add_Session_Page.helpers({
   displayFieldError(fieldName) {
     const errorKeys = Template.instance().context.invalidKeys();
     return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
+  },
+  profileList() {
+    const owner = Meteor.userId();
+    return owner ? Profile.find({ owner }) : this.ready();
+    // return Profile.find();
   },
 });
 
@@ -45,8 +54,9 @@ Template.Add_Session_Page.events({
     const time = event.target.time.value;
     const place = event.target.place.value;
     const sensei = event.target.sensei.value;
+    const detail = event.target.detail.value;
     const owner = Meteor.userId();
-    const newSession = { name, time, place, sensei, owner };
+    const newSession = { name, time, place, sensei, detail, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

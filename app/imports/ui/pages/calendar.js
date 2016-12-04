@@ -1,10 +1,11 @@
-/*import {ReactiveDict} from 'meteor/reactive-dict';
- import {FlowRouter} from 'meteor/kadira:flow-router';
- import {Template} from 'meteor/templating';
- import {_} from 'meteor/underscore';
+// import { ReactiveDict } from 'meteor/reactive-dict';
+// import { FlowRouter } from 'meteor/kadira:flow-router';
+// import { Template } from 'meteor/templating';
+// import { _ } from 'meteor/underscore';
 
  //eslint-disable object-shorthand, no-unused-vars
 
+ /*
  let initialize_calendar;
  initialize_calendar = function () {
  $('.calendar').each(function () {

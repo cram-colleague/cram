@@ -10,21 +10,19 @@ import { Profile } from '../../api/profile/profile.js';
 
 const displayErrorMessages = 'displayErrorMessages';
 
-Template.Edit_Session_Page.onCreated(function onCreated() {
+Template.Session_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('SSession');
   });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = SessionSchema.namedContext('Edit_Session_Page');
-  this.autorun(() => {
-    this.subscribe('Profile');
-  });
+  this.context = SessionSchema.namedContext('Session_Page');
 });
 
 
-Template.Edit_Session_Page.helpers({
+Template.Session_Page.helpers({
   sessionField(fieldName) {
+    // change it later
     const session = SSession.findOne(FlowRouter.getParam('_id'));
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return session && session[fieldName];
@@ -36,10 +34,11 @@ Template.Edit_Session_Page.helpers({
     const errorKeys = Template.instance().context.invalidKeys();
     return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
   },
-  profileList() {
-    const owner = Meteor.userId();
-    return owner ? Profile.find({ owner }) : this.ready();
-    // return Profile.find();
+  profileField(fieldName) {
+    // change it later
+    const profile = Profile.findOne(FlowRouter.getParam('_id'));
+    // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
+    return profile && profile[fieldName];
   },
 });
 
@@ -58,41 +57,41 @@ Template.Edit_Session_Page.helpers({
 //   });
 // });
 
-Template.Edit_Session_Page.events({
+Template.Session_Page.events({
   'click .delete'(event, instance) {
     event.preventDefault();
     const r = window.confirm('Do you really want to delete this entry?');
     if (r === true) {
       SSession.remove(FlowRouter.getParam('_id'));
-      FlowRouter.go('List_Session_Page');
+      FlowRouter.go('Home_Page');
     } else {
-      FlowRouter.go('List_Session_Page');
+      FlowRouter.go('Home_Page');
     }
   },
-  'submit .session-data-form'(event, instance) {
+  'submit .contact-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
-    const name = event.target.name.value;
-    const time = event.target.time.value;
-    const place = event.target.place.value;
-    const sensei = event.target.sensei.value;
-    const detail = event.target.detail.value;
-    const owner = Meteor.userId();
-    const updateSession = { name, time, place, sensei, detail, owner };
+    // const first = event.target.first.value;
+    // const last = event.target.last.value;
+    // const preCourse = event.target.preCourse.value;
+    // const currCourse = event.target.currCourse.value;
+    // const description = event.target.description.value;
+    const students = Meteor.userId();
+    // const updateProfile = { first, last, preCourse, currCourse, description, students };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
-    SessionSchema.clean(updateSession);
+    // SessionSchema.clean(updateProfile);
     // Determine validity.
-    instance.context.validate(updateSession);
-    if (instance.context.isValid()) {
-      SSession.update(FlowRouter.getParam('_id'), { $set: updateSession });
+    // instance.context.validate(updateProfile);
+    // if (instance.context.isValid()) {
+      SSession.update(FlowRouter.getParam('_id'), { $set: {'SSession.students': students} });
       instance.messageFlags.set(displayErrorMessages, false);
-      window.alert('Your study session updated!');
+      window.alert('Your profile updated!');
       FlowRouter.go('List_Session_Page');
-    } else {
-      instance.messageFlags.set(displayErrorMessages, true);
-    }
+    // } else {
+    //   instance.messageFlags.set(displayErrorMessages, true);
+    // }
   },
 });
 

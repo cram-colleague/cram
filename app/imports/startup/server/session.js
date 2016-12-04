@@ -6,10 +6,12 @@ import { _ } from 'meteor/underscore';
  * @type {*[]}
  */
 const sessionSeeds = [
-  { name: 'ISC314',
+  { name: 'ICS314',
     time: '2016-10-25 12:00:00',
     place: 'ICSpace',
     sensei: 'Minako Doi',
+    students: null,
+    detail: 'The sunject we will be covering is Meteor.',
     owner: 'temp',
   },
 ];

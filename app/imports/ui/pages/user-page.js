@@ -17,6 +17,24 @@ Template.User_Page.helpers({
     const owner = Meteor.userId();
     return owner ? SSession.find({ owner }) : this.ready();
   },
+  canShowP: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find({ owner }).count());
+    if (Profile.find({ owner }).count() > 0) {
+      find = true;
+    }
+    return find;
+  },
+  canShowS: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find({ owner }).count());
+    if (SSession.find({ owner }).count() > 0) {
+      find = true;
+    }
+    return find;
+  },
 });
 
 Template.User_Page.onCreated(function onCreated() {

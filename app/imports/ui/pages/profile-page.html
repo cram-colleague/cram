@@ -1,9 +1,9 @@
 <template name="Profile_Page">
   {{#if Template.subscriptionsReady}}
-    <div style="margin-top: 20px" class="ui container">
+    <div class="ui container">
       <br />
-      <!--<form class="ui form contact-data-form {{ errorClass }}">-->
       <h2 class="ui dividing header"><i class="child icon"></i>  Profile</h2>
+      <br />
         <div class="ui three column grid container">
           <div class="column">
             <div class="ui fluid card">
@@ -11,7 +11,7 @@
                 <img src="{{ profileField 'pic' }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
               </div>
               <div class="content">
-                <div class="ui header">{{ profileField 'first' }} {{ profileField 'last' }} {{ profileField 'user' }}</div>
+                <div class="ui header">{{ profileField 'first' }} {{ profileField 'last' }}</div>
               </div>
             </div>
           </div>
