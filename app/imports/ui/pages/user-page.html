@@ -2,6 +2,16 @@
   {{#If_Logged_In}}
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
+        <br />
+      {{#if canShowP}}
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            User Page
+            <div class="sub header">View and edit your profile</div>
+          </div>
+        </h2>
+        <br />
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
           <tr>
@@ -36,6 +46,50 @@
           {{/each}}
           </tbody>
         </table>
+
+        <br /><br />
+        <h3 class="ui horizontal divider header">
+          <i class="calendar icon"></i>
+          Schedule
+        </h3>
+        <br />
+        {{#if canShowS}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Time</th>
+            <th>Place</th>
+            <th>View</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each session in sessionList}}
+            <tr>
+              <td>{{session.name}}</td>
+              <td>{{session.time}}</td>
+              <td>{{session.place}}</td>
+              <td><a href="{{pathFor 'Session_Page' _id=session._id }}">View</a></td>
+              <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+          {{else}}
+          <h3 class="ui centered header">You haven't create any study session yet</h3>
+          <h4 class="ui centered header">Do you want to create session? <br /><br /> <button class="ui button" ><a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a></button></h4>
+          {{/if}}
+      {{else}}
+        <h1 class="ui centered header">Thank you for logged in!!</h1>
+        <h2 class="ui centered header">Let's create your profile so that you can study with fellows :)</h2>
+        <div class="ui internally celled centered grid">
+          <div class="ten wide column">
+            <button class="ui button" ><a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a></button>
+          </div>
+        </div>
+      {{/if}}
       {{else}}
         {{> Loading}}
       {{/if}}

@@ -1,10 +1,12 @@
 <template name="Edit_Session_Page">
   {{#if Template.subscriptionsReady}}
+    <br />
     <div style="margin-top: 20px" class="ui container">
       <form class="ui form session-data-form {{ errorClass }}">
-        <h4 class="ui dividing header">Edit Study Session</h4>
+        <h2 class="ui dividing header"><i class="edit icon"></i>  Edit Study Session</h2>
+        <br />
         <div class="field">
-          <label>Name of the course</label>
+          <label  style="font-size: large">Name of the course</label>
           <input type="text" name="name" id="name" placeholder="Name of the course" value="{{ sessionField 'name' }}">
           {{#if displayFieldError 'name' }}
             <div class="ui error message">
@@ -13,8 +15,10 @@
           {{/if}}
         </div>
 
+        <br />
+
         <div class="field">
-          <label>What time?</label>
+          <label  style="font-size: large">What time?</label>
           <input type="text" name="time" id="time" placeholder="YYYY-MM-DD 12:00:00" value="{{ sessionField 'time' }}">
           {{#if displayFieldError 'time' }}
             <div class="ui error message">
@@ -23,8 +27,10 @@
           {{/if}}
         </div>
 
+        <br />
+
         <div class="field">
-          <label>Where?</label>
+          <label  style="font-size: large">Where?</label>
           <input type="text" name="place" id="place" placeholder="Where?" value="{{ sessionField 'place' }}">
           {{#if displayFieldError 'place' }}
             <div class="ui error message">
@@ -33,16 +39,32 @@
           {{/if}}
         </div>
 
+        <br />
+        {{#each profile in profileList}}
+          <div class="field">
+            <label  style="font-size: large">Who will be teaching?</label>
+            <input name="sensei" id="sensei" value="{{profile.first}} {{profile.last}}">
+            {{#if displayFieldError 'sensei' }}
+              <div class="ui error message">
+                <p>You must specify the teacher</p>
+              </div>
+            {{/if}}
+          </div>
+        {{/each}}
+
+        <br />
+
         <div class="field">
-          <label>Who will be teaching?</label>
-          <input type="text" name="sensei" id="sensei" placeholder="Who will be teaching?" value="{{ sessionField 'sensei' }}">
-          {{#if displayFieldError 'sensei' }}
+          <label  style="font-size: large">What is going to be covered?</label>
+          <input type="text" name="detail" id="detail" placeholder="we will be covering...">
+          {{#if displayFieldError 'detail' }}
             <div class="ui error message">
-              <p>You must specify the time</p>
+              <p>You must specify the detail</p>
             </div>
           {{/if}}
         </div>
 
+        <br />
         <button class="ui button" type="submit">Update</button>
         <button class="ui button delete" type="button">Delete</button>
       </form>

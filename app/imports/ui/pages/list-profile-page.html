@@ -1,39 +1,25 @@
 <template name="List_Profile_Page">
   {{#If_Logged_In}}
-    <div class="ui text container">
+    <div class="ui container">
       {{#if Template.subscriptionsReady}}
-        <table style="margin-top: 20px" class="ui celled table">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <!--<th>Previous Course</th>-->
-            <!--<th>Courses you want to teach</th>-->
-            <!--<th>Current Course</th>-->
-            <!--<th>Courses you want to be taught</th>-->
-            <th>Description of yourself</th>
-            <!--<th>Owner</th>-->
-            <!-- if statement should come? -->
-            <!--<th>Edit</th>-->
-          </tr>
-          </thead>
-
-          <tbody>
-          {{#each profile in profileList}}
-            <tr>
-              <!--change it later-->
-              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a></td>
-              <!--<td>{{profile.preCourse}}</td>-->
-              <!--<td>{{profile.sensei}}</td>-->
-              <!--<td>{{profile.currCourse}}</td>-->
-              <!--<td>{{profile.grasshopper}}</td>-->
-              <td>{{profile.description}}</td>
-              <!--<td>{{profile.owner}}</td>-->
-              <!-- if statement should come? -->
-              <!--<td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>-->
-            </tr>
-          {{/each}}
-          </tbody>
-        </table>
+        <br />
+      <h2 class="ui dividing header"><i class="users icon"></i>  List of Profiles</h2>
+        <br />
+       <div class="ui cards">
+        {{#each profile in profileList}}
+         <div class="card">
+           <a class="image" href="{{pathFor 'Profile_Page' _id=profile._id }}">
+             <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+           </a>
+           <div class="content">
+             <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a>
+             <div class="meta">
+               {{profile.description}}
+             </div>
+           </div>
+         </div>
+        {{/each}}
+       </div>
       {{else}}
         {{> Loading}}
       {{/if}}

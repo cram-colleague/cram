@@ -46,7 +46,6 @@ export const ProfileSchema = new SimpleSchema({
   pic: {
     label: 'pic',
     type: String,
-    optional: true,
     max: 200,
   },
 });
