@@ -1,0 +1,100 @@
+<template name="Admin_Page">
+  {{#If_Logged_In}}
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <br />
+      {{#if canShowP}}
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            Admin Page
+            <div class="sub header">View and edit profiles and study sessions</div>
+          </div>
+        </h2>
+        <br />
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <!--<th>Previous Course</th>-->
+            <!--<th>Courses you want to teach</th>-->
+            <!--<th>Current Course</th>-->
+            <!--<th>Courses you want to be taught</th>-->
+            <th>Description of yourself</th>
+            <!--<th>Owner</th>-->
+            <!-- if statement should come? -->
+            <th>View</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each profile in profileList}}
+            <tr>
+              <!--change it later-->
+              <td>{{profile.first}} {{profile.last}}</td>
+              <!--<td>{{profile.preCourse}}</td>-->
+              <!--<td>{{profile.sensei}}</td>-->
+              <!--<td>{{profile.currCourse}}</td>-->
+              <!--<td>{{profile.grasshopper}}</td>-->
+              <td>{{profile.description}}</td>
+              <!--<td>{{profile.owner}}</td>-->
+              <!-- if statement should come? -->
+              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
+              <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+
+        <br /><br />
+        <h3 class="ui horizontal divider header">
+          <i class="calendar icon"></i>
+          Schedule
+        </h3>
+        <br />
+        {{#if canShowS}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Time</th>
+            <th>Place</th>
+            <th>View</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each session in sessionList}}
+            <tr>
+              <td>{{session.name}}</td>
+              <td>{{session.time}}</td>
+              <td>{{session.place}}</td>
+              <td><a href="{{pathFor 'Session_Page' _id=session._id }}">View</a></td>
+              <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+          {{else}}
+          <h3 class="ui centered header">You haven't create any study session yet</h3>
+          <h4 class="ui centered header">No one created study session yet <br /><br /></h4>
+          {{/if}}
+      {{else}}
+        <h2 class="ui centered header">No one created profile yet</h2>
+
+      {{/if}}
+
+        <br /><br />
+        <h3 class="ui horizontal divider header">
+          <i class="announcement icon"></i>
+          Report
+        </h3>
+        <br />
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>

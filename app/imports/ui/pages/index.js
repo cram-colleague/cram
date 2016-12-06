@@ -19,6 +19,9 @@ import './profile-page.js';
 import './user-page.html';
 import './user-page.js';
 
+import './admin-page.html';
+import './admin-page.js';
+
 import './home-page.html';
 import './home-page.js';
 

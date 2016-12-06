@@ -11,7 +11,7 @@
       "popupHeight": 610
     }
   },
-  "allowed_users": [
+  "unallowed_users": [
     "johnson",
     "minakod"
   ],
