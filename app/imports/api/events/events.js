@@ -1,5 +1,5 @@
 /**
- * Created by lam on 11/28/2016.
+ * Created by Lam on 12/7/2016.
  */
 Events = new Mongo.Collection( 'events' );
 
