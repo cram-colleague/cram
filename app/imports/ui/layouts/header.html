@@ -35,6 +35,9 @@
           </div>
         </div>
         <a class="item">Leaderboard</a>
+      {{#if canShow}}
+        <a class="{{ isActiveRoute 'Admin_Page'}} item" href="{{ pathFor 'Admin_Page' }}">Admin Page</a>
+      {{/if}}
 
 
 

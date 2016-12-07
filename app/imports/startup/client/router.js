@@ -71,6 +71,13 @@ FlowRouter.route('/user-profile', {
   },
 });
 
+FlowRouter.route('/admin', {
+  name: 'Admin_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Admin_Page' });
+  },
+});
+
 FlowRouter.route('/add-session', {
   name: 'Add_Session_Page',
   action() {
