@@ -1,6 +1,3 @@
-/**
- * Created by lam on 11/28/2016.
- */
 let closeModal = () => {
   $('#add-edit-event-modal').modal('hide');
   $('.modal-backdrop').fadeOut();
@@ -38,7 +35,7 @@ Template.addEditEventModal.helpers({
   }
 });
 
-Template.addEditEventModal.calendar({
+Template.addEditEventModal.events({
   'submit form' (event, template) {
     event.preventDefault();
 
@@ -64,5 +61,18 @@ Template.addEditEventModal.calendar({
         closeModal();
       }
     });
+  },
+  'click .delete-event' (event, template) {
+    let eventModal = Session.get('eventModal');
+    if (confirm('Are you sure? This is permanent.')) {
+      Meteor.call('removeEvent', eventModal.event, (error) => {
+        if (error) {
+          Bert.alert(error.reason, 'danger');
+        } else {
+          Bert.alert('Event deleted!', 'success');
+          closeModal();
+        }
+      });
+    }
   }
 });

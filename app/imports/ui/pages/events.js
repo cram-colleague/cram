@@ -1,36 +1,17 @@
-import { Template } from 'meteor/templating';
-import { SSession } from '../../api/session/session.js';
-
-Template.personal_calendar.helpers({
-
-  /**
-   * @returns {*} All of the Profile documents.
-   */
-  sessionList() {
-    return SSession.find();
-  },
-});
-
-Template.personal_calendar.onCreated(function onCreated() {
-  this.autorun(() => {
-    this.subscribe('SSession');
-  });
-});
-
 
 let isPast = ( date ) => {
   let today = moment().format();
   return moment( today ).isAfter( date );
 };
 
-Template.personal_calendar.onCreated( () => {
+Template.events.onCreated( () => {
   let template = Template.instance();
-  template.subscribe( 'personal_calendar' );
+  template.subscribe( 'events' );
 });
 
-Template.personal_calendar.onRendered( () => {
+Template.events.onRendered( () => {
   $( '#events-calendar' ).fullCalendar({
-    personal_calendar( start, end, timezone, callback ) {
+    events( start, end, timezone, callback ) {
       let data = Events.find().fetch().map( ( event ) => {
         event.editable = !isPast( event.start );
         return event;
