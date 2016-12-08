@@ -30,12 +30,14 @@ Template.events.onRendered( () => {
       );
     },
     dayClick( date ) {
-      Session.set( 'eventModal', { type: 'add', date: date.format() } );
-      $( '#add-edit-event-modal' ).modal( 'show' );
+      FlowRouter.go('Add_Session_Page');
+      //Session.set( 'eventModal', { type: 'add', date: date.format() } );
+      //$( '#add-edit-event-modal' ).modal( 'show' );
     },
     eventClick( event ) {
-      Session.set( 'eventModal', { type: 'edit', event: event._id } );
-      $( '#add-edit-event-modal' ).modal( 'show' );
+      FlowRouter.go('Add_Session_Page');
+      //Session.set( 'eventModal', { type: 'edit', event: event._id } );
+      //$( '#add-edit-event-modal' ).modal( 'show' );
     }
   });
   Tracker.autorun( () => {
