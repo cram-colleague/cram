@@ -34,7 +34,8 @@
             <a class="{{ isActiveRoute 'List_Session_Page'}} item" href="{{ pathFor 'List_Session_Page' }}">List of Study Session</a>
           </div>
         </div>
-        <a class="item">Leaderboard</a>
+        <!--<a class="item">Leaderboard</a>-->
+        <a class="{{ isActiveRoute 'Add_Report_Page'}} item" href="{{ pathFor 'Add_Report_Page' }}">Report</a>
       {{#if canShow}}
         <a class="{{ isActiveRoute 'Admin_Page'}} item" href="{{ pathFor 'Admin_Page' }}">Admin Page</a>
       {{/if}}

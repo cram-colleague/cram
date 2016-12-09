@@ -17,10 +17,10 @@ Template.Header.onRendered(function enableDropDown() {
 Template.Header.helpers({
   canShow: function canShow() {
     let find = false;
-    let user = Meteor.user().profile.name;
+    const user = Meteor.user().profile.name;
     // console.log(Profile.find({ owner }).count());
-    if (user == 'minakod' || user == 'lambert3' || user == 'seantshi' || user == 'io' || user == 'johnson') {
-        find = true;
+    if (user === 'minakod' || user === 'lambert3' || user === 'seantshi' || user === 'io' || user === 'johnson') {
+      find = true;
     }
     return find;
   },

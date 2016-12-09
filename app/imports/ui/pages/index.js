@@ -4,6 +4,9 @@ import './add-profile-page.js';
 import './add-session-page.html';
 import './add-session-page.js';
 
+import './add-report-page.html';
+import './add-report-page.js';
+
 import './edit-stuff-page.html';
 import './edit-stuff-page.js';
 

@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Profile } from '../../api/profile/profile.js';
-import { Meteor } from 'meteor/meteor';
+import { Report } from '../../api/report/report.js';
+// import { Meteor } from 'meteor/meteor';
 import { SSession } from '../../api/session/session.js';
 
 Template.Admin_Page.helpers({
@@ -17,6 +18,11 @@ Template.Admin_Page.helpers({
     // const owner = Meteor.userId();
     // return owner ? SSession.find({ owner }) : this.ready();
     return SSession.find();
+  },
+  reportList() {
+    // const owner = Meteor.userId();
+    // return owner ? SSession.find({ owner }) : this.ready();
+    return Report.find();
   },
   canShowP: function canShow() {
     let find = false;
@@ -36,6 +42,15 @@ Template.Admin_Page.helpers({
     }
     return find;
   },
+  canShowR: function canShow() {
+    let find = false;
+    // const owner = Meteor.userId();
+    // console.log(Profile.find().count());
+    if (Report.find().count() > 0) {
+      find = true;
+    }
+    return find;
+  },
 });
 
 Template.Admin_Page.onCreated(function onCreated() {
@@ -44,5 +59,8 @@ Template.Admin_Page.onCreated(function onCreated() {
   });
   this.autorun(() => {
     this.subscribe('SSession');
+  });
+  this.autorun(() => {
+    this.subscribe('Report');
   });
 });

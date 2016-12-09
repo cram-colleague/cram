@@ -1,0 +1,53 @@
+<template name="Add_Report_Page">
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form report-data-form {{ errorClass }}">
+      <br />
+      <h2 class="ui dividing header"><i class="send outline icon"></i>  Report</h2>
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">Name of the person</label>
+        <input type="text" name="name" id="name" placeholder="Name">
+        {{#if displayFieldError 'name' }}
+          <div class="ui error message">
+            <p>You must specify the name of the person</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">Title</label>
+        <input type="text" name="title" id="title" placeholder="Title">
+        {{#if displayFieldError 'title' }}
+          <div class="ui error message">
+            <p>You must specify the title.</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">Text</label>
+        <input type="text" name="content" id="content">
+         {{#if displayFieldError 'content' }}
+           <div class="ui error message">
+             <p>You must specify your content.</p>
+           </div>
+         {{/if}}
+      </div>
+
+      <br />
+
+      <br />
+
+      <button class="ui button" type="submit">Submit</button>
+      <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">
+        <button class="ui button">Cancel</button>
+      </a>
+
+    </form>
+  </div>
+</template>

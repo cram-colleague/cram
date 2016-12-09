@@ -11,6 +11,10 @@
             <div class="sub header">View and edit profiles and study sessions</div>
           </div>
         </h2>
+        <h3 class="ui horizontal divider header">
+          <i class="user icon"></i>
+          Profiles
+        </h3>
         <br />
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
@@ -78,20 +82,44 @@
           </tbody>
         </table>
           {{else}}
-          <h3 class="ui centered header">You haven't create any study session yet</h3>
           <h4 class="ui centered header">No one created study session yet <br /><br /></h4>
           {{/if}}
-      {{else}}
-        <h2 class="ui centered header">No one created profile yet</h2>
-
-      {{/if}}
-
         <br /><br />
         <h3 class="ui horizontal divider header">
           <i class="announcement icon"></i>
           Report
         </h3>
         <br />
+        <!--{{#if canShowR}}-->
+          <table style="margin-top: 20px" class="ui celled table">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th>View</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each report in reportList}}
+              <tr>
+                <td>{{report.name}}</td>
+                <td>{{report.title}}</td>
+                <td>{{report.content}}</td>
+                <td><a href="{{pathFor 'Report_Page' _id=report._id }}">View</a></td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        <!--{{else}}-->
+          <!--<h4 class="ui centered header">No one has reported anything yet <br /><br /></h4>-->
+        <!--{{/if}}-->
+      {{else}}
+        <h2 class="ui centered header">No one created profile yet</h2>
+
+      {{/if}}
+
       {{else}}
         {{> Loading}}
       {{/if}}
