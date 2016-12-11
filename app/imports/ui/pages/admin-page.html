@@ -90,7 +90,7 @@
           Report
         </h3>
         <br />
-        <!--{{#if canShowR}}-->
+        {{#if canShowR}}
           <table style="margin-top: 20px" class="ui celled table">
             <thead>
             <tr>
@@ -112,9 +112,9 @@
             {{/each}}
             </tbody>
           </table>
-        <!--{{else}}-->
-          <!--<h4 class="ui centered header">No one has reported anything yet <br /><br /></h4>-->
-        <!--{{/if}}-->
+        {{else}}
+          <h4 class="ui centered header">No one has reported anything yet <br /><br /></h4>
+        {{/if}}
       {{else}}
         <h2 class="ui centered header">No one created profile yet</h2>
 

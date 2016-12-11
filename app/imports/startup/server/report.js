@@ -7,9 +7,9 @@ import { _ } from 'meteor/underscore';
  */
 const reportSeeds = [
   { name: 'Minako Doi',
-    reporter: 'Chad Naka',
     title: 'ICS311',
     content: 'Was not great',
+    reporter: 'Kq4QJ7uGPuTWnTXk2',
   },
 ];
 
@@ -17,7 +17,7 @@ const reportSeeds = [
  * Initialize the Stuff collection if empty with seed data.
  */
 if (Report.find().count() === 0) {
-  _.each(reportSeeds, function seedCourses(course) {
-    Report.insert(course);
+  _.each(reportSeeds, function seedReports(report) {
+    Report.insert(report);
   });
 }

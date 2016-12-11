@@ -50,8 +50,6 @@ Template.Add_Report_Page.events({
     const reporter = Meteor.userId();
     const newReport = { name, title, content, reporter };
 
-    // const newProfile = { first, last, preCourse, currCourse, description };
-
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean

@@ -121,6 +121,13 @@ FlowRouter.route('/session/:_id', {
   },
 });
 
+FlowRouter.route('/report/:_id', {
+  name: 'Report_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Report_Page' });
+  },
+});
+
 FlowRouter.route('/edit-session/:_id', {
   name: 'Edit_Session_Page',
   action() {

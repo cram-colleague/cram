@@ -1,0 +1,73 @@
+<template name="Report_Page">
+  {{#if Template.subscriptionsReady}}
+    <div style="margin-top: 20px" class="ui container">
+      <form class="ui form report-data-form {{ errorClass }}">
+      <br />
+      <h2 class="ui dividing header"><i class="announcement icon"></i> Report</h2>
+        <br />
+
+      <div class="column">
+        <div class="ui raised segment">
+          <a class="ui olive ribbon big label">Name of the Person</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ reportField 'name' }}</h3>
+          <p></p><p></p>
+          <a class="ui teal ribbon big label">Title</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ reportField 'title' }}</h3>
+          <p></p><p></p>
+          <a class="ui olive ribbon big label">Content</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ reportField 'content' }}</h3>
+          <p></p><p></p>
+          <a class="ui teal ribbon big label">Reporter</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ profileField 'first' }} {{ profileField 'last' }}</h3>
+          <p></p><p></p>
+          <!--<a class="ui teal ribbon big label">Students</a>-->
+          <!--<h3 class="ui header" style="margin-left: 3em">{{ reportField 'students' }}</h3>-->
+          <!--<p></p><p></p>-->
+          <!--<a class="ui olive ribbon big label">Details of the session</a>-->
+          <!--<h3 class="ui header" style="margin-left: 3em">{{ reportField 'detail' }}</h3>-->
+          <!--<p></p><p></p>-->
+        </div>
+      </div>
+
+      <!--<div class="field">-->
+        <!--<div class="ui large header">Name of the course</div>-->
+        <!--<div class="content">{{ sessionField 'name' }}</div>-->
+      <!--</div>-->
+
+      <!--<div class="field">-->
+        <!--<div class="ui large header">What time?</div>-->
+        <!--<div class="content">{{ sessionField 'time' }}</div>-->
+      <!--</div>-->
+
+      <!--<div class="field">-->
+        <!--<div class="ui large header">Where?</div>-->
+        <!--<div class="content">{{ sessionField 'place' }}</div>-->
+      <!--</div>-->
+      <!--<br />-->
+      <!--{{#each profile in profileList}}-->
+        <!--<div class="field">-->
+          <!--<div class="ui large header">Who will be teaching?</div>-->
+          <!--<div class="content"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ sessionField 'name' }}</a></div>-->
+        <!--</div>-->
+      <!--{{/each}}-->
+
+      <br /><br />
+      <div class="ui two column center aligned page grid">
+        <div class="column twelve wide">
+          <!--<button class="ui button" type="submit">Going</button>-->
+          <button class="ui button delete" type="button">Delete</button>
+        </div>
+        <div class="column twelve wide">
+          <button class="ui button" onclick="goBack()">Go Back</button>
+          <script>
+            function goBack() {
+              window.history.back();
+            }
+          </script>
+        </div>
+      </div>
+      </form>
+    </div>
+      <!--</form>-->
+  {{/if}}
+</template>

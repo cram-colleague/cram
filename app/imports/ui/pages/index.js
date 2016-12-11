@@ -31,6 +31,9 @@ import './home-page.js';
 import './session-page.html';
 import './session-page.js';
 
+import './report-page.html';
+import './report-page.js';
+
 import './term-page.html';
 import './term-page.js';
 
