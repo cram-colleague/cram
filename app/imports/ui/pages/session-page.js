@@ -54,6 +54,14 @@ Template.Session_Page.helpers({
     }
     return false;
   },
+  profileShowS: function (field) {
+    const session = SSession.findOne(FlowRouter.getParam('_id'));
+    const student = session.students;
+    if (field === student) {
+      return true;
+    }
+    return false;
+  },
 });
 
 // Template.Edit_Contact_Page.onRendered(function enableSemantic() {
@@ -102,7 +110,7 @@ Template.Session_Page.events({
     SSession.update(FlowRouter.getParam('_id'), { $set: { students: student } });
     instance.messageFlags.set(displayErrorMessages, false);
     window.alert('You are added!');
-    FlowRouter.go('List_Session_Page');
+    // FlowRouter.go('List_Session_Page');
     // } else {
     //   instance.messageFlags.set(displayErrorMessages, true);
     // }
