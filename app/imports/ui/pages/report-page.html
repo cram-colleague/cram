@@ -17,15 +17,13 @@
           <a class="ui olive ribbon big label">Content</a>
           <h3 class="ui header" style="margin-left: 3em">{{ reportField 'content' }}</h3>
           <p></p><p></p>
-          <a class="ui teal ribbon big label">Reporter</a>
-          <h3 class="ui header" style="margin-left: 3em">{{ profileField 'first' }} {{ profileField 'last' }}</h3>
-          <p></p><p></p>
-          <!--<a class="ui teal ribbon big label">Students</a>-->
-          <!--<h3 class="ui header" style="margin-left: 3em">{{ reportField 'students' }}</h3>-->
-          <!--<p></p><p></p>-->
-          <!--<a class="ui olive ribbon big label">Details of the session</a>-->
-          <!--<h3 class="ui header" style="margin-left: 3em">{{ reportField 'detail' }}</h3>-->
-          <!--<p></p><p></p>-->
+          {{#each profile in profileList}}
+            <a class="ui teal ribbon big label">Reporter</a>
+            {{#if profileShow profile.owner}}
+            <h3 class="ui header" style="margin-left: 3em">{{ profile.first }} {{ profile.last }}</h3>
+            <p></p><p></p>
+            {{/if}}
+          {{/each}}
         </div>
       </div>
 

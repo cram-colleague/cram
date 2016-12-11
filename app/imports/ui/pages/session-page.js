@@ -17,6 +17,9 @@ Template.Session_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = SessionSchema.namedContext('Session_Page');
+  this.autorun(() => {
+    this.subscribe('Profile');
+  });
 });
 
 
@@ -39,6 +42,17 @@ Template.Session_Page.helpers({
     const profile = Profile.findOne(FlowRouter.getParam('_id'));
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
+  },
+  profileList() {
+    return Profile.find();
+  },
+  profileShow: function (field) {
+    const session = SSession.findOne(FlowRouter.getParam('_id'));
+    const owner = session.owner;
+    if (field === owner) {
+      return true;
+    }
+    return false;
   },
 });
 
@@ -68,7 +82,7 @@ Template.Session_Page.events({
       FlowRouter.go('Home_Page');
     }
   },
-  'submit .contact-data-form'(event, instance) {
+  'click .going'(event, instance) {
     event.preventDefault();
     // Get name (text field)
     // const first = event.target.first.value;
@@ -76,7 +90,7 @@ Template.Session_Page.events({
     // const preCourse = event.target.preCourse.value;
     // const currCourse = event.target.currCourse.value;
     // const description = event.target.description.value;
-    const students = Meteor.userId();
+    const student = Meteor.userId();
     // const updateProfile = { first, last, preCourse, currCourse, description, students };
     // Clear out any old validation errors.
     instance.context.resetValidation();
@@ -85,10 +99,10 @@ Template.Session_Page.events({
     // Determine validity.
     // instance.context.validate(updateProfile);
     // if (instance.context.isValid()) {
-      SSession.update(FlowRouter.getParam('_id'), { $set: {'SSession.students': students} });
-      instance.messageFlags.set(displayErrorMessages, false);
-      window.alert('Your profile updated!');
-      FlowRouter.go('List_Session_Page');
+    SSession.update(FlowRouter.getParam('_id'), { $set: { students: student } });
+    instance.messageFlags.set(displayErrorMessages, false);
+    window.alert('You are added!');
+    FlowRouter.go('List_Session_Page');
     // } else {
     //   instance.messageFlags.set(displayErrorMessages, true);
     // }

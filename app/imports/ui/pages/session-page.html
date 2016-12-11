@@ -18,8 +18,12 @@
           <a class="ui olive ribbon big label">Place</a>
           <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'place' }}</h3>
           <p></p><p></p>
-          <a class="ui teal ribbon big label">Teacher</a>
-          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'sensei' }}</h3>
+          {{#each profile in profileList}}
+            <a class="ui teal ribbon big label">Teacher</a>
+            {{#if profileShow profile.owner}}
+              <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ sessionField 'sensei' }}</a></h3>
+            {{/if}}
+          {{/each}}
           <p></p><p></p>
           <a class="ui teal ribbon big label">Students</a>
           <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'students' }}</h3>
@@ -55,7 +59,7 @@
       <br /><br />
       <div class="ui two column center aligned page grid">
         <div class="column twelve wide">
-          <button class="ui button" type="submit">Going</button>
+          <button class="ui button going" type="button">Going</button>
         </div>
         <div class="column twelve wide">
           <button class="ui button" onclick="goBack()">Go Back</button>

@@ -17,6 +17,9 @@ Template.Report_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = ReportSchema.namedContext('Report_Page');
+  this.autorun(() => {
+    this.subscribe('Profile');
+  });
 });
 
 
@@ -38,11 +41,23 @@ Template.Report_Page.helpers({
   profileField(fieldName) {
     // change it later
     const report = Report.findOne(FlowRouter.getParam('_id'));
-    const reporter = report.reporter;
+    const owner = report.reporter;
+    // const profile = Profile.findOne({ createdBy: owner });
     const profile = Profile.findOne('reporter');
-    console.log(profile);
+    // console.log(profile);
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
+  },
+  profileList() {
+    return Profile.find();
+  },
+  profileShow: function (field) {
+    const report = Report.findOne(FlowRouter.getParam('_id'));
+    const owner = report.reporter;
+    if (field === owner) {
+      return true;
+    }
+    return false;
   },
 });
 
