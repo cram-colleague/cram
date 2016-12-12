@@ -57,6 +57,13 @@ FlowRouter.route('/add-profile', {
   },
 });
 
+FlowRouter.route('/add-report', {
+  name: 'Add_Report_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Report_Page' });
+  },
+});
+
 // FlowRouter.route('/user-profile', {
 //   name: 'User_Profile_Page',
 //   action() {
@@ -111,6 +118,13 @@ FlowRouter.route('/session/:_id', {
   name: 'Session_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Session_Page' });
+  },
+});
+
+FlowRouter.route('/report/:_id', {
+  name: 'Report_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Report_Page' });
   },
 });
 

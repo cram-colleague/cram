@@ -19,14 +19,16 @@
       <div class="ui simple dropdown item">
         <a class="{{ isActiveRoute 'User_Page'}} item" href="{{ pathFor 'User_Page' }}">User Profile</a>
         <i class="dropdown icon"></i>
+        {{#if activeUser}}
         <div class="menu">
           <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="{{ pathFor 'personal_calendar' }}">Personal Calendar</a>
-          <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="{{ pathFor 'List_Profile_Page' }}">List of Profile</a>
+          <a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a>
         </div>
+        {{/if}}
       </div>
 
       <div class="ui simple dropdown item">
-          <a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a>
+        <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="{{ pathFor 'List_Profile_Page' }}">List of Profile</a>
           <i class="dropdown icon"></i>
           <div class="menu">
             <a class="{{ isActiveRoute 'List_Profile_Page'}} item" href="{{ pathFor 'events' }}">Calendar</a>
@@ -34,28 +36,13 @@
             <a class="{{ isActiveRoute 'List_Session_Page'}} item" href="{{ pathFor 'List_Session_Page' }}">List of Study Session</a>
           </div>
         </div>
-        <a class="item">Leaderboard</a>
-      {{#if canShow}}
-        <a class="{{ isActiveRoute 'Admin_Page'}} item" href="{{ pathFor 'Admin_Page' }}">Admin Page</a>
-      {{/if}}
-
-
-
-        <!--<div class="ui dropdown item">-->
-          <!--List of-->
-          <!--<i class="dropdown icon"></i>-->
-          <!--<div class="menu">-->
-            <!--<a class="item {{ isActiveRoute 'List_Profile_Page'}}" href="{{ pathFor 'List_Profile_Page' }}">List of Profiles</a>-->
-            <!--<a class="{{ isActiveRoute 'List_Course_Page'}} item" href="{{ pathFor 'List_Course_Page' }}">List of Courses</a>-->
-            <!--<a class="item {{ isActiveRoute 'List_Session_Page'}}" href="{{ pathFor 'List_Session_Page' }}">List of Study Session</a>-->
-          <!--</div>-->
-        <!--</div>-->
-
-        <!--a class="item">
-          <i class="icon mail"></i> Messages
-          <div class="floating ui red label">3</div>
-        </a-->
-
+        <!--<a class="item">Leaderboard</a>-->
+        {{#if activeUser}}
+          <a class="{{ isActiveRoute 'Add_Report_Page'}} item" href="{{ pathFor 'Add_Report_Page' }}">Report</a>
+        {{/if}}
+        {{#if canShow}}
+          <a class="{{ isActiveRoute 'Admin_Page'}} item" href="{{ pathFor 'Admin_Page' }}">Admin Page</a>
+        {{/if}}
         {{> Cas_Login }}
       {{/if}}
     </div>
