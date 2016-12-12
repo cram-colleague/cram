@@ -28,7 +28,6 @@ Template.Report_Page.helpers({
     // change it later
     const report = Report.findOne(FlowRouter.getParam('_id'));
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
-    console.log(report);
     return report && report[fieldName];
   },
   errorClass() {

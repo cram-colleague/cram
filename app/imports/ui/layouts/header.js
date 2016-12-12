@@ -33,5 +33,5 @@ Template.Header.helpers({
       find = true;
     }
     return find;
-  }
+  },
 });

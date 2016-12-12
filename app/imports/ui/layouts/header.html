@@ -37,7 +37,9 @@
           </div>
         </div>
         <!--<a class="item">Leaderboard</a>-->
-        <a class="{{ isActiveRoute 'Add_Report_Page'}} item" href="{{ pathFor 'Add_Report_Page' }}">Report</a>
+        {{#if activeUser}}
+          <a class="{{ isActiveRoute 'Add_Report_Page'}} item" href="{{ pathFor 'Add_Report_Page' }}">Report</a>
+        {{/if}}
         {{#if canShow}}
           <a class="{{ isActiveRoute 'Admin_Page'}} item" href="{{ pathFor 'Admin_Page' }}">Admin Page</a>
         {{/if}}
