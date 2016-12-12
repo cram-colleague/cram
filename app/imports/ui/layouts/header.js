@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { Profile } from '../../api/profile/profile';
 
 // The Header menu does not use dropdown menus, but most menus do.
 // Here's how to do the required initialization for Semantic UI dropdown menus.
@@ -24,4 +25,13 @@ Template.Header.helpers({
     }
     return find;
   },
+  activeUser: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find({ owner }).count());
+    if (Profile.find({ owner }).count() > 0) {
+      find = true;
+    }
+    return find;
+  }
 });
