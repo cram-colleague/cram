@@ -1,5 +1,5 @@
 /**
- * Created by lam on 11/28/2016.
+ * Created by Lam on 12/7/2016.
  */
 Events = new Mongo.Collection( 'events' );
 
@@ -30,12 +30,8 @@ let EventsSchema = new SimpleSchema({
   },
   'type': {
     type: String,
-    label: 'What type of event is this?',
-    allowedValues: [ 'Birthday', 'Corporate', 'Wedding', 'Miscellaneous' ]
-  },
-  'guests': {
-    type: Number,
-    label: 'The number of guests expected at this event.'
+    label: 'What are you attending as?',
+    allowedValues: [ 'Grasshopper', 'Sensei']
   }
 });
 

@@ -43,7 +43,7 @@
         {{#each profile in profileList}}
           <div class="field">
             <label  style="font-size: large">Who will be teaching?</label>
-            <input name="sensei" id="sensei" value="{{profile.first}} {{profile.last}}">
+            <input name="sensei" id="sensei" value="{{ sessionField 'sensei' }}">
             {{#if displayFieldError 'sensei' }}
               <div class="ui error message">
                 <p>You must specify the teacher</p>

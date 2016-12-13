@@ -57,6 +57,13 @@ FlowRouter.route('/add-profile', {
   },
 });
 
+FlowRouter.route('/add-report', {
+  name: 'Add_Report_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Report_Page' });
+  },
+});
+
 // FlowRouter.route('/user-profile', {
 //   name: 'User_Profile_Page',
 //   action() {
@@ -68,6 +75,13 @@ FlowRouter.route('/user-profile', {
   name: 'User_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'User_Page' });
+  },
+});
+
+FlowRouter.route('/admin', {
+  name: 'Admin_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Admin_Page' });
   },
 });
 
@@ -107,6 +121,13 @@ FlowRouter.route('/session/:_id', {
   },
 });
 
+FlowRouter.route('/report/:_id', {
+  name: 'Report_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Report_Page' });
+  },
+});
+
 FlowRouter.route('/edit-session/:_id', {
   name: 'Edit_Session_Page',
   action() {
@@ -124,6 +145,13 @@ FlowRouter.route('/personal-calendar', {
   name: 'personal_calendar',
   action() {
     BlazeLayout.render('App_Body', { main: 'personal_calendar' });
+  },
+});
+
+FlowRouter.route('/events', {
+  name: 'events',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'events' });
   },
 });
 

@@ -4,6 +4,9 @@ import './add-profile-page.js';
 import './add-session-page.html';
 import './add-session-page.js';
 
+import './add-report-page.html';
+import './add-report-page.js';
+
 import './edit-stuff-page.html';
 import './edit-stuff-page.js';
 
@@ -19,11 +22,17 @@ import './profile-page.js';
 import './user-page.html';
 import './user-page.js';
 
+import './admin-page.html';
+import './admin-page.js';
+
 import './home-page.html';
 import './home-page.js';
 
 import './session-page.html';
 import './session-page.js';
+
+import './report-page.html';
+import './report-page.js';
 
 import './term-page.html';
 import './term-page.js';
@@ -45,6 +54,12 @@ import './user-profile-page.js';   // js page created
 
 import './calendar.html';
 import './calendar.js';
+
+import './events.html';
+import './events.js';
+
+import './add-edit-event-modal.html';
+import './add-edit-event-modal.js';
 
 import './personal-calendar.html';
 import './personal-calendar.js';
