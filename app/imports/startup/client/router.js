@@ -148,8 +148,21 @@ FlowRouter.route('/personal-calendar', {
   },
 });
 
+FlowRouter.route('/events', {
+  name: 'events',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'events' });
+  },
+});
+
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
   },
 };
+FlowRouter.route('/Leaderboard_Page/', {
+  name: 'Leaderboard_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Leaderboard_Page' });
+  },
+});
