@@ -1,0 +1,58 @@
+<template name="Leaderboard_Page">
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <br />
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            Leaderboard
+            <div class="sub header">See who helps the most or gets the most help</div>
+          </div>
+        </h2>
+        <h3 class="ui horizontal divider header">
+          <i class="user icon"></i>
+          Profiles
+        </h3>
+        <br />
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <!--<th>Previous Course</th>-->
+            <!--<th>Courses you want to teach</th>-->
+            <!--<th>Current Course</th>-->
+            <!--<th>Courses you want to be taught</th>-->
+            <th>Description of yourself</th>
+            <!--<th>Owner</th>-->
+            <!-- if statement should come? -->
+            <th>Student</th>
+            <th>Sensei</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each profile in profileList}}
+            <tr>
+              <!--change it later-->
+              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a></td>
+              <!--<td>{{profile.preCourse}}</td>-->
+              <!--<td>{{profile.sensei}}</td>-->
+              <!--<td>{{profile.currCourse}}</td>-->
+              <!--<td>{{profile.grasshopper}}</td>-->
+              <td>{{profile.description}}</td>
+              <td>{{sizedad profile.first profile.last}}</td>
+              <td>{{sizeded profile.owner}}</td>
+              <td>{{total profile.owner profile.first profile.last}}</td>
+
+              <!--<td>{{profile.owner}}</td>-->
+              <!-- if statement should come? -->
+              <!--<td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
+              <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>-->
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{/if}}
+    </div>
+</template>
