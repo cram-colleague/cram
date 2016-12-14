@@ -64,3 +64,6 @@ import './add-edit-event-modal.js';
 import './personal-calendar.html';
 import './personal-calendar.js';
 
+import './leaderboard.html';
+import './leaderboard.js';
+
