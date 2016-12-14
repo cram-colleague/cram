@@ -14,6 +14,35 @@
           Profiles
         </h3>
         <br />
+
+
+      <div class="ui cards">
+        {{#each profile in profileList}}
+        <div class="card">
+          <div class="content">
+            <img class="right floated mini ui image" src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+            <div class="header">{{ profile.first }} {{ profile.last }}</div>
+            <div class="description">{{ profile.description }}</div>
+          </div>
+          <div class="extra content">
+            <div class="ui mini yellow label">
+              Student:
+              <div class="ui mini circular label">{{sizedad profile.first profile.last}}</div>
+            </div>
+            <div class="ui mini yellow label">
+              Teacher:
+              <div class="ui mini circular label">{{sizeded profile.owner}}</div>
+            </div>
+            <div class="ui mini yellow label">
+              Total:
+              <div class="ui mini circular label">{{total profile.owner profile.first profile.last}}</div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
           <tr>
