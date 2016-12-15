@@ -34,8 +34,8 @@ import './session-page.js';
 import './report-page.html';
 import './report-page.js';
 
-import './term-page.html';
-import './term-page.js';
+// import './term-page.html';
+// import './term-page.js';
 
 import './list-stuff-page.html';
 import './list-stuff-page.js';

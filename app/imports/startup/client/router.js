@@ -64,12 +64,6 @@ FlowRouter.route('/add-report', {
   },
 });
 
-// FlowRouter.route('/user-profile', {
-//   name: 'User_Profile_Page',
-//   action() {
-//     BlazeLayout.render('App_Body', { main: 'User_Profile_Page' });
-//   },
-// });
 
 FlowRouter.route('/user-profile', {
   name: 'User_Page',
@@ -160,7 +154,7 @@ FlowRouter.notFound = {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
   },
 };
-FlowRouter.route('/Leaderboard_Page/', {
+FlowRouter.route('/leaderboard/', {
   name: 'Leaderboard_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Leaderboard_Page' });
