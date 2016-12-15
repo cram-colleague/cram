@@ -16,13 +16,6 @@
           <thead>
           <tr>
             <th>Name</th>
-            <!--<th>Previous Course</th>-->
-            <!--<th>Courses you want to teach</th>-->
-            <!--<th>Current Course</th>-->
-            <!--<th>Courses you want to be taught</th>-->
-            <th>Description of yourself</th>
-            <!--<th>Owner</th>-->
-            <!-- if statement should come? -->
             <th>View</th>
             <th>Edit</th>
           </tr>
@@ -31,15 +24,8 @@
           <tbody>
           {{#each profile in profileList}}
             <tr>
-              <!--change it later-->
               <td>{{profile.first}} {{profile.last}}</td>
-              <!--<td>{{profile.preCourse}}</td>-->
-              <!--<td>{{profile.sensei}}</td>-->
-              <!--<td>{{profile.currCourse}}</td>-->
-              <!--<td>{{profile.grasshopper}}</td>-->
               <td>{{profile.description}}</td>
-              <!--<td>{{profile.owner}}</td>-->
-              <!-- if statement should come? -->
               <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
               <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
             </tr>
