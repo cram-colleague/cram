@@ -9,7 +9,7 @@
         {{#each profile in profileList}}
          <div class="card">
            <a class="image" href="{{pathFor 'Profile_Page' _id=profile._id }}">
-             <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+             <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';" style="height: 300px">
            </a>
            <div class="content">
              <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a>

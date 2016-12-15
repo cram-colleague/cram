@@ -55,16 +55,17 @@ Template.Leaderboard_Page.helpers({
     return SSession.find().count();
   },
   sizeded: function (fieldname) {
-    return SSession.find( {students: fieldname}).count();
+    console.log(SSession.find({ students: fieldname }).count());
+    return SSession.find({ students: fieldname }).count();
   },
-  sizedad: function(first, last){
+  sizedad: function (first, last) {
     const name = first + " " + last;
-    return SSession.find( {sensei: name} ).count();
+    return SSession.find({ sensei: name }).count();
   },
   total: function (owner, first, last) {
     const name = first + " " + last;
-    const students = SSession.find( {students: owner} ).count();
-    const sensei = SSession.find( {sensei: name} ).count();
+    const students = SSession.find({ students: owner }).count();
+    const sensei = SSession.find({ sensei: name }).count();
     return students + sensei;
   },
 });
