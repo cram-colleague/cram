@@ -43,6 +43,13 @@
           <div class="column twelve wide">
             <button class="ui button going" type="button">Going</button>
           </div>
+          {{#each profile in profileList}}
+          {{#if profileS profile.owner}}
+          <div class="column twelve wide">
+            <button class="ui button notgoing" type="button">Not Going</button>
+          </div>
+          {{/if}}
+          {{/each}}
           <div class="column twelve wide">
             <button class="ui button" onclick="goBack()">Go Back</button>
             <script>
