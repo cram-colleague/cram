@@ -2,54 +2,56 @@
   {{#if Template.subscriptionsReady}}
     <div style="margin-top: 20px" class="ui container">
       <form class="ui form session-data-form {{ errorClass }}">
-      <br />
-      <h2 class="ui dividing header"><i class="idea icon"></i>  Study Session</h2>
+        <br />
+        <h2 class="ui dividing header"><i class="idea icon"></i>  Study Session</h2>
         <br />
 
-      <div class="column">
-        <div class="ui raised segment">
-          <a class="ui olive ribbon big label">Name of the Course</a>
-          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'name' }}</h3>
-          <p></p><p></p>
-          <a class="ui teal ribbon big label">Time</a>
-          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'time' }}</h3>
-          <p></p><p></p>
-          <a class="ui olive ribbon big label">Place</a>
-          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'place' }}</h3>
-          <p></p><p></p>
-          {{#each profile in profileList}}
+        <div class="column">
+          <div class="ui raised segment">
+            <a class="ui olive ribbon big label">Name of the Course</a>
+            <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'name' }}</h3>
+            <p></p><p></p>
+            <a class="ui teal ribbon big label">Time</a>
+            <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'time' }}</h3>
+            <p></p><p></p>
+            <a class="ui olive ribbon big label">Place</a>
+            <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'place' }}</h3>
+            <p></p><p></p>
             <a class="ui teal ribbon big label">Teacher</a>
-            {{#if profileShow profile.owner}}
-              <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ sessionField 'sensei' }}</a></h3>
-            {{/if}}
-          <p></p><p></p>
-          <a class="ui teal ribbon big label">Students</a>
-            {{#if profileShowS profile.owner}}
-          <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ profile.first }} {{ profile.last }}</a></h3>
-            {{/if}}
+            {{#each profile in profileList}}
+              {{#if profileShow profile.owner}}
+                <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ sessionField 'sensei' }}</a></h3>
+              {{/if}}
+            {{/each}}
+            <p></p><p></p>
+            <a class="ui teal ribbon big label">Students</a>
+            {{#each profile in profileList}}
+              {{#if profileShowS profile.owner}}
+                <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ profile.first }} {{ profile.last }}</a></h3>
+              {{/if}}
 
-          {{/each}}
-          <p></p><p></p>
-          <a class="ui olive ribbon big label">Details of the session</a>
-          <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'detail' }}</h3>
-          <p></p><p></p>
+            {{/each}}
+            <p></p><p></p>
+            <a class="ui olive ribbon big label">Details of the session</a>
+            <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'detail' }}</h3>
+            <p></p><p></p>
+          </div>
         </div>
-      </div>
 
-      <br /><br />
-      <div class="ui two column center aligned page grid">
-        <div class="column twelve wide">
-          <button class="ui button going" type="button">Going</button>
+        <br /><br />
+        <div class="ui two column center aligned page grid">
+          <div class="column twelve wide">
+            <button class="ui button going" type="button">Going</button>
+          </div>
+          <div class="column twelve wide">
+            <button class="ui button" onclick="goBack()">Go Back</button>
+            <script>
+              function goBack() {
+                window.history.back();
+              }
+            </script>
+          </div>
         </div>
-        <div class="column twelve wide">
-          <button class="ui button" onclick="goBack()">Go Back</button>
-          <script>
-            function goBack() {
-              window.history.back();
-            }
-          </script>
-        </div>
-      </div>
       </form>
     </div>
   {{/if}}

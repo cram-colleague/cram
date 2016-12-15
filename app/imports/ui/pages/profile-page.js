@@ -4,6 +4,7 @@ import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Profile, ProfileSchema } from '../../api/profile/profile.js';
+import { SSession, SessionSchema } from '../../api/session/session.js';
 
 /* eslint-disable object-shorthand, no-unused-vars */
 
@@ -16,6 +17,9 @@ Template.Profile_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = ProfileSchema.namedContext('Profile_Page');
+  this.autorun(() => {
+    this.subscribe('SSession');
+  });
 });
 
 
@@ -32,6 +36,47 @@ Template.Profile_Page.helpers({
   displayFieldError(fieldName) {
     const errorKeys = Template.instance().context.invalidKeys();
     return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
+  },
+  canShowS: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find({ owner }).count());
+    if (SSession.find({ owner }).count() > 0) {
+      find = true;
+    }
+    return find;
+  },
+  sessionList() {
+    const owner = Meteor.userId();
+    return owner ? SSession.find({ owner }) : this.ready();
+  },
+  size: function () {
+    return SSession.find().count();
+  },
+  sizeded: function (fieldname) {
+    let ok = false;
+    if (SSession.find({ students: fieldname} ).count() > 0) {
+      ok = true;
+    }
+    return ok;
+    // return SSession.find( {students: fieldname}).count();
+  },
+  sizedad: function(first, last){
+    // const name = first + " " + last;
+    // return SSession.find( {sensei: name} ).count();
+    let ok = false;
+    const name = first + " " + last;
+    if (SSession.find( {sensei: name} ).count() > 0) {
+      ok = true;
+    }
+    // return SSession.find( {sensei: name} ).count();
+    return ok;
+  },
+  total: function (owner, first, last) {
+    const name = first + " " + last;
+    const students = SSession.find( {students: owner} ).count();
+    const sensei = SSession.find( {sensei: name} ).count();
+    return students + sensei;
   },
 });
 

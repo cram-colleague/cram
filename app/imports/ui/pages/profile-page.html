@@ -39,6 +39,8 @@
               </tbody>
             </table>
           </div>
+    {{#if canShowS}}
+
           <div class="column">
             <table class="ui single line table">
               <thead>
@@ -49,14 +51,28 @@
                 </tr>
               </thead>
               <tbody>
+          {{#each session in sessionList}}
+            {{#if sizedad profile.first profile.last}}
                 <tr>
-                  <td>ICS314</td>
+                  <td>{{ session.name }}</td>
                   <td></td>
                   <td><i class="large green checkmark icon"></i></td>
                 </tr>
+             {{/if}}
+            {{#if sizeded profile.first profile.last}}
+              <tr>
+                <td>{{ session.name }}</td>
+                <td><i class="large green checkmark icon"></i></td>
+                <td></td>
+              </tr>
+            {{/if}}
+          {{/each}}
               </tbody>
             </table>
           </div>
+      {{else}}
+        <p>Haven't joined the study session yet</p>
+      {{/if}}
         </div>
         <div class="ui one column center aligned page grid">
           <div class="column twelve wide">

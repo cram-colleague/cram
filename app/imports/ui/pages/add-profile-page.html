@@ -5,16 +5,16 @@
       <br />
       <h2 class="ui dividing header"><i class="add user icon"></i>  Add Profile</h2>
       <br />
-        <div class="field">
-          <label style="font-size: large">Picture</label>
-          <input type="text" name="pic" id="pic" placeholder="paste your picture url here">
-          <p>Copy and paste your image url here.  If link is broken, default picture will be placed</p>
-          {{#if displayFieldError 'pic' }}
+      <div class="field">
+        <label style="font-size: large">Picture</label>
+        <input type="text" name="pic" id="pic" placeholder="paste your picture url here" value="paste your picture url here">
+        <p>Copy and paste your image url here.  If link is broken, default picture will be placed</p>
+        {{#if displayFieldError 'pic' }}
           <div class="ui error message">
             <p>You must put something.  If you dont want to put a picture just put a broken link</p>
           </div>
-          {{/if}}
-        </div>
+        {{/if}}
+      </div>
 
       <br />
 
@@ -25,17 +25,17 @@
           <div class="field">
             <input type="text" name="first" id="first" placeholder="First Name">
             {{#if displayFieldError 'first' }}
-            <div class="ui error message">
-              <p>You must specify your name.</p>
-            </div>
+              <div class="ui error message">
+                <p>You must specify your name.</p>
+              </div>
             {{/if}}
           </div>
           <div class="field">
             <input type="text" name="last" id="last" placeholder="Last Name">
             {{#if displayFieldError 'last' }}
-            <div class="ui error message">
-              <p>You must specify your last name</p>
-            </div>
+              <div class="ui error message">
+                <p>You must specify your last name</p>
+              </div>
             {{/if}}
           </div>
         </div>
@@ -47,9 +47,9 @@
         <label style="font-size: large">Description of yourself</label>
         <input type="text" name="description" id="description" placeholder="Description of yourself">
         {{#if displayFieldError 'description' }}
-        <div class="ui error message">
-          <p>You must specify description of yourself</p>
-        </div>
+          <div class="ui error message">
+            <p>You must specify description of yourself</p>
+          </div>
         {{/if}}
       </div>
 
@@ -62,9 +62,9 @@
             <label style="font-size: large">Courses Taken</label>
             <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course">
             {{#if displayFieldError 'preCourse' }}
-            <div class="ui error message">
-              <p>You must specify your previous course.</p>
-            </div>
+              <div class="ui error message">
+                <p>You must specify your previous course.</p>
+              </div>
             {{/if}}
           </div>
 
@@ -74,9 +74,9 @@
             <label style="font-size: large">Current Course</label>
             <input type="text" name="currCourse" id="currCourse" placeholder="Current Course">
             {{#if displayFieldError 'currCourse' }}
-            <div class="ui error message">
-              <p>You must specify your current course.</p>
-            </div>
+              <div class="ui error message">
+                <p>You must specify your current course.</p>
+              </div>
             {{/if}}
           </div>
 
