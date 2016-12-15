@@ -52,20 +52,22 @@
               </thead>
               <tbody>
           {{#each session in sessionList}}
-            {{#if sizedad profile.first profile.last}}
+            {{#each profile in profileList}}
+            {{#if sizeded profile.owner}}
                 <tr>
                   <td>{{ session.name }}</td>
                   <td></td>
                   <td><i class="large green checkmark icon"></i></td>
                 </tr>
              {{/if}}
-            {{#if sizeded profile.first profile.last}}
+            {{#if sizedad profile.first profile.last}}
               <tr>
                 <td>{{ session.name }}</td>
                 <td><i class="large green checkmark icon"></i></td>
                 <td></td>
               </tr>
             {{/if}}
+            {{/each}}
           {{/each}}
               </tbody>
             </table>
