@@ -51,22 +51,22 @@ Template.Leaderboard_Page.helpers({
     }
     return find;
   },
-  size: function(){
+  size: function () {
     return SSession.find().count();
   },
-  sizeded: function(fieldname){
-    return SSession.find({students: fieldname}).count();
+  sizeded: function (fieldname) {
+    return SSession.find( {students: fieldname}).count();
   },
   sizedad: function(first, last){
     const name = first + " " + last;
-    return SSession.find({sensei: name}).count();
+    return SSession.find( {sensei: name} ).count();
   },
-  total: function(owner, first, last){
+  total: function (owner, first, last) {
     const name = first + " " + last;
-    const students = SSession.find({students: owner}).count();
-    const sensei = SSession.find({sensei: name}).count();
+    const students = SSession.find( {students: owner} ).count();
+    const sensei = SSession.find( {sensei: name} ).count();
     return students + sensei;
-  }
+  },
 });
 
 Template.Leaderboard_Page.onCreated(function onCreated() {

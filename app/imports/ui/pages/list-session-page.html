@@ -5,44 +5,19 @@
         {{#if Template.subscriptionsReady}}
           <br />
           <h2 class="ui header"><i class="calendar icon"></i>  List of Study Session</h2>
-        <hr />
-        <br />
-        <div class="ui cards">
-          {{#each session in sessionList}}
-           <div class="card">
-             <div class="content">
-               <div class="header"><a href="{{pathFor 'Session_Page' _id=session._id }}">{{session.name}}</a></div>
-               <div class="meta">{{session.place}}</div>
-               <div class="description">{{session.time}}</div>
+          <hr />
+          <br />
+          <div class="ui cards">
+            {{#each session in sessionList}}
+             <div class="card">
+               <div class="content">
+                 <div class="header"><a href="{{pathFor 'Session_Page' _id=session._id }}">{{session.name}}</a></div>
+                 <div class="meta">{{session.place}}</div>
+                 <div class="description">{{session.time}}</div>
+               </div>
              </div>
-           </div>
-          {{/each}}
-        </div>
-        <!--<table style="margin-top: 20px" class="ui celled unstackable table">-->
-          <!--<thead>-->
-          <!--<tr>-->
-            <!--<th>Name of the course</th>-->
-            <!--<th>Time</th>-->
-            <!--<th>Place</th>-->
-            <!--<th class="three wide">Sensei</th>-->
-            <!--<th>Students</th>-->
-          <!--</tr>-->
-          <!--</thead>-->
-
-          <!--<tbody>-->
-          <!--{{#each session in sessionList}}-->
-            <!--{{#each profile in profileList}}-->
-          <!--<tr>-->
-            <!--<td><a href="{{pathFor 'Session_Page' _id=session._id }}">{{session.name}}</a></td>-->
-            <!--<td>{{session.time}}</td>-->
-            <!--<td>{{session.place}}</td>-->
-            <!--<td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{session.sensei}}</a></td>-->
-            <!--<td>{{session.students}}</td>-->
-          <!--</tr>-->
-            <!--{{/each}}-->
-          <!--{{/each}}-->
-          <!--</tbody>-->
-        <!--</table>-->
+            {{/each}}
+          </div>
         {{else}}
         {{> Loading}}
         {{/if}}

@@ -3,7 +3,7 @@
       {{#if Template.subscriptionsReady}}
         <br />
         <h2 class="ui header">
-          <i class="settings icon"></i>
+          <i class="signal icon"></i>
           <div class="content">
             Leaderboard
             <div class="sub header">See who helps the most or gets the most help</div>
@@ -15,73 +15,24 @@
         </h3>
         <br />
 
-
-      <div class="ui cards">
-        {{#each profile in profileList}}
-        <div class="card">
-          <div class="content">
-            <img class="right floated mini ui image" src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
-            <div class="header">{{ profile.first }} {{ profile.last }}</div>
-            <div class="description">{{ profile.description }}</div>
-          </div>
-          <div class="extra content">
-            <div class="ui mini yellow label">
-              Student:
-              <div class="ui mini circular label">{{sizedad profile.first profile.last}}</div>
+        <div class="ui cards">
+          {{#each profile in profileList}}
+          <div class="card">
+            <div class="content">
+              <img class="right floated mini ui image" src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+              <div class="header"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ profile.first }} {{ profile.last }}</a></div>
+              <div class="description">{{ profile.description }}</div>
             </div>
-            <div class="ui mini yellow label">
-              Teacher:
-              <div class="ui mini circular label">{{sizeded profile.owner}}</div>
-            </div>
-            <div class="ui mini yellow label">
-              Total:
-              <div class="ui mini circular label">{{total profile.owner profile.first profile.last}}</div>
+            <div class="extra content">
+              <div class="ui horizontal bulleted link list">
+                <div class="item">Student: {{sizedad profile.first profile.last}}</div>
+                <div class="item">Teacher: {{sizeded profile.owner}}</div>
+                <div class="item" style="font-weight: bold;">Total: {{total profile.owner profile.first profile.last}}</div>
+              </div>
             </div>
           </div>
-        </div>
         {{/each}}
       </div>
-
-
-        <table style="margin-top: 20px" class="ui celled table">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <!--<th>Previous Course</th>-->
-            <!--<th>Courses you want to teach</th>-->
-            <!--<th>Current Course</th>-->
-            <!--<th>Courses you want to be taught</th>-->
-            <th>Description of yourself</th>
-            <!--<th>Owner</th>-->
-            <!-- if statement should come? -->
-            <th>Student</th>
-            <th>Sensei</th>
-            <th>Total</th>
-          </tr>
-          </thead>
-
-          <tbody>
-          {{#each profile in profileList}}
-            <tr>
-              <!--change it later-->
-              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a></td>
-              <!--<td>{{profile.preCourse}}</td>-->
-              <!--<td>{{profile.sensei}}</td>-->
-              <!--<td>{{profile.currCourse}}</td>-->
-              <!--<td>{{profile.grasshopper}}</td>-->
-              <td>{{profile.description}}</td>
-              <td>{{sizedad profile.first profile.last}}</td>
-              <td>{{sizeded profile.owner}}</td>
-              <td>{{total profile.owner profile.first profile.last}}</td>
-
-              <!--<td>{{profile.owner}}</td>-->
-              <!-- if statement should come? -->
-              <!--<td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
-              <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>-->
-            </tr>
-          {{/each}}
-          </tbody>
-        </table>
       {{/if}}
     </div>
 </template>
