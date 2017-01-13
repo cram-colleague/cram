@@ -9,6 +9,15 @@ Template.List_Profile_Page.helpers({
   profileList() {
     return Profile.find();
   },
+  canShowP: function canShow() {
+    let find = false;
+    // const owner = Meteor.userId();
+    // console.log(Profile.find().count());
+    if (Profile.find().count() > 0) {
+      find = true;
+    }
+    return find;
+  },
 });
 
 Template.List_Profile_Page.onCreated(function onCreated() {
