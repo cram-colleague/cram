@@ -7,12 +7,15 @@
         <div class="ui three column grid container">
           <div class="column">
             <div class="ui fluid card">
+              <div class="content">
+                <h2 class="ui header">{{ profileField 'first' }} {{ profileField 'last' }}</h2>
+              </div>
               <div class="ui image">
                 <img src="{{ profileField 'pic' }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
               </div>
-              <div class="content">
-                <div class="ui header">{{ profileField 'first' }} {{ profileField 'last' }}</div>
-              </div>
+              <!--<div class="content">-->
+                <!--<h2 class="ui header">{{ profileField 'first' }} {{ profileField 'last' }}</h2>-->
+              <!--</div>-->
             </div>
           </div>
           <div class="column">
