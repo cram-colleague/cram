@@ -7,6 +7,8 @@
           <h2 class="ui header"><i class="calendar icon"></i>  List of Study Session</h2>
           <hr />
           <br />
+        {{#if canShowP}}
+        {{#if canShowS}}
           <div class="ui cards">
             {{#each session in sessionList}}
              <div class="card">
@@ -18,6 +20,21 @@
              </div>
             {{/each}}
           </div>
+        {{else}}
+          <h3 class="ui centered header">Why don't you make a study session!</h3>
+        <br>
+        <div class="ui one column centered grid">
+          <button class="ui button" ><a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a></button>
+        </div>
+        {{/if}}
+        {{else}}
+        <h3 class="ui centered header">Seems like no one has created a profile...</h3>
+        <h3 class="ui centered header">Let's create your profile!!</h3>
+        <br>
+        <div class="ui one column centered grid">
+          <button class="ui button" ><a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a></button>
+        </div>
+        {{/if}}
         {{else}}
         {{> Loading}}
         {{/if}}

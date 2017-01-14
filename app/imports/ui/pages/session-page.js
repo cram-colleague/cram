@@ -70,6 +70,15 @@ Template.Session_Page.helpers({
     }
     return false;
   },
+  activeUser: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find({ owner }).count());
+    if (Profile.find({ owner }).count() > 0) {
+      find = true;
+    }
+    return find;
+  },
 });
 
 // Template.Edit_Contact_Page.onRendered(function enableSemantic() {

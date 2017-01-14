@@ -3,7 +3,6 @@
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
         <br />
-      {{#if canShowP}}
         <h2 class="ui header">
           <i class="settings icon"></i>
           <div class="content">
@@ -16,6 +15,7 @@
           Profiles
         </h3>
         <br />
+      {{#if canShowP}}
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
           <tr>
@@ -44,6 +44,9 @@
           {{/each}}
           </tbody>
         </table>
+      {{else}}
+        <h2 class="ui centered header">No one created profile yet</h2>
+      {{/if}}
 
         <br /><br />
         <h3 class="ui horizontal divider header">
@@ -76,7 +79,7 @@
           </tbody>
         </table>
           {{else}}
-          <h4 class="ui centered header">No one created study session yet <br /><br /></h4>
+          <h2 class="ui centered header">No one created study session yet <br /><br /></h2>
           {{/if}}
         <br /><br />
         <h3 class="ui horizontal divider header">
@@ -109,11 +112,6 @@
         {{else}}
           <h4 class="ui centered header">No one has reported anything yet <br /><br /></h4>
         {{/if}}
-      {{else}}
-        <h2 class="ui centered header">No one created profile yet</h2>
-
-      {{/if}}
-
       {{else}}
         {{> Loading}}
       {{/if}}

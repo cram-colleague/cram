@@ -5,6 +5,7 @@
         <br />
       <h2 class="ui dividing header"><i class="users icon"></i>  List of Profiles</h2>
         <br />
+      {{#if canShowP}}
        <div class="ui cards">
         {{#each profile in profileList}}
          <div class="card">
@@ -20,6 +21,15 @@
          </div>
         {{/each}}
        </div>
+      {{else}}
+        <h3 class="ui header centered">There is no profile created yet. Do you want to be first one to make it?</h3>
+      <h3 class="ui header centered"> Let's create one ;)</h3>
+      <br>
+      <div class="ui one column centered grid">
+        <button class="ui button" ><a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a></button>
+      </div>
+      <!--<button class="ui button" ><a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a></button>-->
+      {{/if}}
       {{else}}
         {{> Loading}}
       {{/if}}
