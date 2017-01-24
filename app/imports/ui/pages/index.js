@@ -55,9 +55,6 @@ import './user-profile-page.js';   // js page created
 import './calendar.html';
 import './calendar.js';
 
-import './events.html';
-import './events.js';
-
 import './add-edit-event-modal.html';
 import './add-edit-event-modal.js';
 

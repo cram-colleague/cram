@@ -130,9 +130,9 @@ FlowRouter.route('/edit-session/:_id', {
 });
 
 FlowRouter.route('/calendar', {
-  name: 'calendar',
+  name: 'Calendar_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'calendar' });
+    BlazeLayout.render('App_Body', { main: 'Calendar_Page' });
   },
 });
 FlowRouter.route('/personal-calendar', {
