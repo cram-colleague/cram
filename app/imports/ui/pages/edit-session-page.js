@@ -71,9 +71,11 @@ Template.Edit_Session_Page.events({
   },
   'submit .session-data-form'(event, instance) {
     event.preventDefault();
+    let newSessionTemp = Session.get('eventModal');
     // Get name (text field)
     const name = event.target.name.value;
-    const time = event.target.time.value;
+    const time = newSessionTemp.date;
+    time = event.target.time.value;
     const place = event.target.place.value;
     const sensei = event.target.sensei.value;
     const detail = event.target.detail.value;
