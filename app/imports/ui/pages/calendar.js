@@ -20,10 +20,9 @@ Template.Calendar_Page.onRendered( () => {
         event.editable = !isPast( event.start );
         return event;
       });
-
-      if ( data ) {
-        callback( data );
-      }
+      // if ( data ) {
+      //   callback( data );
+      // }
     },
     eventRender( event, element ) {
       element.find( '.fc-content' ).html(
