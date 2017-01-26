@@ -162,10 +162,3 @@ FlowRouter.route('/leaderboard/', {
     BlazeLayout.render('App_Body', { main: 'Leaderboard_Page' });
   },
 });
-
-FlowRouter.route('/notification/', {
-  name: 'Noti',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Noti' });
-  },
-});
