@@ -13,3 +13,8 @@ body {
 .ui.piled.segment {
   background-color: #fffefe;
 }
+
+ul.notifications {
+  padding-right: 1em;
+  padding-top: 5em;
+}

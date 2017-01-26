@@ -64,3 +64,6 @@ import './personal-calendar.js';
 import './leaderboard.html';
 import './leaderboard.js';
 
+import './notification.html';
+import './notification.js';
+

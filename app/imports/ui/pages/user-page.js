@@ -4,6 +4,8 @@ import { Profile } from '../../api/profile/profile.js';
 import { Meteor } from 'meteor/meteor';
 import { SSession } from '../../api/session/session.js';
 
+serverMessages = new ServerMessages();
+
 Template.User_Page.helpers({
 
   /**
@@ -64,3 +66,14 @@ Template.User_Page.onCreated(function onCreated() {
     this.subscribe('SSession');
   });
 });
+
+Template.User_Page.events({
+  'click .js-btn-client': function (event, template) {
+    Notifications.addNotification("New friend is added!", "How about check the profile?", {type:parseInt(2, 10), timeout: parseInt(0, 10) });
+  }
+});
+
+serverMessages.listen('serverMessage:info', function (subject, message, options) {
+  Notifications.info(subject, message, options);
+});
+

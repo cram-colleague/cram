@@ -135,6 +135,7 @@ FlowRouter.route('/calendar', {
     BlazeLayout.render('App_Body', { main: 'Calendar_Page' });
   },
 });
+
 FlowRouter.route('/personal-calendar', {
   name: 'personal_calendar',
   action() {
@@ -154,9 +155,17 @@ FlowRouter.notFound = {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
   },
 };
+
 FlowRouter.route('/leaderboard/', {
   name: 'Leaderboard_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Leaderboard_Page' });
+  },
+});
+
+FlowRouter.route('/notification/', {
+  name: 'Noti',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Noti' });
   },
 });

@@ -41,6 +41,8 @@ fabienb4:autoform-semantic-ui@0.9.3
 fastclick@1.0.12
 fullcalendar:fullcalendar@2.9.0
 geojson-utils@1.0.9
+gfk:notifications@1.1.4
+gfk:server-messages@1.1.0
 hot-code-push@1.0.4
 html-tools@1.0.11
 htmljs@1.0.11
