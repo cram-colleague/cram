@@ -56,6 +56,15 @@ Template.User_Page.helpers({
     }
     return find;
   },
+  canShowN: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
+    if (Profile.find( { owner: owner, noti: "1"} ).count() > 0) {
+      find = true;
+    }
+    return find;
+  },
 });
 
 Template.User_Page.onCreated(function onCreated() {
@@ -69,11 +78,8 @@ Template.User_Page.onCreated(function onCreated() {
 
 Template.User_Page.events({
   'click .js-btn-client': function (event, template) {
-    Notifications.addNotification("New friend is added!", "How about check the profile?", {type:parseInt(2, 10), timeout: parseInt(0, 10) });
+    Notifications.warn('New friend is added!', 'Lets check the profile :)');
   }
 });
 
-serverMessages.listen('serverMessage:info', function (subject, message, options) {
-  Notifications.info(subject, message, options);
-});
 

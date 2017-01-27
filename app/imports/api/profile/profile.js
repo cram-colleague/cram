@@ -49,6 +49,12 @@ export const ProfileSchema = new SimpleSchema({
     optional: true,
     max: 200,
   },
+  noti: {
+    label: 'noti',
+    type: String,
+    optional: true,
+    max: 20,
+  },
 });
 
 Profile.attachSchema(ProfileSchema);

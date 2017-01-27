@@ -17,4 +17,6 @@ body {
 ul.notifications {
   padding-right: 1em;
   padding-top: 5em;
+  padding-left: 20em;
+  font-size: 18px;
 }
