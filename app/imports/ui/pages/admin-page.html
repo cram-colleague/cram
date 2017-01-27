@@ -23,7 +23,7 @@
             <th>Description of yourself</th>
             <th>View</th>
             <th>Edit</th>
-            <th>Noti</th>
+            <!--<th>Noti</th>-->
           </tr>
           </thead>
 
@@ -41,7 +41,7 @@
               <!-- if statement should come? -->
               <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
               <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
-              <td>{{profile.noti}}</td>
+              <!--<td>{{profile.noti}}</td>-->
             </tr>
           {{/each}}
           </tbody>
