@@ -59,9 +59,9 @@ Template.User_Page.helpers({
   canShowN: function canShow() {
     let find = false;
     const owner = Meteor.userId();
-    // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
+    console.log(Profile.find( { owner: owner, noti: "1"} ).count());
     if (Profile.find( { owner: owner, noti: "1"} ).count() > 0) {
-      find = true;
+      find = false;
     }
     return find;
   },

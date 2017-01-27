@@ -41,3 +41,9 @@ if (Profile.find().count() === 0) {
     Profile.insert(profile);
   });
 }
+
+Meteor.methods({
+  newProf: function() {
+    Profile.update({ noti: "0" }, { $set: { noti: "1" } });
+  }
+});
