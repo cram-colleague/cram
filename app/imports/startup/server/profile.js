@@ -45,8 +45,5 @@ if (Profile.find().count() === 0) {
 Meteor.methods({
   newProf: function() {
     Profile.update({ noti: "0" }, { $set: { notiP: "1" } });
-  },
-  newSess: function() {
-    Profile.update({ noti: "0" }, { $set: { notiS: "1" } });
   }
 });

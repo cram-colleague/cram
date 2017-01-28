@@ -80,6 +80,7 @@ Template.Edit_Session_Page.events({
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
     const updateSession = { name, time, place, sensei, detail, owner };
+    Meteor.call('newSess');
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

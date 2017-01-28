@@ -61,7 +61,7 @@ Template.User_Page.helpers({
     const owner = Meteor.userId();
     // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
     if (Profile.find( { owner: owner, notiP: "1"} ).count() > 0) {
-      find = false;
+      find = true;
     }
     return find;
   },
@@ -69,8 +69,8 @@ Template.User_Page.helpers({
     let find = false;
     const owner = Meteor.userId();
     // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
-    if (Profile.find( { owner: owner, noti: "1"} ).count() > 0) {
-      find = false;
+    if (Profile.find( { owner: owner, notiS: "1"} ).count() > 0) {
+      find = true;
     }
     return find;
   },
@@ -86,8 +86,11 @@ Template.User_Page.onCreated(function onCreated() {
 });
 
 Template.User_Page.events({
-  'click .js-btn-client': function (event, template) {
+  'click .js-btn-clientN': function (event, template) {
     Notifications.warn('New friend is added!', 'Lets check the profile :)');
+  },
+  'click .js-btn-clientS': function (event, template) {
+    Notifications.info('New stusy session is added!', 'Lets check what is up :)');
   }
 });
 
