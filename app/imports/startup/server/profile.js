@@ -51,3 +51,4 @@ Meteor.methods({
     Profile.update({ owner: owner, notiP: "1" }, { $set: { notiP: "0" } });
   },
 });
+
