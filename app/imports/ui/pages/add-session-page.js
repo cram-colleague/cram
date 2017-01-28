@@ -58,7 +58,7 @@ Template.Add_Session_Page.events({
     const sensei = event.target.sensei.value;
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
-    // Meteor.call('newSess');
+    Meteor.call('newSess');
     const newSession = { name, time, place, sensei, detail, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
@@ -68,7 +68,6 @@ Template.Add_Session_Page.events({
     instance.context.validate(newSession);
     if (instance.context.isValid()) {
       SSession.insert(newSession);
-      Meteor.call('newSess');
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your study session added!');
       FlowRouter.go('List_Session_Page');
