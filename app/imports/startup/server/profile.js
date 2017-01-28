@@ -44,6 +44,10 @@ if (Profile.find().count() === 0) {
 
 Meteor.methods({
   newProf: function() {
-    Profile.update({ noti: "0" }, { $set: { notiP: "1" } });
-  }
+    Profile.update({ notiP: "0" }, { $set: { notiP: "1" } });
+  },
+  watchProf: function() {
+    const owner = Meteor.userId();
+    Profile.update({ owner: owner, notiP: "1" }, { $set: { notiP: "0" } });
+  },
 });

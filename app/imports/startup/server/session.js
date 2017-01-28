@@ -29,5 +29,9 @@ if (SSession.find().count() === 0) {
 Meteor.methods({
   newSess: function() {
     Profile.update({ notiS: "0" }, { $set: { notiS: "1" } });
+  },
+  watchSess: function() {
+    const owner = Meteor.userId();
+    Profile.update({ owner: owner, notiS: "1" }, { $set: { notiS: "0" } });
   }
 });

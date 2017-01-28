@@ -88,9 +88,11 @@ Template.User_Page.onCreated(function onCreated() {
 Template.User_Page.events({
   'click .js-btn-clientN': function (event, template) {
     Notifications.warn('New friend is added!', 'Lets check the profile :)');
+    Meteor.call('watchProf');
   },
   'click .js-btn-clientS': function (event, template) {
     Notifications.info('New stusy session is added!', 'Lets check what is up :)');
+    Meteor.call('watchSess');
   }
 });
 
