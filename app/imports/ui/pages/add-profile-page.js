@@ -59,10 +59,11 @@ Template.Add_Profile_Page.events({
     const description = event.target.description.value;
     const owner = Meteor.userId();
     const pic = event.target.pic.value;
-    const noti = 0;
+    const notiP = 0;
+    const notiS = 0;
     // Profile.update({noti: "0"}, {$set: {noti: "1"}});
     Meteor.call('newProf');
-    const newProfile = { first, last, preCourse, currCourse, description, owner, pic, noti };
+    const newProfile = { first, last, preCourse, currCourse, description, owner, pic, notiP, notiS };
 
     //Testing
     // const newProfile = { first, last, preCourse, currCourse, description };

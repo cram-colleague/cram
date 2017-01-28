@@ -49,7 +49,13 @@ export const ProfileSchema = new SimpleSchema({
     optional: true,
     max: 200,
   },
-  noti: {
+  notiP: {
+    label: 'noti',
+    type: String,
+    optional: true,
+    max: 20,
+  },
+  notiS: {
     label: 'noti',
     type: String,
     optional: true,

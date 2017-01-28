@@ -3,13 +3,20 @@
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
         <br />
-        {{#if canShowN}}
-          <br />
-          {{> notifications}}
-          <div class="row">
-            <input class="ui inverted orange js-btn-client button" type="button" value="Show notification" />
-          </div>
-        {{/if}}
+        {{#if canShowNP}}
+      <br />
+      {{> notifications}}
+      <div class="row">
+        <input class="ui inverted orange js-btn-client button" type="button" value="Show notification" />
+      </div>
+      {{/if}}
+      {{#if canShowNS}}
+      <br />
+      {{> notifications}}
+      <div class="row">
+        <input class="ui inverted orange js-btn-client button" type="button" value="Show notification" />
+      </div>
+      {{/if}}
       {{#if canShowP}}
         <h2 class="ui header">
           <i class="settings icon"></i>

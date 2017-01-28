@@ -58,6 +58,7 @@ Template.Add_Session_Page.events({
     const sensei = event.target.sensei.value;
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
+    Meteor.call('newSess');
     const newSession = { name, time, place, sensei, detail, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();

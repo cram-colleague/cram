@@ -56,7 +56,16 @@ Template.User_Page.helpers({
     }
     return find;
   },
-  canShowN: function canShow() {
+  canShowNP: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
+    if (Profile.find( { owner: owner, notiP: "1"} ).count() > 0) {
+      find = false;
+    }
+    return find;
+  },
+  canShowNS: function canShow() {
     let find = false;
     const owner = Meteor.userId();
     // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
