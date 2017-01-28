@@ -33,5 +33,5 @@ Meteor.methods({
   watchSess: function() {
     const owner = Meteor.userId();
     Profile.update({ owner: owner, notiS: "1" }, { $set: { notiS: "0" } });
-  }
+  },
 });

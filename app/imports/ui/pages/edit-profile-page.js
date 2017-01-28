@@ -4,6 +4,7 @@ import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Profile, ProfileSchema } from '../../api/profile/profile.js';
+import { SSession, SessionSchema } from '../../api/session/session.js';
 
 /* eslint-disable object-shorthand, no-unused-vars */
 
@@ -52,9 +53,11 @@ Template.Edit_Profile_Page.helpers({
 Template.Edit_Profile_Page.events({
   'click .delete'(event, instance) {
     event.preventDefault();
+    const owner = Meteor.userId();
     const r = window.confirm('Do you really want to delete this entry?');
     if (r === true) {
       Profile.remove(FlowRouter.getParam('_id'));
+      Meteor.call('deleteSess');
       FlowRouter.go('Home_Page');
     } else {
       FlowRouter.go('Home_Page');
