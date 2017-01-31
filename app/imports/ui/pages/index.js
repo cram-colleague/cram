@@ -3,6 +3,7 @@ import './tuto-add-profile-page.html';
 import './add-profile-page.js';
 
 import './add-session-page.html';
+import './tuto-add-session-page.html';
 import './add-session-page.js';
 
 import './add-report-page.html';
@@ -21,6 +22,7 @@ import './profile-page.html';
 import './profile-page.js';
 
 import './user-page.html';
+import './tuto-user-page.html';
 import './user-page.js';
 
 import './admin-page.html';

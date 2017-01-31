@@ -1,0 +1,73 @@
+<template name="Tuto_Add_Session_Page">
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form session-data-form {{ errorClass }}">
+      <br />
+      <h2 class="ui dividing header"><i class="calendar outline icon"></i>  Add Study Session</h2>
+      <br />
+      <div class="field">
+        <label style="font-size: large">Name of the course</label>
+        <input type="text" name="name" id="name" placeholder="Name of the course">
+        {{#if displayFieldError 'name' }}
+          <div class="ui error message">
+            <p>You must specify your name of the course.</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">What time?</label>
+        <input type="text" name="time" id="time" placeholder="YYYY-MM-DD 12:00:00">
+        {{#if displayFieldError 'time' }}
+          <div class="ui error message">
+            <p>You must specify the time</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">Where?</label>
+        <input type="text" name="place" id="place" value="ICSpace">
+        {{#if displayFieldError 'place' }}
+          <div class="ui error message">
+            <p>You must specify the place</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <br />
+
+      {{#each profile in profileList}}
+      <div class="field">
+        <label style="font-size: large">Who will be teaching?</label>
+        <input name="sensei" id="sensei" value="{{profile.first}} {{profile.last}}">
+        {{#if displayFieldError 'sensei' }}
+          <div class="ui error message">
+            <p>You must specify the teacher</p>
+          </div>
+        {{/if}}
+      </div>
+      {{/each}}
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">What is going to be covered?</label>
+        <input type="text" name="detail" id="detail" placeholder="we will be covering...">
+        {{#if displayFieldError 'detail' }}
+          <div class="ui error message">
+            <p>You must specify the detail</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <br />
+
+      <button class="ui button" type="submit">Submit</button>
+
+    </form>
+  </div>
+</template>

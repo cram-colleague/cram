@@ -61,12 +61,6 @@ export const ProfileSchema = new SimpleSchema({
     optional: true,
     max: 20,
   },
-  // termU: {
-  //   label: 'termU',
-  //   type: String,
-  //   optional: true,
-  //   max: 20,
-  // }
 });
 
 Profile.attachSchema(ProfileSchema);

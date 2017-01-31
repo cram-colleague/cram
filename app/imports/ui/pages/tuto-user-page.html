@@ -1,0 +1,94 @@
+<template name="Tuto_User_Page">
+  <!--{{#If_Logged_In}}-->
+    <div class="ui container">
+      <!--{{#if Template.subscriptionsReady}}-->
+        <br />
+      <br>
+      <div class="ui purple massive label">
+        Tutorial
+      </div>
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            User Page
+            <div class="sub header">View and edit your profile</div>
+          </div>
+        </h2>
+        <br />
+        <div class="ui pointing below purple big basic label">
+          You can view and edit your profile by clicking "view" or "edit".
+        </div>
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>View</th>
+            <th>Edit</th>
+            <!--<th>noti</th>-->
+          </tr>
+          </thead>
+
+          <tbody>
+          <!--{{#each profile in profileList}}-->
+            <tr>
+              <td>John Template</td>
+              <td>Hi, I am a Junior and am pursuing B.S. Computer Science. My free time, I watch japanese dramas.</td>
+              <td><a href="">View</a></td>
+              <td><a href="">Edit</a></td>
+              <!--<td>{{profile.notiS}}</td>-->
+            </tr>
+          <!--{{/each}}-->
+          </tbody>
+        </table>
+
+        <br /><br />
+        <h3 class="ui horizontal divider header">
+          <i class="calendar icon"></i>
+          Schedule
+        </h3>
+        <br />
+      <div class="ui pointing below purple big basic label">
+        You can view and edit your study session that you created by clicking "view" or "edit".
+      </div>
+        <!--{{#if canShowS}}-->
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Time</th>
+            <th>Place</th>
+            <th>View</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <!--{{#each session in sessionList}}-->
+            <tr>
+              <td>ICS 311</td>
+              <td>Jan 13, 2017 4:30pm</td>
+              <td>ICSpace</td>
+              <td><a href="">View</a></td>
+              <td><a href="">Edit</a></td>
+            </tr>
+          <!--{{/each}}-->
+          </tbody>
+        </table>
+      <br />
+      <div class="two fields">
+        <div class="field" style="float: right" data-tooltip="Next is Create Study Session Page" data-position="top right">
+          <a class="{{ isActiveRoute 'Tuto_Add_Session_Page'}} item" href="{{ pathFor 'Tuto_Add_Session_Page' }}">
+            <i class="huge purple pointing right icon"></i>
+          </a>
+        </div>
+        <div class="field" style="float: left" data-tooltip="Before is Create Profile Page" data-position="top left">
+          <a class="{{ isActiveRoute 'Tuto_Add_Profile_Page'}} item" href="{{ pathFor 'Tuto_Add_Profile_Page' }}">
+            <i class="huge purple pointing left icon"></i>
+          </a>
+        </div>
+      </div>
+      <br />
+    </div>
+  <br />
+</template>
