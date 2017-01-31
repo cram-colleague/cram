@@ -1,4 +1,5 @@
 import './add-profile-page.html';
+import './tuto-add-profile-page.html';
 import './add-profile-page.js';
 
 import './add-session-page.html';

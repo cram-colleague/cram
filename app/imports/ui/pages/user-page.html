@@ -90,6 +90,12 @@
             <button class="ui button" ><a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a></button>
           </div>
         </div>
+        <h2 class="ui centered header">Or, do you want to see tutorials?</h2>
+      <div class="ui internally celled centered grid">
+        <div class="ten wide column">
+          <button class="ui button" ><a class="{{ isActiveRoute 'Tutp_Add_Profile_Page'}} item" href="{{ pathFor 'Tuto_Add_Profile_Page' }}">Go To Tutorials</a></button>
+        </div>
+      </div>
       {{/if}}
       {{else}}
         {{> Loading}}

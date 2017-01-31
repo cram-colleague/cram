@@ -54,6 +54,6 @@ Meteor.methods({
   deleteSess: function() {
     const owner = Meteor.userId();
     SSession.remove({ owner:owner });
-  }
+  },
 });
 

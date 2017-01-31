@@ -162,3 +162,10 @@ FlowRouter.route('/leaderboard/', {
     BlazeLayout.render('App_Body', { main: 'Leaderboard_Page' });
   },
 });
+
+FlowRouter.route('/tuto-add-profile', {
+  name: 'Tuto_Add_Profile_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_Add_Profile_Page' });
+  },
+});

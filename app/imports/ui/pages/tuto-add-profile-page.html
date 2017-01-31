@@ -1,0 +1,123 @@
+<template name="Tuto_Add_Profile_Page">
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form profile-data-form {{ errorClass }}">
+      <!--<p>Currently logged in user: {{user}}</p>-->
+      <br />
+      <div class="ui purple massive label">
+        Tutorial
+      </div>
+      <h2 class="ui dividing header"><i class="add user icon"></i>  Add Profile</h2>
+      <br />
+      <div class="field">
+        <label style="font-size: large">Picture</label>
+        <div class="ui pointing below purple big basic label">
+          You will need to paste your profile picture here! If you don't want to have a photo, you can leave as it is.
+        </div>
+        <input type="text" placeholder="paste your picture url here">
+        <p>Copy and paste your image url here.  If link is broken, default picture will be placed</p>
+      </div>
+
+      <br />
+
+      <!--upload image function-->
+      <div class="field">
+        <label style="font-size: large">Name</label>
+        <div class="ui pointing below purple big basic label">
+          Enter your first and last mame
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="first" id="first" placeholder="First Name">
+            <!--{{#if displayFieldError 'first' }}-->
+              <!--<div class="ui error message">-->
+                <!--<p>You must specify your name.</p>-->
+              <!--</div>-->
+            <!--{{/if}}-->
+          </div>
+          <div class="field">
+            <input type="text" name="last" id="last" placeholder="Last Name">
+            <!--{{#if displayFieldError 'last' }}-->
+              <!--<div class="ui error message">-->
+                <!--<p>You must specify your last name</p>-->
+              <!--</div>-->
+            <!--{{/if}}-->
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">Description of yourself</label>
+        <div class="ui pointing below purple big basic label">
+          Write some description of your self so that other students can know more about you :)
+        </div>
+        <input type="text" placeholder="Description of yourself">
+        <!--{{#if displayFieldError 'description' }}-->
+          <!--<div class="ui error message">-->
+            <!--<p>You must specify description of yourself</p>-->
+          <!--</div>-->
+        <!--{{/if}}-->
+      </div>
+
+      <br />
+
+      <div class="field">
+        <div class="two fields">
+
+          <div class="field">
+            <label style="font-size: large">Courses Taken</label>
+            <div class="ui pointing below purple big basic label">
+              You will need to put the courses you have taken, so that other students can know your background and might ask some questions!
+            </div>
+            <input type="text" name="preCourse" id="preCourse" placeholder="Previous Course">
+            <!--{{#if displayFieldError 'preCourse' }}-->
+              <!--<div class="ui error message">-->
+                <!--<p>You must specify your previous course.</p>-->
+              <!--</div>-->
+            <!--{{/if}}-->
+          </div>
+
+          <br />
+
+          <div class="field">
+            <label style="font-size: large">Current Course</label>
+            <div class="ui pointing below purple big basic label">
+              You will need to put the courses you are taking this semester, so that other students can work together!
+            </div>
+            <input type="text" name="currCourse" id="currCourse" placeholder="Current Course">
+            <!--{{#if displayFieldError 'currCourse' }}-->
+              <!--<div class="ui error message">-->
+                <!--<p>You must specify your current course.</p>-->
+              <!--</div>-->
+            <!--{{/if}}-->
+          </div>
+
+          <br />
+        </div>
+      </div>
+
+      <br />
+
+      <div class="two fields">
+        <div class="field">
+          <div class="ui purple basic big label">
+            After you fill out everything, you can press submit button and you can start creating and joining a study session!!
+          </div>
+        </div>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+      <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">
+        <button class="ui button">Cancel</button>
+      </a>
+      <br />
+      <div class="field" style="float: right">
+        <a class="{{ isActiveRoute 'Tuto_User_Profile_Page'}} item" href="{{ pathFor 'Tuto_User_Profile_Page' }}">
+            <i class="huge purple pointing right icon"></i>
+        </a>
+      </div>
+      <br />
+      <br />
+    </form>
+  </div>
+</template>
