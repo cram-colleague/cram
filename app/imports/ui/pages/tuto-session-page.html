@@ -1,0 +1,122 @@
+<template name="Tuto_Session_Page">
+  <!--{{#if Template.subscriptionsReady}}-->
+    <div style="margin-top: 20px" class="ui container">
+      <form class="ui form session-data-form {{ errorClass }}">
+        <br />
+        <div class="ui purple massive label">
+          Tutorial
+        </div>
+        <h2 class="ui dividing header"><i class="idea icon"></i>  Study Session</h2>
+        <br />
+        <div class="column">
+          <div class="ui raised segment">
+            <a class="ui olive ribbon big label">Name of the Course</a>
+            <br />
+            <br />
+            <div class="ui purple big basic label">
+              Displaying the course name
+            </div>
+            <h3 class="ui header" style="margin-left: 3em">ICS 311</h3>
+            <p></p><p></p>
+            <a class="ui teal ribbon big label">Time</a>
+            <br />
+            <br />
+            <div class="ui purple big basic label">
+              Displaying the time of the study session.
+            </div>
+            <h3 class="ui header" style="margin-left: 3em">Tue Oct 25 2016 12:00:00 GMT-1000 (HST)</h3>
+            <p></p><p></p>
+            <a class="ui olive ribbon big label">Place</a>
+            <br />
+            <br />
+            <div class="ui purple big basic label">
+              Displaying where the study session will be.
+            </div>
+            <h3 class="ui header" style="margin-left: 3em">ICSpace</h3>
+            <p></p><p></p>
+            <a class="ui teal ribbon big label">Teacher</a>
+            <br />
+            <br />
+            <div class="ui purple big basic label">
+              Displaying who will be teaching and you will be able to see his/her profile.
+            </div>
+            <!--{{#each profile in profileList}}-->
+              <!--{{#if profileShow profile.owner}}-->
+                <h3 class="ui header" style="margin-left: 3em"><a href="">John Template</a></h3>
+              <!--{{/if}}-->
+            <!--{{/each}}-->
+            <p></p><p></p>
+            <a class="ui teal ribbon big label">Students</a>
+            <br />
+            <br />
+            <div class="ui purple big basic label">
+              Displaying who will be students for this session and you will be able to see their profiles.
+            </div>
+            <!--{{#each profile in profileList}}-->
+              <!--{{#if profileShowS profile.owner}}-->
+                <h3 class="ui header" style="margin-left: 3em"><a href="">Rachel Temp</a></h3>
+            <h3 class="ui header" style="margin-left: 3em"><a href="">Mark Late</a></h3>
+              <!--{{/if}}-->
+            <!--{{/each}}-->
+            <p></p><p></p>
+            <a class="ui olive ribbon big label">Details of the session</a>
+            <br />
+            <br />
+            <div class="ui purple big basic label">
+              Displaying what will be covered for this session.
+            </div>
+            <h3 class="ui header" style="margin-left: 3em">Chapter 5 in the book: B-Tree</h3>
+            <p></p><p></p>
+          </div>
+        </div>
+
+        <br /><br />
+        <div class="ui two column center aligned page grid">
+          <!--{{#if activeUser}}-->
+          <div class="ui pointing below purple big basic label">
+            If you want to join the session, click "Going," then you will be added to this session.
+          </div>
+          <br /><br />
+            <div class="column twelve wide">
+              <button class="ui button going" type="button">Going</button>
+            </div>
+            <!--{{#each profile in profileList}}-->
+            <!--{{#if profileS profile.owner}}-->
+            <!--<div class="column twelve wide">-->
+              <!--<button class="ui button notgoing" type="button">Not Going</button>-->
+            <!--</div>-->
+            <!--{{/if}}-->
+            <!--{{/each}}-->
+          <!--{{/if}}-->
+          <div class="ui pointing below purple big basic label">
+            You can go back to previous page you were looking.
+          </div>
+          <br /><br />
+          <div class="column twelve wide">
+            <button class="ui button">Go Back</button>
+            <!--<script>-->
+              <!--function goBack() {-->
+                <!--window.history.back();-->
+              <!--}-->
+            <!--</script>-->
+          </div>
+        </div>
+        <br />
+        <br />
+        <div style="float: left" data-tooltip="Before is Create Study Session Page" data-position="top left">
+          <a class="{{ isActiveRoute 'Tuto_Add_Session_Page'}} item" href="{{ pathFor 'Tuto_Add_Session_Page' }}">
+            <i class="huge purple pointing left icon"></i>
+          </a>
+        </div>
+        <div style="float: right" data-tooltip="Next is Session Page" data-position="top right">
+          <a class="{{ isActiveRoute 'Tuto_Session_Page'}} item" href="{{ pathFor 'Tuto_Session_Page' }}" style="float: right">
+            <i class="huge purple pointing right icon"></i>
+          </a>
+        </div>
+        <br />
+        <br />
+        <br />
+      </form>
+    </div>
+  <!--{{/if}}-->
+</template>

@@ -183,3 +183,10 @@ FlowRouter.route('/tuto-add-session', {
     BlazeLayout.render('App_Body', { main: 'Tuto_Add_Session_Page' });
   },
 });
+
+FlowRouter.route('/tuto-session', {
+  name: 'Tuto_Session_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_Session_Page' });
+  },
+});
