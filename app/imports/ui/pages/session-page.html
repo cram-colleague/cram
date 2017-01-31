@@ -29,8 +29,8 @@
               {{#if profileShowS profile.owner}}
                 <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ profile.first }} {{ profile.last }}</a></h3>
               {{/if}}
-
             {{/each}}
+            <!--<h3 class="ui header" style="margin-left: 3em">No one signed up yet</h3>-->
             <p></p><p></p>
             <a class="ui olive ribbon big label">Details of the session</a>
             <h3 class="ui header" style="margin-left: 3em">{{ sessionField 'detail' }}</h3>

@@ -190,3 +190,10 @@ FlowRouter.route('/tuto-session', {
     BlazeLayout.render('App_Body', { main: 'Tuto_Session_Page' });
   },
 });
+
+FlowRouter.route('/tuto-add-report', {
+  name: 'Tuto_Add_Report_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_Add_Report_Page' });
+  },
+});
