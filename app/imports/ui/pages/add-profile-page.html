@@ -3,6 +3,8 @@
     <form class="ui form profile-data-form {{ errorClass }}">
       <!--<p>Currently logged in user: {{user}}</p>-->
       <br />
+      <a class="{{ isActiveRoute 'Tuto_Add_Profile_Page'}} item" href="{{ pathFor 'Tuto_Add_Profile_Page' }}">
+        <button class="ui purple basic button" style="float: right">How to use this page</button></a>
       <h2 class="ui dividing header"><i class="add user icon"></i>  Add Profile</h2>
       <br />
       <div class="field">
