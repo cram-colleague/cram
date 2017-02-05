@@ -8,7 +8,8 @@
       <br />
       <div class="field">
         <label style="font-size: large">Name of the course</label>
-        <input type="text" name="name" id="name" placeholder="Name of the course">
+        <input type="text" name="name" id="name">
+        <!--To display the select options-->
         {{#if displayFieldError 'name' }}
           <div class="ui error message">
             <p>You must specify your name of the course.</p>
