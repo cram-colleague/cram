@@ -27,6 +27,7 @@
             {{/each}}
             <p></p><p></p>
             <a class="ui teal ribbon big label">Students</a>
+            <!--<h3 class="ui header" style="margin-left: 3em">{{ sessionField 'students' }}</h3>-->
             {{#each profile in profileList}}
               {{#if profileShowS profile.owner}}
                 <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ profile.first }} {{ profile.last }}</a></h3>
@@ -44,18 +45,28 @@
         <br /><br />
         <div class="ui two column center aligned page grid">
           {{#if activeUser}}
-            <div class="column twelve wide">
-              <button class="ui button going" type="button">Going</button>
-            </div>
-            {{#each profile in profileList}}
-            {{#if profileS profile.owner}}
-            <div class="column twelve wide">
-              <button class="ui button notgoing" type="button">Not Going</button>
-            </div>
-            {{/if}}
-            {{/each}}
+            <!--<div class="column twelve wide">-->
+              <!--<button class="ui button going" type="button">Going</button>-->
+            <!--</div>-->
+            <!--{{#each profile in profileList}}-->
+            <!--{{#if profileS profile.owner}}-->
+            <!--<div class="column twelve wide">-->
+              <!--<button class="ui button notgoing" type="button">Not Going</button>-->
+            <!--</div>-->
+            <!--{{else}}-->
+            <!--<div class="column twelve wide">-->
+            <!--<button class="ui button going" type="button">Going</button>-->
+            <!--</div>-->
+            <!--{{/if}}-->
+            <!--{{/each}}-->
+          <div class="ui big buttons">
+            <button class="ui blue button going" type="button">Going</button>
+            <div class="or"></div>
+            <button class="ui button notgoing" type="button">Not Going</button>
+          </div>
           {{/if}}
           <div class="column twelve wide">
+            <br /><br />
             <button class="ui button" onclick="goBack()">Go Back</button>
             <script>
               function goBack() {
