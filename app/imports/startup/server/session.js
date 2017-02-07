@@ -1,4 +1,5 @@
 import { SSession } from '../../api/session/session.js';
+import { Profile } from '../../api/profile/profile.js';
 import { _ } from 'meteor/underscore';
 
 /**
@@ -24,3 +25,13 @@ if (SSession.find().count() === 0) {
     SSession.insert(session);
   });
 }
+
+Meteor.methods({
+  newSess: function() {
+    Profile.update({ notiS: "0" }, { $set: { notiS: "1" } });
+  },
+  watchSess: function() {
+    const owner = Meteor.userId();
+    Profile.update({ owner: owner, notiS: "1" }, { $set: { notiS: "0" } });
+  },
+});

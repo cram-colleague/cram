@@ -1,4 +1,5 @@
 import { Profile } from '../../api/profile/profile.js';
+import { SSession, SessionSchema } from '../../api/session/session.js';
 import { _ } from 'meteor/underscore';
 // import { Meteor } from 'meteor/meteor';
 
@@ -41,3 +42,18 @@ if (Profile.find().count() === 0) {
     Profile.insert(profile);
   });
 }
+
+Meteor.methods({
+  newProf: function() {
+    Profile.update({ notiP: "0" }, { $set: { notiP: "1" } });
+  },
+  watchProf: function() {
+    const owner = Meteor.userId();
+    Profile.update({ owner: owner, notiP: "1" }, { $set: { notiP: "0" } });
+  },
+  deleteSess: function() {
+    const owner = Meteor.userId();
+    SSession.remove({ owner:owner });
+  },
+});
+

@@ -2,11 +2,14 @@
   <div style="margin-top: 20px" class="ui container">
     <form class="ui form session-data-form {{ errorClass }}">
       <br />
+      <a class="{{ isActiveRoute 'Tuto_Add_Session_Page'}} item" href="{{ pathFor 'Tuto_Add_Session_Page' }}">
+        <button class="ui purple basic button" style="float: right">How to use this page</button></a>
       <h2 class="ui dividing header"><i class="calendar outline icon"></i>  Add Study Session</h2>
       <br />
       <div class="field">
         <label style="font-size: large">Name of the course</label>
-        <input type="text" name="name" id="name" placeholder="Name of the course">
+        <input type="text" name="name" id="name">
+        <!--To display the select options-->
         {{#if displayFieldError 'name' }}
           <div class="ui error message">
             <p>You must specify your name of the course.</p>

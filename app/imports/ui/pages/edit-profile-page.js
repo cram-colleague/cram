@@ -4,6 +4,7 @@ import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Profile, ProfileSchema } from '../../api/profile/profile.js';
+import { SSession, SessionSchema } from '../../api/session/session.js';
 
 /* eslint-disable object-shorthand, no-unused-vars */
 
@@ -52,9 +53,11 @@ Template.Edit_Profile_Page.helpers({
 Template.Edit_Profile_Page.events({
   'click .delete'(event, instance) {
     event.preventDefault();
+    const owner = Meteor.userId();
     const r = window.confirm('Do you really want to delete this entry?');
     if (r === true) {
       Profile.remove(FlowRouter.getParam('_id'));
+      Meteor.call('deleteSess');
       FlowRouter.go('Home_Page');
     } else {
       FlowRouter.go('Home_Page');
@@ -70,7 +73,9 @@ Template.Edit_Profile_Page.events({
     const description = event.target.description.value;
     const owner = Meteor.userId();
     const pic = event.target.pic.value;
-    const updateProfile = { first, last, preCourse, currCourse, description, owner, pic};
+    const notiN = 0;
+    const notiS = 0;
+    const updateProfile = { first, last, preCourse, currCourse, description, owner, pic, notiN, notiS };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

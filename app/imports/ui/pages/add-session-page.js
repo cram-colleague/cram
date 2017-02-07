@@ -49,13 +49,16 @@ Template.Add_Session_Page.helpers({
 Template.Add_Session_Page.events({
   'submit .session-data-form'(event, instance) {
     event.preventDefault();
+    let newSessionTemp = Session.get('eventModal');
     // Get name (text field)
     const name = event.target.name.value;
-    const time = event.target.time.value;
+    const time = newSessionTemp.date;
+    // const time = event.target.time.value;
     const place = event.target.place.value;
     const sensei = event.target.sensei.value;
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
+    Meteor.call('newSess');
     const newSession = { name, time, place, sensei, detail, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();

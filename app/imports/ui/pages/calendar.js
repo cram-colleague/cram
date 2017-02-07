@@ -1,72 +1,45 @@
-// import { ReactiveDict } from 'meteor/reactive-dict';
-// import { FlowRouter } from 'meteor/kadira:flow-router';
-// import { Template } from 'meteor/templating';
-// import { _ } from 'meteor/underscore';
+import { Template } from 'meteor/templating';
+import { Tracker } from 'meteor/tracker';
+import { SSession, SessionSchema } from '../../api/session/session.js';
+import { Meteor } from 'meteor/meteor';
 
- //eslint-disable object-shorthand, no-unused-vars
-
- /*
- let initialize_calendar;
- initialize_calendar = function () {
- $('.calendar').each(function () {
- let calandar = $(this);
- calendar.fullCalendar({
- header: {
- left: 'prev,next today',
- center: 'title',
- right: 'month,agendaWeek,agendaDay'
- },
- selectable: true,
- selectHelper: true,
- editable: true,
- eventLimit: true,
- });
- })
- };
- $(document).on('turbolinks:load', initialize_calendar);
- */
-
-let isPast = (date) => {
+let isPast = ( date ) => {
   let today = moment().format();
-  return moment(today).isAfter(date);
+  return moment( today ).isAfter( date );
 };
 
-Template.calendar.onCreated(() => {
+Template.Calendar_Page.onCreated( () => {
   let template = Template.instance();
-  template.subscribe('calendar');
+  template.subscribe( 'SSession' );
 });
 
-Template.calendar.onRendered(() => {
-  $('#calendar-calendar').fullCalendar({
-    calendar(start, end, timezone, callback) {
-      let data = Events.find().fetch().map((event) => {
-        event.editable = !isPast(event.start);
+Template.Calendar_Page.onRendered( () => {
+  $( '#events-calendar' ).fullCalendar({
+    events( start, end, timezone, callback ) {
+      let data = SSession.find().fetch().map( ( event ) => {
+        event.editable = !isPast( event.start );
         return event;
       });
-
-      if (data) {
-        callback(data);
-      }
+      // if ( data ) {
+      //   callback( data );
+      // }
     },
-    eventRender(event, element) {
-      element.find('.fc-content').html(
-          `<h4>${ event.title }</h4>
-         <p class="guest-count">${ event.guests } Guests</p>
-         <p class="type-${ event.type }">#${ event.type }</p>
+    eventRender( event, element ) {
+      element.find( '.fc-content' ).html(
+          `<h4>${ event.name }</h4>
+         <p class="sensei">${ event.sensei }</p>
+         <p class="students">${ event.students }</p>
         `
       );
     },
-    dayClick(date) {
-      Session.set('eventModal', { type: 'add', date: date.format() });
-      $('#add-edit-event-modal').modal('show');
+    dayClick( date ) {
+      Session.set( 'eventModal', { type: 'add', date: date.format()     } );
+      $( '#addSession' ).modal( 'show' );
     },
-    eventClick(event) {
-      Session.set('eventModal', { type: 'edit', event: event._id });
-      $('#add-edit-event-modal').modal('show');
-    }
   });
-  Tracker.autorun(() => {
-    Events.find().fetch();
-    $('#calendar-calendar').fullCalendar('refetchEvents');
+  Tracker.autorun( () => {
+    SSession.find().fetch();
+    $( '#events-calendar' ).fullCalendar( 'refetchEvents' );
   });
 });
+

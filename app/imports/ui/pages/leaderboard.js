@@ -55,7 +55,7 @@ Template.Leaderboard_Page.helpers({
     return SSession.find().count();
   },
   sizeded: function (fieldname) {
-    console.log(SSession.find({ students: fieldname }).count());
+    // console.log(SSession.find({ students: fieldname }).count());
     return SSession.find({ students: fieldname }).count();
   },
   sizedad: function (first, last) {

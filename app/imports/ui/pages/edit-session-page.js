@@ -71,6 +71,7 @@ Template.Edit_Session_Page.events({
   },
   'submit .session-data-form'(event, instance) {
     event.preventDefault();
+    let newSessionTemp = Session.get('eventModal');
     // Get name (text field)
     const name = event.target.name.value;
     const time = event.target.time.value;
@@ -79,6 +80,7 @@ Template.Edit_Session_Page.events({
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
     const updateSession = { name, time, place, sensei, detail, owner };
+    Meteor.call('newSess');
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

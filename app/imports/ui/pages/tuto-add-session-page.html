@@ -1,0 +1,118 @@
+<template name="Tuto_Add_Session_Page">
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form session-data-form {{ errorClass }}">
+      <br />
+      <div class="ui purple massive label">
+        Tutorial
+      </div>
+      <h2 class="ui dividing header"><i class="calendar outline icon"></i>  Add Study Session</h2>
+      <br />
+      <div class="field">
+        <label style="font-size: large">Name of the course</label>
+        <div class="ui pointing below purple big basic label">
+          Type your name of the course that you want to teach.
+        </div>
+        <input type="text" placeholder="Name of the course">
+        <!--{{#if displayFieldError 'name' }}-->
+          <!--<div class="ui error message">-->
+            <!--<p>You must specify your name of the course.</p>-->
+          <!--</div>-->
+        <!--{{/if}}-->
+      </div>
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">What time?</label>
+        <div class="ui pointing below purple big basic label">
+          You can specify what time you want to start the study session
+        </div>
+        <input type="text" name="time" id="time" placeholder="YYYY-MM-DD 12:00:00">
+        <!--{{#if displayFieldError 'time' }}-->
+          <!--<div class="ui error message">-->
+            <!--<p>You must specify the time</p>-->
+          <!--</div>-->
+        <!--{{/if}}-->
+      </div>
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">Where?</label>
+        <div class="ui pointing below purple big basic label">
+          Normally, it would be at ICSpace. However, you can change to different place.
+        </div>
+        <input type="text" name="place" id="place" value="ICSpace">
+        <!--{{#if displayFieldError 'place' }}-->
+          <!--<div class="ui error message">-->
+            <!--<p>You must specify the place</p>-->
+          <!--</div>-->
+        <!--{{/if}}-->
+      </div>
+
+      <br />
+
+      <!--{{#each profile in profileList}}-->
+      <div class="field">
+        <label style="font-size: large">Who will be teaching?</label>
+        <div class="ui pointing below purple big basic label">
+          The system will automatically fill your name.
+        </div>
+        <input name="sensei" id="sensei" value="{{profile.first}} {{profile.last}}">
+        <!--{{#if displayFieldError 'sensei' }}-->
+          <!--<div class="ui error message">-->
+            <!--<p>You must specify the teacher</p>-->
+          <!--</div>-->
+        <!--{{/if}}-->
+      </div>
+      <!--{{/each}}-->
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">What is going to be covered?</label>
+        <div class="ui pointing below purple big basic label">
+          Specify what material you are going to cover, so that other students can decide whether they join the study session or not.
+        </div>
+        <input type="text" name="detail" id="detail" placeholder="we will be covering...">
+        <!--{{#if displayFieldError 'detail' }}-->
+          <!--<div class="ui error message">-->
+            <!--<p>You must specify the detail</p>-->
+          <!--</div>-->
+        <!--{{/if}}-->
+      </div>
+
+      <br />
+      <div class="two fields">
+        <div class="field">
+          <div class="ui purple basic big label">
+            After you fill out everything, you can press submit button!!
+          </div>
+        </div>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+      <br />
+      <br />
+        <div style="float: left" data-tooltip="Before is User Page" data-position="top left">
+          <a class="{{ isActiveRoute 'Tuto_User_Page'}} item" href="{{ pathFor 'Tuto_User_Page' }}">
+            <i class="huge purple pointing left icon"></i>
+          </a>
+        </div>
+        <div style="float: right" data-tooltip="Next is Session Page" data-position="top right">
+          <a class="{{ isActiveRoute 'Tuto_Session_Page'}} item" href="{{ pathFor 'Tuto_Session_Page' }}" style="float: right">
+            <i class="huge purple pointing right icon"></i>
+          </a>
+        </div>
+      <br /><br /><br />
+      <div class="ui one column center aligned page grid">
+        <div class="column twelve wide">
+          <a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">
+            <button class="ui purple basic button">Go to actual page</button></a>
+          <br />
+        </div>
+      </div>
+      <br />
+      <br />
+    </form>
+  </div>
+</template>

@@ -4,6 +4,8 @@ import { Profile } from '../../api/profile/profile.js';
 import { Meteor } from 'meteor/meteor';
 import { SSession } from '../../api/session/session.js';
 
+serverMessages = new ServerMessages();
+
 Template.User_Page.helpers({
 
   /**
@@ -54,6 +56,24 @@ Template.User_Page.helpers({
     }
     return find;
   },
+  canShowNP: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
+    if (Profile.find( { owner: owner, notiP: "1"} ).count() > 0) {
+      find = true;
+    }
+    return find;
+  },
+  canShowNS: function canShow() {
+    let find = false;
+    const owner = Meteor.userId();
+    // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
+    if (Profile.find( { owner: owner, notiS: "1"} ).count() > 0) {
+      find = true;
+    }
+    return find;
+  },
 });
 
 Template.User_Page.onCreated(function onCreated() {
@@ -64,3 +84,15 @@ Template.User_Page.onCreated(function onCreated() {
     this.subscribe('SSession');
   });
 });
+
+Template.User_Page.events({
+  'click .js-btn-clientN': function (event, template) {
+    Notifications.warn('New friend is added!', 'Lets check the profile :)');
+    Meteor.call('watchProf');
+  },
+  'click .js-btn-clientS': function (event, template) {
+    Notifications.info('New stusy session is added!', 'Lets check what is up :)');
+    Meteor.call('watchSess');
+  }
+});
+

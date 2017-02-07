@@ -130,11 +130,12 @@ FlowRouter.route('/edit-session/:_id', {
 });
 
 FlowRouter.route('/calendar', {
-  name: 'calendar',
+  name: 'Calendar_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'calendar' });
+    BlazeLayout.render('App_Body', { main: 'Calendar_Page' });
   },
 });
+
 FlowRouter.route('/personal-calendar', {
   name: 'personal_calendar',
   action() {
@@ -154,9 +155,45 @@ FlowRouter.notFound = {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
   },
 };
+
 FlowRouter.route('/leaderboard/', {
   name: 'Leaderboard_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Leaderboard_Page' });
+  },
+});
+
+FlowRouter.route('/tuto-add-profile', {
+  name: 'Tuto_Add_Profile_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_Add_Profile_Page' });
+  },
+});
+
+FlowRouter.route('/tuto-user-profile', {
+  name: 'Tuto_User_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_User_Page' });
+  },
+});
+
+FlowRouter.route('/tuto-add-session', {
+  name: 'Tuto_Add_Session_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_Add_Session_Page' });
+  },
+});
+
+FlowRouter.route('/tuto-session', {
+  name: 'Tuto_Session_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_Session_Page' });
+  },
+});
+
+FlowRouter.route('/tuto-add-report', {
+  name: 'Tuto_Add_Report_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_Add_Report_Page' });
   },
 });

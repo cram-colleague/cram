@@ -56,7 +56,7 @@
 
         <div class="field">
           <label  style="font-size: large">What is going to be covered?</label>
-          <input type="text" name="detail" id="detail" placeholder="we will be covering...">
+          <input type="text" name="detail" id="detail" placeholder="we will be covering..." value="{{ sessionField 'detail' }}">
           {{#if displayFieldError 'detail' }}
             <div class="ui error message">
               <p>You must specify the detail</p>

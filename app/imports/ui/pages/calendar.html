@@ -1,44 +1,66 @@
-<!--template-- name="calendar">
-  <div style="margin-top: 20px; padding: 10px 0;">
-
-  </div>
-  <head>
-    <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
-    <script src='lib/jquery.min.js'></script>
-    <script src='lib/moment.min.js'></script>
-    <script src='fullcalendar/fullcalendar.js'></script>
-    <script>
-      $(document).ready(function () {
-
-        // page is now ready, initialize the calendar...
-
-        $('#calendar').fullCalendar({
-          // put your options and callbacks here
-        })
-
-      });
-    </script>
-  </head>
-
-
-
+<template name="Calendar_Page">
+  <br>
   <div class="ui container">
-    <div id='calendar'></div>
+    <br>
+    <div id="events-calendar"></div>
+    <br>
+  </div>
+  <div id="addSession" class="ui modal" style="padding: 1em 2em">
+    {{>Add_Session_Page}}
   </div>
 
-  <!--div style="text-align: center;">
-    <a class="{{ isActiveRoute 'Add_Profile_Page'}} item"
-       href="{{ pathFor 'Add_Profile_Page' }}">
-      <button class="ui button">Button to add Profile</button>
-    </a>
-    {{> addEditEventModal }}
-  </div-->
+  <style>
+    .fc-event-container {
+      padding: 5px !important;
+    }
 
-<!--/template-->
-<template name="calendar">
+    .fc-event {
+      padding: 5px 10px;
+      border-color: #ddd;
+      background: #fff !important;
+    }
 
-  <div class="ui container">
-    <br /><br />
-    <div id="calendar-calendar"></div>
-  </div>
+    .fc-content {
+      color: #444;
+    }
+
+    h4,
+    h5 {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    h4 {
+      color: #666;
+      font-size: 13px;
+      line-height: 18px;
+      white-space: normal;
+    }
+
+    h5 {
+      color: #888;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .guest-count {
+      margin: 5px 0;
+    }
+
+    p[class^="type-"] {
+      margin: 0;
+    }
+
+    p[class="type-Corporate"] {
+      color: red;
+    }
+
+    p[class="type-Wedding"] {
+      color: green;
+    }
+
+    p[class="type-Birthday"] {
+      color: blue;
+    }
+  </style>
 </template>

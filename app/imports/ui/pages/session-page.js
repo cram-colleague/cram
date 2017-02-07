@@ -56,17 +56,24 @@ Template.Session_Page.helpers({
   },
   profileShowS: function (field) {
     const session = SSession.findOne(FlowRouter.getParam('_id'));
-    const student = session.students;
-    if (field === student) {
-      return true;
+    const num = session.students.length;
+    // console.log(num);
+    for (var n = 0; n < num; n++) {
+      const student = session.students[n];
+      if (field === student) {
+        return true;
+      }
     }
     return false;
   },
   profileS: function (field) {
     const session = SSession.findOne(FlowRouter.getParam('_id'));
-    const student = session.students;
-    if (student === Meteor.userId()) {
-      return true;
+    const num = session.students.length;
+    for (var n = 0; n < num; n++) {
+      const student = session.students[n];
+      if (field === student) {
+        return true;
+      }
     }
     return false;
   },
@@ -124,7 +131,7 @@ Template.Session_Page.events({
     // Determine validity.
     // instance.context.validate(updateProfile);
     // if (instance.context.isValid()) {
-    SSession.update(FlowRouter.getParam('_id'), { $set: { students: student } });
+    SSession.update(FlowRouter.getParam('_id'), { $push: { students: student } });
     instance.messageFlags.set(displayErrorMessages, false);
     window.alert('You are added!');
     // FlowRouter.go('List_Session_Page');
@@ -140,7 +147,7 @@ Template.Session_Page.events({
     // const preCourse = event.target.preCourse.value;
     // const currCourse = event.target.currCourse.value;
     // const description = event.target.description.value;
-    // const student = Meteor.userId();
+    const student = Meteor.userId();
     // const updateProfile = { first, last, preCourse, currCourse, description, students };
     // Clear out any old validation errors.
     instance.context.resetValidation();
@@ -149,7 +156,7 @@ Template.Session_Page.events({
     // Determine validity.
     // instance.context.validate(updateProfile);
     // if (instance.context.isValid()) {
-    SSession.update(FlowRouter.getParam('_id'), { $set: { students: '' } });
+    SSession.update(FlowRouter.getParam('_id'), { $pull: { students: student } });
     instance.messageFlags.set(displayErrorMessages, false);
     window.alert('You got canceled!');
     // FlowRouter.go('List_Session_Page');

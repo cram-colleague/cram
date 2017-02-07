@@ -13,7 +13,12 @@ export const SessionSchema = new SimpleSchema({
     label: 'name',
     type: String,
     optional: false,
-    max: 200,
+    allowedValues: ['ICS111',"ICS141","ICS211","ICS212","ICS215","ICS222","ICS241","ICS290","ICS311","ICS312","ICS313","ICS314","ICS321","ICS331","ICS332","ICS351","ICS355","ICS361","ICS390","ICS414","ICS415","ICS419","ICS421","ICS422","ICS423","ICS424","ICS425","ICS426","ICS431","ICS432","ICS435","ICS441","ICS443","ICS451","ICS452","ICS455","ICS461","ICS462","ICS464","ICS465","ICS466","ICS469","ICS471","ICS475","ICS476","ICS483","ICS484","ICS485","ICS491","ICS495","ICS499"],
+    autoform: {
+      atFirldInput: {
+        firstOption: "(Select a Class)"
+      }
+    }
   },
   time: {
     label: 'time',
@@ -35,8 +40,12 @@ export const SessionSchema = new SimpleSchema({
   },
   students: {
     label: 'students',
-    type: String,
+    type: Array,
+    maxCount: 5,
     optional: true,
+  },
+  "students.$": {
+    type: String,
   },
   detail: {
     label: 'detail',
