@@ -2,6 +2,7 @@ import { Profile } from '../../api/profile/profile.js';
 import { Course } from '../../api/course/course.js';
 import { SSession } from '../../api/session/session.js';
 import { Report } from '../../api/report/report.js';
+import { Messenger } from '../../api/messenger/messenger.js';
 import { Meteor } from 'meteor/meteor';
 
 Meteor.publish('Profile', function publishProfileData() {
@@ -20,4 +21,8 @@ Meteor.publish('SSession', function publishSSessionData() {
 
 Meteor.publish('Report', function publishReportData() {
   return Report.find();
+});
+
+Meteor.publish('Messenger', function publishReportData() {
+  return Messenger.find();
 });
