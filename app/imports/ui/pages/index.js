@@ -35,6 +35,9 @@ import './admin-page.js';
 import './home-page.html';
 import './home-page.js';
 
+import './message-page.html';
+import './message-page.js';
+
 import './session-page.html';
 import './tuto-session-page.html';
 import './session-page.js';

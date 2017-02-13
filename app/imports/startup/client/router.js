@@ -85,6 +85,12 @@ FlowRouter.route('/admin', {
     BlazeLayout.render('App_Body', { main: 'Admin_Page' });
   },
 });
+FlowRouter.route('/message', {
+  name: 'Message_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Message_Page' });
+  },
+});
 
 FlowRouter.route('/add-session', {
   name: 'Add_Session_Page',
