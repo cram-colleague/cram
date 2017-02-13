@@ -33,4 +33,4 @@ export const MessengerSchema = new SimpleSchema({
   },
 });
 
-Report.attachSchema(MessengerSchema);
+Messenger.attachSchema(MessengerSchema);

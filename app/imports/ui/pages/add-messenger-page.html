@@ -1,0 +1,57 @@
+<template name="Add_Messenger_Page">
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form messenger-data-form {{ errorClass }}">
+      <br />
+      <!--<a class="{{ isActiveRoute 'Tuto_Add_Report_Page'}} item" href="{{ pathFor 'Tuto_Add_Report_Page' }}">-->
+        <button class="ui purple basic button" style="float: right">How to use this page</button></a>
+      <h2 class="ui dividing header"><i class="send outline icon"></i>  Report</h2>
+      <br />
+
+      {{#each profile in profileList}}
+      <div class="field">
+        <label style="font-size: large">Your Name</label>
+        <input type="text" name="name" id="name" value="{{profile.first}} {{profile.last}}">
+        {{#if displayFieldError 'sender' }}
+          <div class="ui error message">
+            <p>You must specify the name of the person</p>
+          </div>
+        {{/if}}
+      </div>
+      {{/each}}
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">Title</label>
+        <input type="text" name="title" id="title" placeholder="Title">
+        {{#if displayFieldError 'title' }}
+          <div class="ui error message">
+            <p>You must specify the title.</p>
+          </div>
+        {{/if}}
+      </div>
+
+      <br />
+
+      <div class="field">
+        <label style="font-size: large">Text</label>
+        <textarea name="content" id="content"></textarea>
+         {{#if displayFieldError 'content' }}
+           <div class="ui error message">
+             <p>You must specify your content.</p>
+           </div>
+         {{/if}}
+      </div>
+
+      <br />
+
+      <br />
+
+      <button class="ui button" type="submit">Submit</button>
+      <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">
+        <button class="ui button">Cancel</button>
+      </a>
+
+    </form>
+  </div>
+</template>
