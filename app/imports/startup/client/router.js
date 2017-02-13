@@ -57,6 +57,13 @@ FlowRouter.route('/add-profile', {
   },
 });
 
+FlowRouter.route('/add-messenger/:_id', {
+  name: 'Add_Messenger_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Messenger_Page' });
+  },
+});
+
 FlowRouter.route('/add-report', {
   name: 'Add_Report_Page',
   action() {

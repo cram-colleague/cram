@@ -2,6 +2,9 @@ import './add-profile-page.html';
 import './tuto-add-profile-page.html';
 import './add-profile-page.js';
 
+import './add-messenger-page.html';
+import './add-messenger-page.js';
+
 import './add-session-page.html';
 import './tuto-add-session-page.html';
 import './add-session-page.js';

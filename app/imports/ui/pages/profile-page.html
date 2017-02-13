@@ -2,6 +2,9 @@
   {{#if Template.subscriptionsReady}}
     <div class="ui container">
       <br />
+      {{#each profile in profileList}}
+      <a class="{{ isActiveRoute 'Add_Messenger_Page'}} item" href="{{ pathFor 'Add_Messenger_Page' _id=profile._id }}"><button class="ui orange basic button" style="float: right">Message</button></a>
+      {{/each}}
       <h2 class="ui dividing header"><i class="child icon"></i>  Profile</h2>
       <br />
         <div class="ui three column grid container">
