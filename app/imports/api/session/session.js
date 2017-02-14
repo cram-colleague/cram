@@ -22,9 +22,18 @@ export const SessionSchema = new SimpleSchema({
   },
   time: {
     label: 'time',
-    type: Date,
+    type: String,
     optional: false,
     max: 200,
+  },
+  start: {
+    label: 'start',
+    type: String,
+  },
+  end: {
+    label: 'start',
+    type: String,
+    optional: true,
   },
   place: {
     label: 'place',

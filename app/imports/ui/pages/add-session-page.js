@@ -53,13 +53,16 @@ Template.Add_Session_Page.events({
     // Get name (text field)
     const name = event.target.name.value;
     const time = newSessionTemp.date;
+    const start = newSessionTemp.date + "T" + "22:00:00Z-10:00:00";
+    const end = newSessionTemp.date + "T" + "23:00:00Z-10:00:00";
+    console.log(start);
     // const time = event.target.time.value;
     const place = event.target.place.value;
     const sensei = event.target.sensei.value;
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
     Meteor.call('newSess');
-    const newSession = { name, time, place, sensei, detail, owner };
+    const newSession = { name, start, time, place, sensei, detail, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

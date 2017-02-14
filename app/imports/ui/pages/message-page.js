@@ -10,7 +10,7 @@ import { Profile } from '../../api/profile/profile.js';
 
 const displayErrorMessages = 'displayErrorMessages';
 
-Template.Report_Page.onCreated(function onCreated() {
+Template.Message_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Message');
   });
