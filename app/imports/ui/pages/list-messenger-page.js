@@ -14,15 +14,19 @@ Template.List_Messenger_Page.helpers({
     return Profile.find();
   },
   messengerList() {
-    const owner = Meteor.userId();
-    return owner ? Messenger.find({ receiver: owner }) : this.ready();
+    const owner = Meteor.userId();;
+    const receiver = Profile.findOne({ owner: owner })._id;
+    console.log(receiver);
+    return owner ? Messenger.find({ receiver: receiver }) : this.ready();
     // return Messenger.find();
   },
   canShowM: function canShow() {
     let find = false;
     const owner = Meteor.userId();
-    console.log(Messenger.find({ receiver: owner }).count());
-    if (Messenger.find({ receiver: owner }).count() > 0) {
+    const receiver = Profile.findOne({ owner: owner })._id;
+    // console.log(receiver);
+    // console.log(Messenger.find({ receiver: receiver }).count());
+    if (Messenger.find({ receiver: receiver }).count() > 0) {
       find = true;
     }
     return find;
