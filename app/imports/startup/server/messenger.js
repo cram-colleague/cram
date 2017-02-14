@@ -5,7 +5,7 @@ import { _ } from 'meteor/underscore';
  * A list of Stuff to pre-fill the Collection.
  * @type {*[]}
  */
-const messengertSeeds = [
+const messengerSeeds = [
   { sender: 'Minako Doi',
     title: 'ICS311',
     content: 'Was not great',

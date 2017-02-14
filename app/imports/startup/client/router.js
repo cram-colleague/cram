@@ -57,6 +57,13 @@ FlowRouter.route('/add-profile', {
   },
 });
 
+FlowRouter.route('/add-messenger/:_id', {
+  name: 'Add_Messenger_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Messenger_Page' });
+  },
+});
+
 FlowRouter.route('/add-report', {
   name: 'Add_Report_Page',
   action() {
@@ -76,6 +83,12 @@ FlowRouter.route('/admin', {
   name: 'Admin_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Admin_Page' });
+  },
+});
+FlowRouter.route('/message', {
+  name: 'Message_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Message_Page' });
   },
 });
 

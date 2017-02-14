@@ -1,0 +1,47 @@
+<template name="Message_Page">
+  {{#if Template.subscriptionsReady}}
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form message-data-form {{ errorClass }}">
+      <br />
+      <h2 class="ui dividing header"><i class="announcement icon"></i> Message</h2>
+      <br />
+
+      <div class="column">
+        <div class="ui raised segment">
+          <a class="ui olive ribbon big label">Name of the Person</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ messageField 'sender' }}</h3>
+          <p></p><p></p>
+          <a class="ui teal ribbon big label">Title</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ messageField 'title' }}</h3>
+          <p></p><p></p>
+          <a class="ui olive ribbon big label">Content</a>
+          <h3 class="ui header" style="margin-left: 3em">{{ messageField 'content' }}</h3>
+          <p></p><p></p>
+          {{#each profile in profileList}}
+          <a class="ui teal ribbon big label">Receiver</a>
+          {{#if profileShow profile.owner}}
+          <h3 class="ui header" style="margin-left: 3em">{{ profile.first }} {{ profile.last }}</h3>
+          <p></p><p></p>
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+
+      <br /><br />
+      <div class="ui two column center aligned page grid">
+        <div class="column twelve wide">
+          <button class="ui button delete" type="button">Delete</button>
+        </div>
+        <div class="column twelve wide">
+          <button class="ui button" onclick="goBack()">Go Back</button>
+          <script>
+            function goBack() {
+              window.history.back();
+            }
+          </script>
+        </div>
+      </div>
+    </form>
+  </div>
+  {{/if}}
+</template>

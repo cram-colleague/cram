@@ -61,6 +61,12 @@ export const ProfileSchema = new SimpleSchema({
     optional: true,
     max: 20,
   },
+  mess: {
+    label: 'mess',
+    type: String,
+    optional : true,
+    max: 20,
+  }
 });
 
 Profile.attachSchema(ProfileSchema);
