@@ -9,7 +9,12 @@
       <div class="column">
         <div class="ui raised segment">
           <a class="ui olive ribbon big label">Name of the Person</a>
-          <h3 class="ui header" style="margin-left: 3em">{{ messageField 'sender' }}</h3>
+          <!--<h3 class="ui header" style="margin-left: 3em">{{ messageField 'name' }}</h3>-->
+          {{#each profile in profileList}}
+          {{#if profileShow profile.owner}}
+          <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ messageField 'name' }}</a></h3>
+          {{/if}}
+          {{/each}}
           <p></p><p></p>
           <a class="ui teal ribbon big label">Title</a>
           <h3 class="ui header" style="margin-left: 3em">{{ messageField 'title' }}</h3>

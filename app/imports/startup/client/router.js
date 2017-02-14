@@ -43,6 +43,13 @@ FlowRouter.route('/list-session', {
   },
 });
 
+FlowRouter.route('/list-messenger', {
+  name: 'List_Messenger_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'List_Messenger_Page' });
+  },
+});
+
 FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {

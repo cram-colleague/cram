@@ -6,7 +6,8 @@ import { _ } from 'meteor/underscore';
  * @type {*[]}
  */
 const messengerSeeds = [
-  { sender: 'Minako Doi',
+  { sender: 'Kq4QJ7uGPuTWnTXk2',
+    name: 'Minako Doi',
     title: 'ICS311',
     content: 'Was not great',
     receiver: 'Kq4QJ7uGPuTWnTXk2',

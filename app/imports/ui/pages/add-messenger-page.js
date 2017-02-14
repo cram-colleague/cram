@@ -51,9 +51,10 @@ Template.Add_Messenger_Page.events({
     // Get name (text field)
     const sender = Meteor.userId();
     const title = event.target.title.value;
+    const name = event.target.name.value;
     const content = event.target.content.value;
     const receiver = FlowRouter.getParam('_id');
-    const newReport = { name, sender, content, receiver };
+    const newReport = { sender, name, content, receiver };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();

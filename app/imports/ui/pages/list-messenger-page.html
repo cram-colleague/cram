@@ -1,0 +1,49 @@
+<template name="List_Messenger_Page">
+  {{#If_Logged_In}}
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <br />
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            Messenger
+            <div class="sub header">View and edit messages</div>
+          </div>
+        </h2>
+        <br />
+        <h3 class="ui horizontal divider header">
+          <i class="announcement icon"></i>
+          Message
+        </h3>
+        <br />
+        {{#if canShowM}}
+          <table style="margin-top: 20px" class="ui celled table">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th>View</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each message in messengerList}}
+              <tr>
+                <td>{{message.name}}</td>
+                <td>{{message.title}}</td>
+                <td>{{message.content}}</td>
+                <td><a href="{{pathFor 'Message_Page' _id=message._id }}">View</a></td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        {{else}}
+          <h4 class="ui centered header">No one has message you yet <br /><br /></h4>
+        {{/if}}
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>

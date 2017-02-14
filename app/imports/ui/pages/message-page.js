@@ -43,6 +43,7 @@ Template.Message_Page.helpers({
     const owner = report.receiver;
     // const profile = Profile.findOne({ createdBy: owner });
     const profile = Profile.findOne('receiver');
+    // const profile = Profile.findOne(owner);
     // console.log(profile);
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
@@ -51,8 +52,8 @@ Template.Message_Page.helpers({
     return Profile.find();
   },
   profileShow: function (field) {
-    const report = Report.findOne(FlowRouter.getParam('_id'));
-    const owner = report.receiver;
+    const message = Messenger.findOne(FlowRouter.getParam('_id'));
+    const owner = message.sender;
     if (field === owner) {
       return true;
     }
