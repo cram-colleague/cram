@@ -33,13 +33,13 @@ Template.Calendar_Page.onRendered( () => {
       );
     },
     dayClick( date ) {
-      Session.set( 'eventModal', { type: 'add', date: date.format()     } );
+      Session.set( 'eventModal', { type: 'add', date: date.format()} );
       $( '#addSession' ).modal( 'show' );
     },
   });
   Tracker.autorun( () => {
     SSession.find().fetch();
-    $( '#events-calendar' ).fullCalendar( 'refetchEvents' );
+    $( '#events-calendar' ).fullCalendar( 'refreshEvents' );
   });
 });
 
