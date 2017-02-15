@@ -23,7 +23,7 @@
               <th>Name</th>
               <th>Title</th>
               <th>Content</th>
-              <th style="float: right">View</th>
+              <th>View</th>
             </tr>
             </thead>
 
@@ -33,7 +33,7 @@
                 <td>{{message.name}}</td>
                 <td>{{message.title}}</td>
                 <td id="con">{{message.content}}</td>
-                <td style="float: right"><a href="{{pathFor 'Message_Page' _id=message._id }}">View</a></td>
+                <td><a href="{{pathFor 'Message_Page' _id=message._id }}">View</a></td>
               </tr>
             {{/each}}
             </tbody>
