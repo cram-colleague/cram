@@ -92,7 +92,7 @@ FlowRouter.route('/admin', {
     BlazeLayout.render('App_Body', { main: 'Admin_Page' });
   },
 });
-FlowRouter.route('/message', {
+FlowRouter.route('/message/:_id', {
   name: 'Message_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Message_Page' });
