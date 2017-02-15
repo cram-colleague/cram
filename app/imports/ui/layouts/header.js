@@ -36,12 +36,20 @@ Template.Header.helpers({
     return find;
   },
   canShowMs: function canShow() {
+    // let find = false;
+    // const owner = Meteor.userId();
+    // const receiver = Profile.findOne({ owner: owner })._id;
+    // // const rece = receiver._id;
+    // console.log(receiver);
+    // console.log(Messenger.find().count());
+    // if (Messenger.find({ receiver: receiver }).count() > 0) {
+    //   find = true;
+    // }
+    // return find;
     let find = false;
     const owner = Meteor.userId();
-    const receiver = Profile.findOne({ owner: owner })._id;
-    // console.log(receiver);
-    console.log(Messenger.find({ receiver: receiver }).count());
-    if (Messenger.find({ receiver: receiver }).count() > 0) {
+    // console.log(Profile.find( { owner: owner, noti: "1"} ).count());
+    if (Profile.find( { owner: owner, mess: "1"} ).count() > 0) {
       find = true;
     }
     return find;

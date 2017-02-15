@@ -58,17 +58,18 @@ Template.Add_Messenger_Page.events({
     const name = event.target.name.value;
     const content = event.target.content.value;
     const receiver = FlowRouter.getParam('_id');
-    const newReport = { sender, name, title, content, receiver };
+    const newMessenger = { sender, name, title, content, receiver };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean
-    MessengerSchema.clean(newReport);
+    MessengerSchema.clean(newMessenger);
     instance.context.validate(newReport);
 
     if (instance.context.isValid()) {
       // const _id = Meteor.user().profile.name;
-      Messenger.insert(newReport);
+      Messenger.insert(newMessenger);
+      Meteor.call('newMess');
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Your report just sent to admin');
       FlowRouter.go('User_Page');
