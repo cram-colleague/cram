@@ -10,7 +10,7 @@
       {{#each profile in profileList}}
       <div class="field">
         <label style="font-size: large">Your Name</label>
-        <input type="text" name="name" id="name" value="{{profile.first}} {{profile.last}}">
+        <input type="text" name="name" id="name" placeholder="Name">
         {{#if displayFieldError 'sender' }}
           <div class="ui error message">
             <p>You must specify the name of the person</p>

@@ -2,8 +2,8 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
-// import { Meteor } from 'meteor/meteor';
-import { Messenger, MessengerSchema } from '../../api/report/report.js';
+import { Meteor } from 'meteor/meteor';
+import { Messenger, MessengerSchema } from '../../api/messenger/messenger.js';
 import { Profile } from '../../api/profile/profile.js';
 
 /* eslint-disable object-shorthand, no-unused-vars */
@@ -12,7 +12,7 @@ const displayErrorMessages = 'displayErrorMessages';
 
 Template.Message_Page.onCreated(function onCreated() {
   this.autorun(() => {
-    this.subscribe('Message');
+    this.subscribe('Messenger');
   });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
@@ -42,7 +42,8 @@ Template.Message_Page.helpers({
     const report = Messenger.findOne(FlowRouter.getParam('_id'));
     const owner = report.receiver;
     // const profile = Profile.findOne({ createdBy: owner });
-    const profile = Profile.findOne('receiver');
+    const profile = Profile.findOne({ _id: owner });
+    // const profile = Profile.findOne(owner);
     // console.log(profile);
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
@@ -50,9 +51,17 @@ Template.Message_Page.helpers({
   profileList() {
     return Profile.find();
   },
-  profileShow: function (field) {
-    const report = Report.findOne(FlowRouter.getParam('_id'));
-    const owner = report.receiver;
+  profileShowS: function (field) {
+    const message = Messenger.findOne(FlowRouter.getParam('_id'));
+    const owner = message.sender;
+    if (field === owner) {
+      return true;
+    }
+    return false;
+  },
+  profileShowR: function (field) {
+    const message = Messenger.findOne(FlowRouter.getParam('_id'));
+    const owner = message.receiver;
     if (field === owner) {
       return true;
     }
@@ -81,9 +90,9 @@ Template.Message_Page.events({
     const r = window.confirm('Do you really want to delete this entry?');
     if (r === true) {
       Messenger.remove(FlowRouter.getParam('_id'));
-      FlowRouter.go('Home_Page');
+      FlowRouter.go('User_Page');
     } else {
-      FlowRouter.go('Home_Page');
+      FlowRouter.go('User_Page');
     }
   },
   // 'submit .contact-data-form'(event, instance) {

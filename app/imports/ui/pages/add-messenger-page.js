@@ -3,6 +3,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Messenger, MessengerSchema } from '../../api/messenger/messenger.js';
+import { Profile, ProfileSchema } from '../../api/profile/profile.js';
 import { Meteor } from 'meteor/meteor';
 
 /* eslint-disable no-param-reassign */
@@ -11,11 +12,14 @@ const displayErrorMessages = 'displayErrorMessages';
 
 Template.Add_Messenger_Page.onCreated(function onCreated() {
   this.autorun(() => {
-    this.subscribe('Report');
+    this.subscribe('Messenger');
   });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = MessengerSchema.namedContext('Add_Messenger_Page');
+  this.autorun(() => {
+    this.subscribe('Profile');
+  });
 });
 
 Template.Add_Messenger_Page.helpers({
@@ -51,19 +55,21 @@ Template.Add_Messenger_Page.events({
     // Get name (text field)
     const sender = Meteor.userId();
     const title = event.target.title.value;
+    const name = event.target.name.value;
     const content = event.target.content.value;
     const receiver = FlowRouter.getParam('_id');
-    const newReport = { name, sender, content, receiver };
+    const newMessenger = { sender, name, title, content, receiver };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean
-    MessengerSchema.clean(newReport);
+    MessengerSchema.clean(newMessenger);
     instance.context.validate(newReport);
 
     if (instance.context.isValid()) {
       // const _id = Meteor.user().profile.name;
-      Messenger.insert(newReport);
+      Messenger.insert(newMessenger);
+      Meteor.call('newMess');
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Your report just sent to admin');
       FlowRouter.go('User_Page');

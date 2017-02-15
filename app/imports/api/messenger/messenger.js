@@ -14,6 +14,11 @@ export const MessengerSchema = new SimpleSchema({
     type: String,
     optional: false,
   },
+  name: {
+    label: 'name',
+    type: String,
+    optional: false,
+  },
   title: {
     label: 'title',
     type: String,

@@ -20,3 +20,13 @@ ul.notifications {
   padding-left: 16em;
   font-size: 18px;
 }
+
+table#my_table {
+  table-layout: fixed;
+}
+table#my_table td#con {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
