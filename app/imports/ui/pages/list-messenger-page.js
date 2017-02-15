@@ -25,7 +25,7 @@ Template.List_Messenger_Page.helpers({
     const owner = Meteor.userId();
     const receiver = Profile.findOne({ owner: owner })._id;
     // console.log(receiver);
-    // console.log(Messenger.find({ receiver: receiver }).count());
+    console.log(Messenger.find({ receiver: receiver }).count());
     if (Messenger.find({ receiver: receiver }).count() > 0) {
       find = true;
     }

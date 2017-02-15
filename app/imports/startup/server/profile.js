@@ -59,10 +59,6 @@ Meteor.methods({
     const owner = Meteor.userId();
     Profile.update({ owner: owner, mess: "0" }, { $set: { mess: "1" } });
   },
-  newMess: function() {
-    const owner = Meteor.userId();
-    Profile.update({ owner: owner, mess: "0" }, { $set: { mess: "1" } });
-  },
   readMess: function() {
     const owner = Meteor.userId();
     Profile.update({ owner: owner, mess: "1" }, { $set: { mess: "0" } });
