@@ -33,7 +33,11 @@
                 <td>{{message.name}}</td>
                 <td>{{message.title}}</td>
                 <td id="con">{{message.content}}</td>
-                <td><a href="{{pathFor 'Message_Page' _id=message._id }}">View</a></td>
+                <td>
+                  <!--<button class="ui button view" type="button" value="{{message._id}}">-->
+                    <a href="{{pathFor 'Message_Page' _id=message._id }}">View</a>
+                  <!--</button>-->
+                  </td>
               </tr>
             {{/each}}
             </tbody>

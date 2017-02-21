@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { Profile } from '../../api/profile/profile.js';
 // import { Meteor } from 'meteor/meteor';
 import { Messenger } from '../../api/messenger/messenger.js';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.List_Messenger_Page.helpers({
 
@@ -50,3 +51,4 @@ Template.List_Messenger_Page.onCreated(function onCreated() {
     this.subscribe('Messenger');
   });
 });
+

@@ -17,7 +17,9 @@
         <!--a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a-->
       <div class="ui simple dropdown item">
         <a class="{{ isActiveRoute 'User_Page'}} item" href="{{ pathFor 'User_Page' }}">User Profile
+          {{#if canShowMs}}
           <div class="floating ui red label">New</div>
+          {{/if}}
         </a>
         <i class="dropdown icon"></i>
         {{#if activeUser}}
