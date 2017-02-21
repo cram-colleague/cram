@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-import { Profile } from '../../api/profile/profile';
+import { Profile } from '../../api/profile/profile.js';
+import { Messenger, MessengerSchema } from '../../api/messenger/messenger.js';
 
 // The Header menu does not use dropdown menus, but most menus do.
 // Here's how to do the required initialization for Semantic UI dropdown menus.
@@ -35,6 +36,16 @@ Template.Header.helpers({
     return find;
   },
   canShowMs: function canShow() {
+    // let find = false;
+    // const owner = Meteor.userId();
+    // const receiver = Profile.findOne({ owner: owner })._id;
+    // // const rece = receiver._id;
+    // console.log(receiver);
+    // console.log(Messenger.find().count());
+    // if (Messenger.find({ receiver: receiver }).count() > 0) {
+    //   find = true;
+    // }
+    // return find;
     let find = false;
     const owner = Meteor.userId();
     // console.log(Profile.find( { owner: owner, noti: "1"} ).count());

@@ -57,11 +57,8 @@ Meteor.methods({
   },
   newMess: function() {
     const owner = Meteor.userId();
-    Profile.update({ owner: owner, mess: "0" }, { $set: { mess: "1" } });
-  },
-  newMess: function() {
-    const owner = Meteor.userId();
-    Profile.update({ owner: owner, mess: "0" }, { $set: { mess: "1" } });
+    const receiver = Messenger.findOne({ sender: owner }).receiver;
+    Profile.update({ _id: receiver, mess: "0" }, { $set: { mess: "1" } });
   },
   readMess: function() {
     const owner = Meteor.userId();
