@@ -87,12 +87,12 @@ Template.Message_Page.helpers({
 Template.Message_Page.events({
   'click .delete'(event, instance) {
     event.preventDefault();
-    const r = window.confirm('Do you really want to delete this entry?');
+    const r = window.confirm('Do you really want to delete this message?');
     if (r === true) {
       Messenger.remove(FlowRouter.getParam('_id'));
-      FlowRouter.go('User_Page');
+      FlowRouter.go('List_Messenger_Page');
     } else {
-      FlowRouter.go('User_Page');
+      FlowRouter.go('List_Messenger_Page');
     }
   },
   // 'submit .contact-data-form'(event, instance) {
