@@ -64,14 +64,14 @@ Template.Add_Messenger_Page.events({
     instance.context.resetValidation();
     // Invoke clean
     MessengerSchema.clean(newMessenger);
-    instance.context.validate(newReport);
+    instance.context.validate(newMessenger);
 
     if (instance.context.isValid()) {
       // const _id = Meteor.user().profile.name;
       Messenger.insert(newMessenger);
       Meteor.call('newMess');
       instance.messageFlags.set(displayErrorMessages, false);
-      window.alert('Your report just sent to admin');
+      window.alert('Your message is sent!');
       FlowRouter.go('User_Page');
     } else {
       instance.messageFlags.set(displayErrorMessages, true);

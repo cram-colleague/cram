@@ -1,5 +1,6 @@
 import { Profile } from '../../api/profile/profile.js';
 import { SSession, SessionSchema } from '../../api/session/session.js';
+import { Messenger, MessengerSchema } from '../../api/messenger/messenger.js';
 import { _ } from 'meteor/underscore';
 // import { Meteor } from 'meteor/meteor';
 
