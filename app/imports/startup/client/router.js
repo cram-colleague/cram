@@ -78,7 +78,6 @@ FlowRouter.route('/add-report', {
   },
 });
 
-
 FlowRouter.route('/user-profile', {
   name: 'User_Page',
   action() {
