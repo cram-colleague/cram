@@ -20,12 +20,12 @@ export const SessionSchema = new SimpleSchema({
       }
     }
   },
-  time: {
-    label: 'time',
-    type: String,
-    optional: false,
-    max: 200,
-  },
+  // time: {
+  //   label: 'time',
+  //   type: String,
+  //   optional: false,
+  //   max: 200,
+  // },
   start: {
     label: 'start',
     type: String,
@@ -34,6 +34,34 @@ export const SessionSchema = new SimpleSchema({
     label: 'start',
     type: String,
     optional: true,
+  },
+  startV: {
+    label: 'Start Time Value',
+    type: Number,
+    optional: false,
+  },
+  endV: {
+    label: 'End Time Value',
+    type: Number,
+    optional: false,
+    custom: function startAndEnd() {
+      let x = 0;
+      if (this.value < this.field('startV').value || this.value === this.field('startV').value) {
+        x = 'endV';
+      }
+      //console.log('x: ' + x);
+      return x;
+    },
+  },
+  startString: {
+    label: 'Start time of event represented as a string',
+    type: String,
+    optional: false,
+  },
+  endString: {
+    label: 'End time of event represented as a string',
+    type: String,
+    optional: false,
   },
   place: {
     label: 'place',

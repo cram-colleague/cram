@@ -72,7 +72,7 @@
           {{#each session in sessionList}}
             <tr>
               <td>{{session.name}}</td>
-              <td>{{session.time}}</td>
+              <td>{{session.startString}} to {{session.endString}}</td>
               <td>{{session.place}}</td>
               <td><a href="{{pathFor 'Session_Page' _id=session._id }}">View</a></td>
               <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>

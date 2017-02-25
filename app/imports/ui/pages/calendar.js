@@ -15,6 +15,11 @@ Template.Calendar_Page.onCreated( () => {
 
 Template.Calendar_Page.onRendered( () => {
   $( '#events-calendar' ).fullCalendar({
+    header: {
+      left:   'title',
+      center: '',
+      right:  'today prev,next'
+    },
     events( start, end, timezone, callback ) {
       let data = SSession.find().fetch().map( ( event ) => {
         event.editable = !isPast( event.start );
@@ -26,16 +31,17 @@ Template.Calendar_Page.onRendered( () => {
     },
     eventRender( event, element ) {
       element.find( '.fc-content' ).html(
-          `<h4>${ event.name }</h4>
-         <p class="sensei">${ event.sensei }</p>
-         <p class="students">${ event.students }</p>
-        `
+          `<h4 class="name">${ event.name }</h4>`
       );
     },
     dayClick( date ) {
       Session.set( 'eventModal', { type: 'add', date: date.format()} );
-      $( '#addSession' ).modal( 'show' );
+      $( '#addSession' ).modal({ blurring: true }).modal( 'show' );
     },
+    eventClick(event) {
+      Session.set('eventModal', { type: 'edit', event: event._id });
+      FlowRouter.go('Session_Page', { _id: event._id });
+    }
   });
   Tracker.autorun( () => {
     SSession.find().fetch();
