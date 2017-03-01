@@ -71,16 +71,26 @@ Template.Edit_Session_Page.events({
   },
   'submit .session-data-form'(event, instance) {
     event.preventDefault();
-    let newSessionTemp = Session.get('eventModal');
     // Get name (text field)
-    const name = event.target.name.value;
-    const time = event.target.time.value;
+    const e = document.getElementById(event.target.name.id);
+    const name = e.options[e.selectedIndex].value;
+    // const time = newSessionTemp.date;
+    const sdate = event.target.sdate.value;
+    const f = document.getElementById(event.target.start.id);
+    let start = sdate+"T"+f.options[f.selectedIndex].value+"-10:00";
+    const g = document.getElementById(event.target.end.id);
+    let end = sdate+"T"+g.options[g.selectedIndex].value+"-10:00";
+    const startV = parseInt(event.target.start.value);
+    const endV = parseInt(event.target.end.value);
+    const startString = f.options[f.selectedIndex].text;
+    const endString = g.options[g.selectedIndex].text;
+    // const time = event.target.time.value;
     const place = event.target.place.value;
     const sensei = event.target.sensei.value;
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
-    const updateSession = { name, time, place, sensei, detail, owner };
     Meteor.call('newSess');
+    let updateSession = { name, sdate, start, end, startV, endV, startString, endString, place, sensei, detail, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

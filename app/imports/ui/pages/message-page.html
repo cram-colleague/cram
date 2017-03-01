@@ -13,6 +13,7 @@
           {{#each profile in profileList}}
           {{#if profileShowS profile.owner}}
           <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ messageField 'name' }}</a></h3>
+
           {{/if}}
           {{/each}}
           <p></p><p></p>
