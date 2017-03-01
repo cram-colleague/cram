@@ -50,6 +50,13 @@ FlowRouter.route('/list-messenger', {
   },
 });
 
+FlowRouter.route('/sent-messenger', {
+  name: 'Sent_Messenger_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Sent_Messenger_Page' });
+  },
+});
+
 FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {

@@ -1,4 +1,4 @@
-<template name="List_Messenger_Page">
+<template name="Sent_Messenger_Page">
   {{#If_Logged_In}}
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
@@ -13,24 +13,24 @@
         <br />
         <!--<h3 class="ui horizontal divider header">-->
           <!--<i class="announcement icon"></i>-->
-          <!--Inbox-->
+          <!--Sent Mail-->
         <!--</h3>-->
 
-      <div class="ui secondary fluid two item pointing large menu">
-        <a class="{{ isActiveRoute 'List_Messager_Page'}} item active" href="{{ pathFor 'List_Messenger_Page' }}">
-          Inbox
-        </a>
-        <a class="{{ isActiveRoute 'Sent_Messager_Page'}} item" href="{{ pathFor 'Sent_Messenger_Page' }}">
-          Sent Mail
-        </a>
-      </div>
-        <p></p>
+          <div class="ui secondary fluid two item pointing large menu">
+            <a class="{{ isActiveRoute 'List_Messager_Page'}} item" href="{{ pathFor 'List_Messenger_Page' }}">
+              Inbox
+            </a>
+            <a class="{{ isActiveRoute 'Sent_Messager_Page'}} item active" href="{{ pathFor 'Sent_Messenger_Page' }}">
+              Sent Mail
+            </a>
+          </div>
+          <p></p>
         <br />
         {{#if canShowM}}
           <table id="my_table" style="margin-top: 20px; margin-right: 5em" class="ui celled table">
             <thead>
             <tr>
-              <th>Sender</th>
+              <th>Receiver</th>
               <th>Title</th>
               <th>Content</th>
               <th>View</th>
@@ -40,7 +40,11 @@
             <tbody>
             {{#each message in messengerList}}
               <tr>
-                <td>{{message.name}}</td>
+                {{#each profile in profileList}}
+                {{#if profileShowS profile._id message._id}}
+                <td>{{profile.first}} {{profile.last}}</td>
+                {{/if}}
+                {{/each}}
                 <td>{{message.title}}</td>
                 <td id="con">{{message.content}}</td>
                 <td>
@@ -53,7 +57,7 @@
             </tbody>
           </table>
         {{else}}
-          <h4 class="ui centered header">No one has message you yet <br /><br /></h4>
+          <h4 class="ui centered header">You haven't sent mail yet <br /><br /></h4>
         {{/if}}
       {{else}}
         {{> Loading}}
