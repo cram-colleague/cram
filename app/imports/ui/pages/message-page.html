@@ -12,8 +12,8 @@
           <!--<h3 class="ui header" style="margin-left: 3em">{{ messageField 'name' }}</h3>-->
           {{#each profile in profileList}}
           {{#if profileShowS profile.owner}}
+          <a class="{{ isActiveRoute 'Add_Messenger_Page'}} item" href="{{ pathFor 'Add_Messenger_Page' _id=profile._id }}"><button class="ui green button" style="float: right">Reply!</button></a>
           <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ messageField 'name' }}</a></h3>
-
           {{/if}}
           {{/each}}
           <p></p><p></p>

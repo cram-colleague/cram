@@ -18,7 +18,7 @@ Template.List_Messenger_Page.helpers({
     const owner = Meteor.userId();;
     const receiver = Profile.findOne({ owner: owner })._id;
     // console.log(receiver);
-    return owner ? Messenger.find({ receiver: receiver }) : this.ready();
+    return owner ? Messenger.find({ receiver: receiver }).fetch().reverse() : this.ready();
     // return Messenger.find();
   },
   canShowM: function canShow() {
