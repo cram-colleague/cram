@@ -11,10 +11,20 @@
           </div>
         </h2>
         <br />
-        <h3 class="ui horizontal divider header">
-          <i class="announcement icon"></i>
-          Sent Mail
-        </h3>
+        <!--<h3 class="ui horizontal divider header">-->
+          <!--<i class="announcement icon"></i>-->
+          <!--Sent Mail-->
+        <!--</h3>-->
+
+          <div class="ui secondary fluid two item pointing large menu">
+            <a class="{{ isActiveRoute 'List_Messager_Page'}} item" href="{{ pathFor 'List_Messenger_Page' }}">
+              Inbox
+            </a>
+            <a class="{{ isActiveRoute 'Sent_Messager_Page'}} item active" href="{{ pathFor 'Sent_Messenger_Page' }}">
+              Sent Mail
+            </a>
+          </div>
+          <p></p>
         <br />
         {{#if canShowM}}
           <table id="my_table" style="margin-top: 20px; margin-right: 5em" class="ui celled table">
