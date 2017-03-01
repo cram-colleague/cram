@@ -63,6 +63,9 @@ import './list-session-page.js';
 import './list-messenger-page.html';
 import './list-messenger-page.js';
 
+import './sent-messenger-page.html';
+import './sent-messenger-page.js';
+
 import './user-profile-page.html'; // added by LL need a js
 import './user-profile-page.js';   // js page created
 
