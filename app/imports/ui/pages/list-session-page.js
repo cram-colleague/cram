@@ -9,7 +9,11 @@ Template.List_Session_Page.helpers({
    * @returns {*} All of the Profile documents.
    */
   sessionList() {
-    return SSession.find();
+    let currentDateTime = new Date();
+    // let currentDate = currentDateTime.getFullYear() + "-" + (currentDateTime. + 1) + "-" + currentDateTime.getDate();
+    let currentDate = currentDateTime.toISOString().slice(0,10);
+    // console.log(currentDate);
+    return SSession.find({sdate: {$gte: currentDate}}, {sort: {sdate: 1}});
   },
   profileList() {
     const owner = Meteor.userId();
