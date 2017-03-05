@@ -86,6 +86,15 @@ Template.Session_Page.helpers({
     }
     return find;
   },
+  canGo: function canShow() {
+    let can = false;
+    const session = SSession.findOne(FlowRouter.getParam('_id'));
+    const num = session.students.length;
+    if (num < 5) {
+      can = true;
+    }
+    return can;
+  },
 });
 
 // Template.Edit_Contact_Page.onRendered(function enableSemantic() {
