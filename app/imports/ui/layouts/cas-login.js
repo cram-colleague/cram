@@ -35,11 +35,11 @@ Template.Cas_Login.events({
 });
 
 // Here's how to do the required initialization for Semantic UI dropdown menus.
-Template.Cas_Login.onRendered(function enableDropDown() {
-  this.$('.dropdown').dropdown({
-    action: 'select',
-  });
-});
+// Template.Cas_Login.onRendered(function enableDropDown() {
+//   this.$('.dropdown').dropdown({
+//     action: 'select',
+//   });
+// });
 
 Template.Cas_Login.onCreated(function onCreated() {
   this.autorun(() => {

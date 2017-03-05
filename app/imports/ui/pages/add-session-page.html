@@ -73,6 +73,18 @@
 
       <br />
 
+      <div class="field">
+        <label style="font-size: large">Date</label>
+        <input type="text" name="sdate" id="sdate" placeholder="YYYY-MM-DD" value="{{ sessionDate }}">
+        {{#if displayFieldError 'sdate' }}
+        <div class="ui error message">
+          <p>You must specify the date</p>
+        </div>
+        {{/if}}
+      </div>
+
+      <br />
+
       <div class="two fields">
         <div class="field">
           <label>Start Time</label>

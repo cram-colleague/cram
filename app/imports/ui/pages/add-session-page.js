@@ -35,6 +35,10 @@ Template.Add_Session_Page.helpers({
     return owner ? Profile.find({ owner }) : this.ready();
     // return Profile.find();
   },
+  sessionDate() {
+    let newSession = Session.get('eventModal');
+    return newSession.date;
+  },
 });
 
 // Template.Add_Contact_Page.onRendered(function enableSemantic() {
@@ -60,7 +64,7 @@ Template.Add_Session_Page.events({
     let end = newSession.date+"T"+g.options[g.selectedIndex].value+"-10:00";
     const startV = parseInt(event.target.start.value);
     const endV = parseInt(event.target.end.value);
-    const sdate = newSession.date;
+    const sdate = event.target.sdate.value;
     const startString = f.options[f.selectedIndex].text;
     const endString = g.options[g.selectedIndex].text;
     // const time = event.target.time.value;
@@ -80,7 +84,7 @@ Template.Add_Session_Page.events({
       SSession.insert(newSession);
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your study session added!');
-      FlowRouter.go('List_Session_Page');
+      FlowRouter.go('Calendar_Page');
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

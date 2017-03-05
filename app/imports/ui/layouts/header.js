@@ -17,6 +17,9 @@ Template.Header.onRendered(function enableDropDown() {
 });
 
 Template.Header.helpers({
+  user: function user() {
+    return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
+  },
   canShow: function canShow() {
     let find = false;
     const user = Meteor.user().profile.name;
