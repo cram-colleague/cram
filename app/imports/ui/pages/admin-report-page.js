@@ -4,29 +4,29 @@ import { Report } from '../../api/report/report.js';
 // import { Meteor } from 'meteor/meteor';
 import { SSession } from '../../api/session/session.js';
 
-Template.Admin_Profile_Page.helpers({
+Template.Admin_Report_Page.helpers({
 
   /**
    * @returns {*} All of the Profile documents.
    */
-  profileList() {
+  reportList() {
     // const owner = Meteor.userId();
-    // return owner ? Profile.find({ owner }) : this.ready();
-    return Profile.find();
+    // return owner ? SSession.find({ owner }) : this.ready();
+    return Report.find();
   },
-  canShowP: function canShow() {
+  canShowR: function canShow() {
     let find = false;
     // const owner = Meteor.userId();
     // console.log(Profile.find().count());
-    if (Profile.find().count() > 0) {
+    if (Report.find().count() > 0) {
       find = true;
     }
     return find;
   },
 });
 
-Template.Admin_Profile_Page.onCreated(function onCreated() {
+Template.Admin_Report_Page.onCreated(function onCreated() {
   this.autorun(() => {
-    this.subscribe('Profile');
+    this.subscribe('Report');
   });
 });

@@ -35,6 +35,12 @@ import './admin-page.js';
 import './admin-profile-page.html';
 import './admin-profile-page.js';
 
+import './admin-schedule-page.html';
+import './admin-schedule-page.js';
+
+import './admin-report-page.html';
+import './admin-report-page.js';
+
 import './home-page.html';
 import './home-page.js';
 

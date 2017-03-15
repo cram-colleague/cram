@@ -1,0 +1,61 @@
+<template name="Admin_Report_Page">
+  {{#If_Logged_In}}
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <br />
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            Admin Page
+            <div class="sub header">View and edit profiles and study sessions</div>
+          </div>
+        </h2>
+        <br />
+
+      <div class="ui secondary fluid three item pointing large menu">
+        <a class="{{ isActiveRoute 'Admin_Profile_Page'}} item" href="{{ pathFor 'Admin_Profile_Page' }}">
+          <i class="user icon"></i>
+          Profile
+        </a>
+        <a class="{{ isActiveRoute 'Admin_Schedule_Page'}} item" href="{{ pathFor 'Admin_Schedule_Page' }}">
+          <i class="calendar icon"></i>
+          Schedule
+        </a>
+        <a class="{{ isActiveRoute 'Admin_Report_Page'}} item active" href="{{ pathFor 'Admin_Report_Page' }}">
+          <i class="announcement icon"></i>
+          Report
+        </a>
+      </div>
+      <p></p>
+      <br />
+        {{#if canShowR}}
+          <table style="margin-top: 20px" class="ui celled table">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th>View</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each report in reportList}}
+              <tr>
+                <td>{{report.name}}</td>
+                <td>{{report.title}}</td>
+                <td>{{report.content}}</td>
+                <td><a href="{{pathFor 'Report_Page' _id=report._id }}">View</a></td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        {{else}}
+          <h4 class="ui centered header">No one has reported anything yet <br /><br /></h4>
+        {{/if}}
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>

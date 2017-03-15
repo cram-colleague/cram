@@ -106,6 +106,20 @@ FlowRouter.route('/admin-profile', {
   },
 });
 
+FlowRouter.route('/admin-schedule', {
+  name: 'Admin_Schedule_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Admin_Schedule_Page' });
+  },
+});
+
+FlowRouter.route('/admin-report', {
+  name: 'Admin_Report_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Admin_Report_Page' });
+  },
+});
+
 FlowRouter.route('/message/:_id', {
   name: 'Message_Page',
   action() {

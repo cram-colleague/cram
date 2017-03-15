@@ -4,29 +4,27 @@ import { Report } from '../../api/report/report.js';
 // import { Meteor } from 'meteor/meteor';
 import { SSession } from '../../api/session/session.js';
 
-Template.Admin_Profile_Page.helpers({
+Template.Admin_Schedule_Page.helpers({
 
   /**
    * @returns {*} All of the Profile documents.
    */
-  profileList() {
-    // const owner = Meteor.userId();
-    // return owner ? Profile.find({ owner }) : this.ready();
-    return Profile.find();
+  sessionList() {
+    return SSession.find({}, {sort: {sdate: 1}});
   },
-  canShowP: function canShow() {
+  canShowS: function canShow() {
     let find = false;
     // const owner = Meteor.userId();
-    // console.log(Profile.find().count());
-    if (Profile.find().count() > 0) {
+    // console.log(Profile.find({ owner }).count());
+    if (SSession.find().count() > 0) {
       find = true;
     }
     return find;
   },
 });
 
-Template.Admin_Profile_Page.onCreated(function onCreated() {
+Template.Admin_Schedule_Page.onCreated(function onCreated() {
   this.autorun(() => {
-    this.subscribe('Profile');
+    this.subscribe('SSession');
   });
 });
