@@ -32,6 +32,9 @@ import './user-page.js';
 import './admin-page.html';
 import './admin-page.js';
 
+import './admin-profile-page.html';
+import './admin-profile-page.js';
+
 import './home-page.html';
 import './home-page.js';
 

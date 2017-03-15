@@ -1,0 +1,136 @@
+<template name="Admin_Profile_Page">
+  {{#If_Logged_In}}
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <br />
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            Admin Page
+            <div class="sub header">View and edit profiles and study sessions</div>
+          </div>
+        </h2>
+        <br />
+
+      <div class="ui secondary fluid three item pointing large menu">
+        <a class="{{ isActiveRoute 'Admin_Profile_Page'}} item" href="{{ pathFor 'Admin_Profile_Page' }}">
+          <i class="user icon"></i>
+          Profile
+        </a>
+        <a class="{{ isActiveRoute 'Admin_Schedule_Page'}} item active" href="{{ pathFor 'Admin_Schedule_Page' }}">
+          <i class="calendar icon"></i>
+          Schedule
+        </a>
+        <a class="{{ isActiveRoute 'Admin_Report_Page'}} item active" href="{{ pathFor 'Admin_Report_Page' }}">
+          <i class="announcement icon"></i>
+          Report
+        </a>
+      </div>
+      <p></p>
+      <br />
+
+      {{#if canShowP}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description of yourself</th>
+            <th>View</th>
+            <th>Edit</th>
+            <!--<th>Noti</th>-->
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each profile in profileList}}
+            <tr>
+              <!--change it later-->
+              <td>{{profile.first}} {{profile.last}}</td>
+              <!--<td>{{profile.preCourse}}</td>-->
+              <!--<td>{{profile.sensei}}</td>-->
+              <!--<td>{{profile.currCourse}}</td>-->
+              <!--<td>{{profile.grasshopper}}</td>-->
+              <td>{{profile.description}}</td>
+              <!--<td>{{profile.owner}}</td>-->
+              <!-- if statement should come? -->
+              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
+              <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
+              <!--<td>{{profile.notiS}}</td>-->
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        <h2 class="ui centered header">No one created profile yet</h2>
+      {{/if}}
+
+        <br /><br />
+        <h3 class="ui horizontal divider header">
+          <i class="calendar icon"></i>
+          Schedule
+        </h3>
+        <br />
+        {{#if canShowS}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name of the course</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>View</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each session in sessionList}}
+            <tr>
+              <td>{{session.name}}</td>
+              <td>{{session.sdate}}</td>
+              <td>{{session.startString}} to {{session.endString}}</td>
+              <td><a href="{{pathFor 'Session_Page' _id=session._id }}">View</a></td>
+              <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+          {{else}}
+          <h2 class="ui centered header">No one created study session yet <br /><br /></h2>
+          {{/if}}
+        <br /><br />
+        <h3 class="ui horizontal divider header">
+          <i class="announcement icon"></i>
+          Report
+        </h3>
+        <br />
+        {{#if canShowR}}
+          <table style="margin-top: 20px" class="ui celled table">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th>View</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each report in reportList}}
+              <tr>
+                <td>{{report.name}}</td>
+                <td>{{report.title}}</td>
+                <td>{{report.content}}</td>
+                <td><a href="{{pathFor 'Report_Page' _id=report._id }}">View</a></td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        {{else}}
+          <h4 class="ui centered header">No one has reported anything yet <br /><br /></h4>
+        {{/if}}
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>
