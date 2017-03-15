@@ -1,5 +1,8 @@
 <template name="User_Page">
   {{#If_Logged_In}}
+
+  <br />
+
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
         <br />
@@ -18,6 +21,7 @@
       {{#if canShowP}}
       <a class="{{ isActiveRoute 'Tuto_User_Page'}} item" href="{{ pathFor 'Tuto_User_Page' }}">
         <button class="ui purple basic button" style="float: right">How to use this page</button></a>
+
         <h2 class="ui header">
           <i class="settings icon"></i>
           <div class="content">
@@ -26,31 +30,46 @@
           </div>
         </h2>
         <br />
-        <table style="margin-top: 20px" class="ui celled table">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>View</th>
-            <th>Edit</th>
-            <!--<th>noti</th>-->
-          </tr>
-          </thead>
 
-          <tbody>
-          {{#each profile in profileList}}
-            <tr>
-              <td>{{profile.first}} {{profile.last}}</td>
-              <td>{{profile.description}}</td>
-              <td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>
-              <td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>
-              <!--<td>{{profile.notiS}}</td>-->
-            </tr>
-          {{/each}}
-          </tbody>
-        </table>
+
+      <div class="ui three cards">
+        {{#each profile in profileList}}
+            <div class="card">
+              <a class="ui image" href="{{pathFor 'Profile_Page' _id=profile._id }}">
+                <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';" style="height: 300px">
+              </a>
+              <!--<div class="content">-->
+                <!--<a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a>-->
+              <!--</div>-->
+            </div>
+        {{/each}}
+      </div>
+        <!--<table style="margin-top: 20px" class="ui celled table">-->
+          <!--<thead>-->
+          <!--<tr>-->
+            <!--<th>Name</th>-->
+            <!--<th>Description</th>-->
+            <!--<th>View</th>-->
+            <!--<th>Edit</th>-->
+            <!--&lt;!&ndash;<th>noti</th>&ndash;&gt;-->
+          <!--</tr>-->
+          <!--</thead>-->
+
+          <!--<tbody>-->
+          <!--{{#each profile in profileList}}-->
+            <!--<tr>-->
+              <!--<td>{{profile.first}} {{profile.last}}</td>-->
+              <!--<td>{{profile.description}}</td>-->
+              <!--<td><a href="{{pathFor 'Profile_Page' _id=profile._id }}">View</a></td>-->
+              <!--<td><a href="{{pathFor 'Edit_Profile_Page' _id=profile._id }}">Edit</a></td>-->
+              <!--&lt;!&ndash;<td>{{profile.notiS}}</td>&ndash;&gt;-->
+            <!--</tr>-->
+          <!--{{/each}}-->
+          <!--</tbody>-->
+        <!--</table>-->
 
         <br /><br />
+
         <h3 class="ui horizontal divider header">
           <i class="calendar icon"></i>
           Schedule
