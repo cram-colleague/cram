@@ -81,14 +81,16 @@
 
 
       <div class="ui large tabular menu">
-        <a class="item active">
+        <a class="{{ isActiveRoute 'User_Schedule_Page'}} item active" href="{{ pathFor 'User_Schedule_Page' }}">
           <i class="calendar icon"></i>
           Schedule
         </a>
-        <a class="item">
+        <a class="{{ isActiveRoute 'List_Messenger_Page'}} item" href="{{ pathFor 'List_Messenger_Page' }}">
+          <i class="mail outline icon"></i>
           Message
         </a>
-        <a class="item">
+        <a class="{{ isActiveRoute 'Report_Page'}} item" href="{{ pathFor 'Report_Page' }}">
+          <i class="announcement icon"></i>
           Report
         </a>
       </div>

@@ -14,6 +14,11 @@ Template.List_Messenger_Page.helpers({
     // return owner ? Profile.find({ owner }) : this.ready();
     return Profile.find();
   },
+  profileListO() {
+    const owner = Meteor.userId();
+    return owner ? Profile.find({ owner }) : this.ready();
+    // return Profile.find();
+  },
   messengerList() {
     const owner = Meteor.userId();;
     const receiver = Profile.findOne({ owner: owner })._id;
