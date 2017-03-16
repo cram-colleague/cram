@@ -1,6 +1,6 @@
 <template name="Sent_Messenger_Page">
   {{#If_Logged_In}}
-    <div class="ui text container">
+    <div class="ui container">
       {{#if Template.subscriptionsReady}}
         <br />
       <br />
@@ -35,7 +35,7 @@
           <h2>
             Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a> !!
           </h2>
-          <h3>Check out your schedule for study sessions :) </h3>
+          <h3>Check out your messages :) </h3>
         </div>
         {{/each}}
       </div>
@@ -50,15 +50,12 @@
           <i class="mail outline icon"></i>
           Message
         </a>
-        <a class="{{ isActiveRoute 'Report_Page'}} item" href="{{ pathFor 'Report_Page' }}">
+        <a class="{{ isActiveRoute 'Add_Report_Page'}} item" href="{{ pathFor 'Add_Report_Page' }}">
           <i class="announcement icon"></i>
           Report
         </a>
       </div>
-        <!--<h3 class="ui horizontal divider header">-->
-          <!--<i class="announcement icon"></i>-->
-          <!--Sent Mail-->
-        <!--</h3>-->
+      <br />
 
           <div class="ui secondary fluid two item pointing large menu">
             <a class="{{ isActiveRoute 'List_Messager_Page'}} item" href="{{ pathFor 'List_Messenger_Page' }}">

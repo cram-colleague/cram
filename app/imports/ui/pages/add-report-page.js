@@ -3,6 +3,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Report, ReportSchema } from '../../api/report/report.js';
+import { Profile, ProfileSchema } from '../../api/profile/profile.js';
 import { Meteor } from 'meteor/meteor';
 
 /* eslint-disable no-param-reassign */
@@ -28,6 +29,11 @@ Template.Add_Report_Page.helpers({
   },
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
+  },
+  profileListO() {
+    const owner = Meteor.userId();
+    return owner ? Profile.find({ owner }) : this.ready();
+    // return Profile.find();
   },
 });
 

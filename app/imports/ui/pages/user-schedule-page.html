@@ -3,10 +3,9 @@
 
   <br />
 
-    <div class="ui text container">
+    <div class="ui container">
       {{#if Template.subscriptionsReady}}
         <br />
-      <br>
       {{> notifications}}
       {{#if canShowNP}}
       <div class="row">
@@ -89,7 +88,7 @@
           <i class="mail outline icon"></i>
           Message
         </a>
-        <a class="{{ isActiveRoute 'Report_Page'}} item" href="{{ pathFor 'Report_Page' }}">
+        <a class="{{ isActiveRoute 'Add_Report_Page'}} item" href="{{ pathFor 'Add_Report_Page' }}">
           <i class="announcement icon"></i>
           Report
         </a>

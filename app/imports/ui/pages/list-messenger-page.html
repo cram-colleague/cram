@@ -1,6 +1,6 @@
 <template name="List_Messenger_Page">
   {{#If_Logged_In}}
-    <div class="ui text container">
+    <div class="ui container">
       {{#if Template.subscriptionsReady}}
         <br /><br />
       <a class="{{ isActiveRoute 'Tuto_User_Page'}} item" href="{{ pathFor 'Tuto_User_Page' }}">
@@ -34,7 +34,7 @@
           <h2>
             Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a> !!
           </h2>
-          <h3>Check out your schedule for study sessions :) </h3>
+          <h3>Check out your messages :) </h3>
         </div>
         {{/each}}
       </div>
@@ -49,7 +49,7 @@
           <i class="mail outline icon"></i>
           Message
         </a>
-        <a class="{{ isActiveRoute 'Report_Page'}} item" href="{{ pathFor 'Report_Page' }}">
+        <a class="{{ isActiveRoute 'Add_Report_Page'}} item" href="{{ pathFor 'Add_Report_Page' }}">
           <i class="announcement icon"></i>
           Report
         </a>

@@ -1,10 +1,59 @@
 <template name="Add_Report_Page">
   <div style="margin-top: 20px" class="ui container">
+    {{#if Template.subscriptionsReady}}
     <form class="ui form report-data-form {{ errorClass }}">
       <br />
       <a class="{{ isActiveRoute 'Tuto_Add_Report_Page'}} item" href="{{ pathFor 'Tuto_Add_Report_Page' }}">
         <button class="ui purple basic button" style="float: right">How to use this page</button></a>
-      <h2 class="ui dividing header"><i class="send outline icon"></i>  Report</h2>
+
+      <h2 class="ui header">
+        <i class="settings icon"></i>
+        <div class="content">
+          User Page
+          <div class="sub header">View and edit your profile</div>
+        </div>
+      </h2>
+      <br />
+
+
+      <div class="ui grid">
+        {{#each profile in profileListO}}
+        <div class="three wide column">
+          <!--<div class="ui three cards">-->
+          <div class="ui card">
+            <a class="ui image" href="{{pathFor 'Profile_Page' _id=profile._id }}">
+              <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+            </a>
+            <!--<div class="content">-->
+            <!--<a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a>-->
+            <!--</div>-->
+          </div>
+        </div>
+
+        <div class="ten wide column">
+          <h2>
+            Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a> !!
+          </h2>
+          <h3>Send a report to admin :) </h3>
+        </div>
+        {{/each}}
+      </div>
+
+
+      <div class="ui large tabular menu">
+        <a class="{{ isActiveRoute 'User_Schedule_Page'}} item" href="{{ pathFor 'User_Schedule_Page' }}">
+          <i class="calendar icon"></i>
+          Schedule
+        </a>
+        <a class="{{ isActiveRoute 'List_Messenger_Page'}} item" href="{{ pathFor 'List_Messenger_Page' }}">
+          <i class="mail outline icon"></i>
+          Message
+        </a>
+        <a class="{{ isActiveRoute 'Add_Report_Page'}} item active" href="{{ pathFor 'Add_Report_Page' }}">
+          <i class="announcement icon"></i>
+          Report
+        </a>
+      </div>
       <br />
 
       <div class="field">
@@ -46,10 +95,13 @@
       <br />
 
       <button class="ui button" type="submit">Submit</button>
-      <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">
+      <a class="{{ isActiveRoute 'User_Schedule_Page'}} item" href="{{ pathFor 'User_Schedule_Page' }}">
         <button class="ui button">Cancel</button>
       </a>
 
     </form>
+    {{else}}
+    {{> Loading}}
+    {{/if}}
   </div>
 </template>
