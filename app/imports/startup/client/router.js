@@ -85,6 +85,13 @@ FlowRouter.route('/add-report', {
   },
 });
 
+FlowRouter.route('/user-schedule', {
+  name: 'User_Schedule_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'User_Schedule_Page' });
+  },
+});
+
 FlowRouter.route('/user-profile', {
   name: 'User_Page',
   action() {

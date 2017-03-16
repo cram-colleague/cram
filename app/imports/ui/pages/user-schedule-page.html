@@ -1,4 +1,4 @@
-<template name="User_Page">
+<template name="User_Schedule_Page">
   {{#If_Logged_In}}
 
   <br />
@@ -50,6 +50,7 @@
         <h2>
           Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a> !!
         </h2>
+        <h3>Check out your schedule for study sessions :) </h3>
       </div>
         {{/each}}
       </div>

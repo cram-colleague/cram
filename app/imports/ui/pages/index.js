@@ -29,6 +29,9 @@ import './user-page.html';
 import './tuto-user-page.html';
 import './user-page.js';
 
+import './user-schedule-page.html';
+import './user-schedule-page.js';
+
 import './admin-page.html';
 import './admin-page.js';
 

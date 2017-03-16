@@ -6,7 +6,7 @@ import { SSession } from '../../api/session/session.js';
 
 serverMessages = new ServerMessages();
 
-Template.User_Page.helpers({
+Template.User_Schedule_Page.helpers({
 
   /**
    * @returns {*} All of the Profile documents.
@@ -106,7 +106,7 @@ Template.User_Page.helpers({
   },
 });
 
-Template.User_Page.onCreated(function onCreated() {
+Template.User_Schedule_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Profile');
   });
@@ -115,7 +115,7 @@ Template.User_Page.onCreated(function onCreated() {
   });
 });
 
-Template.User_Page.events({
+Template.User_Schedule_Page.events({
   'click .js-btn-clientN': function (event, template) {
     Notifications.warn('New friend is added!', 'Lets check the profile :)');
     Meteor.call('watchProf');
