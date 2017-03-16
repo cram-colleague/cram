@@ -3,14 +3,58 @@
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
         <br />
-        <h2 class="ui header">
-          <i class="mail outline icon"></i>
-          <div class="content">
-            Messenger
-            <div class="sub header">View messages</div>
+      <br />
+      <a class="{{ isActiveRoute 'Tuto_User_Page'}} item" href="{{ pathFor 'Tuto_User_Page' }}">
+        <button class="ui purple basic button" style="float: right">How to use this page</button></a>
+
+      <h2 class="ui header">
+        <i class="settings icon"></i>
+        <div class="content">
+          User Page
+          <div class="sub header">View and edit your profile</div>
+        </div>
+      </h2>
+      <br />
+
+
+      <div class="ui grid">
+        {{#each profile in profileListO}}
+        <div class="three wide column">
+          <!--<div class="ui three cards">-->
+          <div class="ui card">
+            <a class="ui image" href="{{pathFor 'Profile_Page' _id=profile._id }}">
+              <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+            </a>
+            <!--<div class="content">-->
+            <!--<a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a>-->
+            <!--</div>-->
           </div>
-        </h2>
-        <br />
+        </div>
+
+        <div class="ten wide column">
+          <h2>
+            Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a> !!
+          </h2>
+          <h3>Check out your schedule for study sessions :) </h3>
+        </div>
+        {{/each}}
+      </div>
+
+
+      <div class="ui large tabular menu">
+        <a class="{{ isActiveRoute 'User_Schedule_Page'}} item" href="{{ pathFor 'User_Schedule_Page' }}">
+          <i class="calendar icon"></i>
+          Schedule
+        </a>
+        <a class="{{ isActiveRoute 'List_Messenger_Page'}} item active" href="{{ pathFor 'List_Messenger_Page' }}">
+          <i class="mail outline icon"></i>
+          Message
+        </a>
+        <a class="{{ isActiveRoute 'Report_Page'}} item" href="{{ pathFor 'Report_Page' }}">
+          <i class="announcement icon"></i>
+          Report
+        </a>
+      </div>
         <!--<h3 class="ui horizontal divider header">-->
           <!--<i class="announcement icon"></i>-->
           <!--Sent Mail-->
