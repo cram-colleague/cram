@@ -10,9 +10,62 @@
       <div class="field">
         <label style="font-size: large">Name of the course</label>
         <div class="ui pointing below purple big basic label">
-          Type your name of the course that you want to teach.
+          Select the name of the course that you want to teach.
         </div>
-        <input type="text" placeholder="Name of the course">
+        <select class="ui fluid search dropdown" name="name" id="name">
+          <option value="">Select the Course</option>
+          <option value="ICS111">ICS111</option>
+          <option value="ICS141">ICS141</option>
+          <option value="ICS211">ICS211</option>
+          <option value="ICS212">ICS212</option>
+          <option value="ICS215">ICS215</option>
+          <option value="ICS222">ICS222</option>
+          <option value="ICS241">ICS241</option>
+          <option value="ICS290">ICS290</option>
+          <option value="ICS311">ICS311</option>
+          <option value="ICS312">ICS312</option>
+          <option value="ICS313">ICS313</option>
+          <option value="ICS314">ICS314</option>
+          <option value="ICS321">ICS321</option>
+          <option value="ICS331">ICS331</option>
+          <option value="ICS332">ICS332</option>
+          <option value="ICS351">ICS351</option>
+          <option value="ICS355">ICS355</option>
+          <option value="ICS361">ICS361</option>
+          <option value="ICS390">ICS390</option>
+          <option value="ICS414">ICS414</option>
+          <option value="ICS415">ICS415</option>
+          <option value="ICS419">ICS419</option>
+          <option value="ICS421">ICS421</option>
+          <option value="ICS422">ICS422</option>
+          <option value="ICS423">ICS423</option>
+          <option value="ICS424">ICS424</option>
+          <option value="ICS425">ICS425</option>
+          <option value="ICS426">ICS426</option>
+          <option value="ICS431">ICS431</option>
+          <option value="ICS432">ICS432</option>
+          <option value="ICS435">ICS435</option>
+          <option value="ICS441">ICS441</option>
+          <option value="ICS443">ICS443</option>
+          <option value="ICS451">ICS451</option>
+          <option value="ICS452">ICS452</option>
+          <option value="ICS455">ICS455</option>
+          <option value="ICS461">ICS461</option>
+          <option value="ICS462">ICS462</option>
+          <option value="ICS464">ICS464</option>
+          <option value="ICS465">ICS465</option>
+          <option value="ICS466">ICS466</option>
+          <option value="ICS469">ICS469</option>
+          <option value="ICS471">ICS471</option>
+          <option value="ICS475">ICS475</option>
+          <option value="ICS476">ICS476</option>
+          <option value="ICS483">ICS483</option>
+          <option value="ICS484">ICS484</option>
+          <option value="ICS485">ICS485</option>
+          <option value="ICS491">ICS491</option>
+          <option value="ICS495">ICS495</option>
+          <option value="ICS499">ICS499</option>
+        </select>
         <!--{{#if displayFieldError 'name' }}-->
           <!--<div class="ui error message">-->
             <!--<p>You must specify your name of the course.</p>-->
@@ -23,15 +76,102 @@
       <br />
 
       <div class="field">
-        <label style="font-size: large">What time?</label>
+        <label style="font-size: large">Date</label>
         <div class="ui pointing below purple big basic label">
-          You can specify what time you want to start the study session
+          You can specify the date with your study session with YYYY-MM-DD
         </div>
-        <input type="text" name="time" id="time" placeholder="YYYY-MM-DD 12:00:00">
+        <input type="text" name="time" id="time" placeholder="YYYY-MM-DD">
         <!--{{#if displayFieldError 'time' }}-->
           <!--<div class="ui error message">-->
             <!--<p>You must specify the time</p>-->
           <!--</div>-->
+        <!--{{/if}}-->
+      </div>
+
+      <br />
+
+      <div class="two fields">
+        <div class="field">
+          <label>Start Time</label>
+          <div class="ui pointing below purple big basic label">
+            You can select the time to start
+          </div>
+          <select class="ui fluid search dropdown" name="start" id="start">
+            <option value="">Select a Start Time</option>
+            <option value="00:00">12:00AM</option>
+            <option value="01:00">1:00AM</option>
+            <option value="02:00">2:00AM</option>
+            <option value="03:00">3:00AM</option>
+            <option value="04:00">4:00AM</option>
+            <option value="05:00">5:00AM</option>
+            <option value="06:00">6:00AM</option>
+            <option value="07:00">7:00AM</option>
+            <option value="08:00">8:00AM</option>
+            <option value="09:00">9:00AM</option>
+            <option value="10:00">10:00AM</option>
+            <option value="11:00">11:00AM</option>
+            <option value="12:00">12:00PM</option>
+            <option value="13:00">1:00PM</option>
+            <option value="14:00">2:00PM</option>
+            <option value="15:00">3:00PM</option>
+            <option value="16:00">4:00PM</option>
+            <option value="17:00">5:00PM</option>
+            <option value="18:00">6:00PM</option>
+            <option value="19:00">7:00PM</option>
+            <option value="20:00">8:00PM</option>
+            <option value="21:00">9:00PM</option>
+            <option value="22:00">10:00PM</option>
+            <option value="23:00">11:00PM</option>
+          </select>
+          <!--{{#if displayFieldError 'start' }}-->
+          <!--<div class="ui error message">-->
+            <!--<p>Please specify the start time of this session.</p>-->
+          <!--</div>-->
+          <!--{{/if}}-->
+        </div>
+
+        <div class="field">
+          <label>End Time</label>
+          <div class="ui pointing below purple big basic label">
+            You can select the time to end
+          </div>
+          <select class="ui fluid search dropdown" name="end" id="end">
+            <option value="">Select an End Time</option>
+            <option value="00:00">12:00AM</option>
+            <option value="01:00">1:00AM</option>
+            <option value="02:00">2:00AM</option>
+            <option value="03:00">3:00AM</option>
+            <option value="04:00">4:00AM</option>
+            <option value="05:00">5:00AM</option>
+            <option value="06:00">6:00AM</option>
+            <option value="07:00">7:00AM</option>
+            <option value="08:00">8:00AM</option>
+            <option value="09:00">9:00AM</option>
+            <option value="10:00">10:00AM</option>
+            <option value="11:00">11:00AM</option>
+            <option value="12:00">12:00PM</option>
+            <option value="13:00">1:00PM</option>
+            <option value="14:00">2:00PM</option>
+            <option value="15:00">3:00PM</option>
+            <option value="16:00">4:00PM</option>
+            <option value="17:00">5:00PM</option>
+            <option value="18:00">6:00PM</option>
+            <option value="19:00">7:00PM</option>
+            <option value="20:00">8:00PM</option>
+            <option value="21:00">9:00PM</option>
+            <option value="22:00">10:00PM</option>
+            <option value="23:00">11:00PM</option>
+          </select>
+          <!--{{#if displayFieldError 'end' }}-->
+          <!--<div class="ui error message">-->
+            <!--<p>Please specify the end time of this session.</p>-->
+          <!--</div>-->
+          <!--{{/if}}-->
+        </div>
+        <!--{{#if displayFieldError 'endV' }}-->
+        <!--<div class="ui error message">-->
+          <!--<p>Please enter an end time for this session later than it's start time.</p>-->
+        <!--</div>-->
         <!--{{/if}}-->
       </div>
 
