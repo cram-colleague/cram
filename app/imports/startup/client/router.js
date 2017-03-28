@@ -259,3 +259,10 @@ FlowRouter.route('/tuto-add-report', {
     BlazeLayout.render('App_Body', { main: 'Tuto_Add_Report_Page' });
   },
 });
+
+FlowRouter.route('/tuto-user-message', {
+  name: 'Tuto_List_Messenger_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_List_Messenger_Page' });
+  },
+});

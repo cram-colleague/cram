@@ -1,0 +1,125 @@
+<template name="Tuto_List_Messenger_Page">
+  <br />
+  <div class="ui container">
+
+    <div class="ui purple massive label">
+      Tutorial
+    </div>
+    <br />
+    <!--{{#if Template.subscriptionsReady}}-->
+    <br />
+    <!--{{> notifications}}-->
+    <!--{{#if canShowNP}}-->
+    <div class="ui purple big basic label">
+      Notification will pop when new user and study session is added.
+    </div>
+    <br /><br />
+    <div class="row">
+      <input class="ui inverted orange js-btn-clientN button" type="button" value="Show notification" />
+    </div>
+
+    <h2 class="ui header">
+      <i class="settings icon"></i>
+      <div class="content">
+        User Page
+        <div class="sub header">View and edit your profile</div>
+      </div>
+    </h2>
+    <br />
+
+
+    <div class="ui grid">
+      <!--{{#each profile in profileList}}-->
+      <div class="three wide column">
+        <!--<div class="ui three cards">-->
+        <div class="ui card">
+          <a class="ui image" href="{{pathFor 'Profile_Page' _id=profile._id }}">
+            <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+          </a>
+          <!--<div class="content">-->
+          <!--<a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a>-->
+          <!--</div>-->
+        </div>
+      </div>
+
+      <div class="ten wide column">
+        <h2>
+          Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">Guests</a> !!
+        </h2>
+        <h3>Check out your schedule for study sessions :) </h3>
+      </div>
+      <!--{{/each}}-->
+    </div>
+    <br />
+    <div class="ui pointing below purple big basic label">
+      You can choose pages from this tab. Try click some!
+    </div>
+    <br />
+
+    <div class="ui large tabular menu">
+      <a class="{{ isActiveRoute 'Tuto_User_Schedule_Page'}} item" href="{{ pathFor 'Tuto_User_Schedule_Page' }}">
+        <i class="calendar icon"></i>
+        Schedule
+      </a>
+      <a class="{{ isActiveRoute 'Tuto_List_Messenger_Page'}} item active" href="{{ pathFor 'Tuto_List_Messenger_Page' }}">
+        <i class="mail outline icon"></i>
+        Message
+      </a>
+      <a class="{{ isActiveRoute 'Tuto_Add_Report_Page'}} item" href="{{ pathFor 'Tuto_Add_Report_Page' }}">
+        <i class="announcement icon"></i>
+        Report
+      </a>
+    </div>
+        <br />
+        <!--<h3 class="ui horizontal divider header">-->
+          <!--<i class="announcement icon"></i>-->
+          <!--Inbox-->
+        <!--</h3>-->
+    <div class="ui pointing below purple big basic label">
+      You can see the messages that you got and also sent messages.
+    </div>
+      <div class="ui secondary fluid two item pointing large menu">
+        <a class="{{ isActiveRoute 'List_Messager_Page'}} item active" href="{{ pathFor 'List_Messenger_Page' }}">
+          Inbox
+        </a>
+        <a>
+          Sent Mail
+        </a>
+      </div>
+        <p></p>
+        <br />
+        <!--{{#if canShowM}}-->
+          <table id="my_table" style="margin-top: 20px; margin-right: 5em" class="ui celled table">
+            <thead>
+            <tr>
+              <th>Sender</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th>View</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <!--{{#each message in messengerList}}-->
+              <tr>
+                <td>John Segawa</td>
+                <td>ICS414</td>
+                <td id="con">Hi, I have a question about ...</td>
+                <td>
+                  <!--<button class="ui button view" type="button" value="{{message._id}}">-->
+                    <a href="{{pathFor 'Message_Page' _id=message._id }}">View</a>
+                  <!--</button>-->
+                  </td>
+              </tr>
+            <!--{{/each}}-->
+            </tbody>
+          </table>
+        <!--{{else}}-->
+          <h4 class="ui centered header">No one has message you yet <br /><br /></h4>
+        <!--{{/if}}-->
+      <!--{{else}}-->
+        <!--{{> Loading}}-->
+      <!--{{/if}}-->
+    </div>
+  <!--{{/If_Logged_In}}-->
+</template>

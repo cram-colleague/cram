@@ -74,6 +74,7 @@ import './list-session-page.html';
 import './list-session-page.js';
 
 import './list-messenger-page.html';
+import './tuto-list-messenger-page.html';
 import './list-messenger-page.js';
 
 import './sent-messenger-page.html';
