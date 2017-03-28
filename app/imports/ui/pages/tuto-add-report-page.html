@@ -1,71 +1,115 @@
 <template name="Tuto_Add_Report_Page">
-  <div style="margin-top: 20px" class="ui container">
-    <form class="ui form report-data-form {{ errorClass }}">
-      <br />
-      <div class="ui purple massive label">
-        Tutorial
+  <br />
+  <div class="ui container">
+    <div class="ui purple massive label">
+      Tutorial
+    </div>
+    <br />
+    <br />
+    <div class="ui purple big basic label">
+      Notification will pop when new user and study session is added.
+    </div>
+    <br /><br />
+    <div class="row">
+      <input class="ui inverted orange js-btn-clientN button" type="button" value="Show notification" />
+    </div>
+
+    <h2 class="ui header">
+      <i class="settings icon"></i>
+      <div class="content">
+        User Page
+        <div class="sub header">View and edit your profile</div>
       </div>
-      <h2 class="ui dividing header"><i class="send outline icon"></i>  Report</h2>
-      <br />
-      <div class="field">
-        <label style="font-size: large">Name of the person</label>
-        <div class="ui pointing below purple big basic label">
-          Type the name of the person you want to report about.
-        </div>
-        <input type="text" name="name" id="name" placeholder="Name">
-        <!--{{#if displayFieldError 'name' }}-->
-          <!--<div class="ui error message">-->
-            <!--<p>You must specify the name of the person</p>-->
+    </h2>
+    <br />
+
+
+    <div class="ui grid">
+      <!--{{#each profile in profileList}}-->
+      <div class="three wide column">
+        <!--<div class="ui three cards">-->
+        <div class="ui card">
+          <a class="ui image" href="{{pathFor 'Profile_Page' _id=profile._id }}">
+            <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+          </a>
+          <!--<div class="content">-->
+          <!--<a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a>-->
           <!--</div>-->
-        <!--{{/if}}-->
-      </div>
-
-      <br />
-
-      <div class="field">
-        <label style="font-size: large">Title</label>
-        <div class="ui pointing below purple big basic label">
-          Type a title for the report.
         </div>
-        <input type="text" name="title" id="title" placeholder="Title">
-        <!--{{#if displayFieldError 'title' }}-->
-          <!--<div class="ui error message">-->
-            <!--<p>You must specify the title.</p>-->
-          <!--</div>-->
-        <!--{{/if}}-->
       </div>
 
-      <br />
-
-      <div class="field">
-        <label style="font-size: large">Text</label>
-        <div class="ui pointing below purple big basic label">
-          Describe the reasons why you are writing a report.
-        </div>
-        <textarea name="content" id="content"></textarea>
-         <!--{{#if displayFieldError 'content' }}-->
-           <!--<div class="ui error message">-->
-             <!--<p>You must specify your content.</p>-->
-           <!--</div>-->
-         <!--{{/if}}-->
+      <div class="ten wide column">
+        <h2>
+          Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">Guests</a> !!
+        </h2>
+        <h3>Send a report to admin :) </h3>
       </div>
+      <!--{{/each}}-->
+    </div>
+    <br />
+    <div class="ui pointing below purple big basic label">
+      You can choose pages from this tab. Try click some!
+    </div>
+    <br />
 
-      <br />
-
-      <br />
-
-      <div class="ui purple big basic label">
-        If you satisfy with what you write, submit the report. It will be reported to admin of this app and they will do somthing about it.
-      </div>
-      <br />
-      <br />
-      <button class="ui button" type="submit">Submit</button>
-      <a class="{{ isActiveRoute 'User_Profile_Page'}} item" href="{{ pathFor 'User_Profile_Page' }}">
-        <button class="ui button">Cancel</button>
+    <div class="ui large tabular menu">
+      <a class="{{ isActiveRoute 'Tuto_User_Schedule_Page'}} item" href="{{ pathFor 'Tuto_User_Schedule_Page' }}">
+        <i class="calendar icon"></i>
+        Schedule
       </a>
+      <a class="{{ isActiveRoute 'Tuto_List_Messenger_Page'}} item" href="{{ pathFor 'Tuto_List_Messenger_Page' }}">
+        <i class="mail outline icon"></i>
+        Message
+      </a>
+      <a class="{{ isActiveRoute 'Tuto_Add_Report_Page'}} item active" href="{{ pathFor 'Tuto_Add_Report_Page' }}">
+        <i class="announcement icon"></i>
+        Report
+      </a>
+    </div>
+    <br />
 
-      <br />
-      <br />
+    <div class="field">
+      <label style="font-size: large">Name of the person</label>
+      <div class="ui pointing below purple big basic label">
+        Type the name of the person you want to report about.
+      </div>
+      <input type="text" name="name" id="name" placeholder="Name">
+      <!--{{#if displayFieldError 'name' }}-->
+      <!--<div class="ui error message">-->
+      <!--<p>You must specify the name of the person</p>-->
+      <!--</div>-->
+      <!--{{/if}}-->
+    </div>
+
+    <div class="field">
+      <label style="font-size: large">Title</label>
+      <div class="ui pointing below purple big basic label">
+        Type a title for the report.
+      </div>
+      <input type="text" name="title" id="title" placeholder="Title">
+    </div>
+
+    <br />
+
+    <div class="field">
+      <label style="font-size: large">Text</label>
+      <div class="ui pointing below purple big basic label">
+        Describe the reasons why you are writing a report.
+      </div>
+      <textarea name="content" id="content"></textarea>
+
+    </div>
+
+    <br />
+
+    <br />
+
+    <button class="ui button" type="submit">Submit</button>
+    <a class="{{ isActiveRoute 'User_Schedule_Page'}} item" href="{{ pathFor 'User_Schedule_Page' }}">
+      <button class="ui button">Cancel</button>
+    </a>
+
+    <br />
       <div style="float: left" data-tooltip="Before is Session Page" data-position="top left">
         <a class="{{ isActiveRoute 'Tuto_Session_Page'}} item" href="{{ pathFor 'Tuto_Session_Page' }}">
           <i class="huge purple pointing left icon"></i>
@@ -86,6 +130,5 @@
       </div>
       <br />
       <br />
-    </form>
   </div>
 </template>

@@ -46,7 +46,7 @@
         <h2>
           Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">Guests</a> !!
         </h2>
-        <h3>Check out your schedule for study sessions :) </h3>
+        <h3>Check out your messages :) </h3>
       </div>
       <!--{{/each}}-->
     </div>
@@ -114,12 +114,27 @@
             <!--{{/each}}-->
             </tbody>
           </table>
-        <!--{{else}}-->
-          <h4 class="ui centered header">No one has message you yet <br /><br /></h4>
-        <!--{{/if}}-->
-      <!--{{else}}-->
-        <!--{{> Loading}}-->
-      <!--{{/if}}-->
+    <br />
+    <div class="two fields">
+      <div class="field" style="float: left" data-tooltip="Before is User Schedule Page" data-position="top left">
+        <a class="{{ isActiveRoute 'Tuto_User_Schedule_Page'}} item" href="{{ pathFor 'Tuto_User_Schedule_Page' }}">
+          <i class="huge purple pointing left icon"></i>
+        </a>
+      </div>
+      <div class="field" style="float: right" data-tooltip="Next is Create Study Session Page" data-position="top right">
+        <a class="{{ isActiveRoute 'Tuto_Add_Session_Page'}} item" href="{{ pathFor 'Tuto_Add_Session_Page' }}">
+          <i class="huge purple pointing right icon"></i>
+        </a>
+      </div>
+    </div>
+    <br /><br /><br />
+    <div class="ui one column center aligned page grid">
+      <div class="column twelve wide">
+        <a class="{{ isActiveRoute 'List_Messenger_Page'}} item" href="{{ pathFor 'List_Messenger_Page' }}">
+          <button class="ui purple basic button">Go to actual page</button></a>
+        <br />
+      </div>
+    </div>
     </div>
   <!--{{/If_Logged_In}}-->
 </template>
