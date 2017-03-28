@@ -1,0 +1,152 @@
+<template name="Tuto_User_Schedule_Page">
+  <!--{{#If_Logged_In}}-->
+  <br />
+    <div class="ui container">
+
+      <div class="ui purple massive label">
+        Tutorial
+      </div>
+      <br />
+      <!--{{#if Template.subscriptionsReady}}-->
+        <br />
+      <!--{{> notifications}}-->
+      <!--{{#if canShowNP}}-->
+      <div class="ui purple big basic label">
+        Notification will pop when new user and study session is added.
+      </div>
+      <br />
+      <div class="row">
+        <input class="ui inverted orange js-btn-clientN button" type="button" value="Show notification" />
+      </div>
+
+
+        <h2 class="ui header">
+          <i class="settings icon"></i>
+          <div class="content">
+            User Page
+            <div class="sub header">View and edit your profile</div>
+          </div>
+        </h2>
+        <br />
+
+
+      <div class="ui grid">
+        <!--{{#each profile in profileList}}-->
+        <div class="three wide column">
+        <!--<div class="ui three cards">-->
+        <div class="ui card">
+          <a class="ui image" href="{{pathFor 'Profile_Page' _id=profile._id }}">
+            <img src="{{ profile.pic }}" alt="Image not found" onerror="this.onerror=null; this.src='/images/user.png';">
+          </a>
+          <!--<div class="content">-->
+            <!--<a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">{{profile.first}} {{profile.last}}</a>-->
+          <!--</div>-->
+        </div>
+        </div>
+
+      <div class="ten wide column">
+        <h2>
+          Welcome <a class="header" href="{{pathFor 'Profile_Page' _id=profile._id }}">Guests</a> !!
+        </h2>
+        <h3>Check out your schedule for study sessions :) </h3>
+      </div>
+        <!--{{/each}}-->
+      </div>
+
+
+      <div class="ui large tabular menu">
+        <a class="{{ isActiveRoute 'User_Schedule_Page'}} item active" href="{{ pathFor 'User_Schedule_Page' }}">
+          <i class="calendar icon"></i>
+          Schedule
+        </a>
+        <a class="{{ isActiveRoute 'List_Messenger_Page'}} item" href="{{ pathFor 'List_Messenger_Page' }}">
+          <i class="mail outline icon"></i>
+          Message
+        </a>
+        <a class="{{ isActiveRoute 'Add_Report_Page'}} item" href="{{ pathFor 'Add_Report_Page' }}">
+          <i class="announcement icon"></i>
+          Report
+        </a>
+      </div>
+        <!--<br /><br />-->
+
+      <!--<h3 class="ui horizontal divider header">-->
+        <!--<i class="calendar icon"></i>-->
+        <!--Schedule-->
+      <!--</h3>-->
+      <br />
+      <!--{{#if canShowS}}-->
+      <table class="ui single line table">
+        <thead>
+        <tr>
+          <th>Class</th>
+          <th>Teacher</th>
+          <th>Learner</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>View</th>
+          <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--{{#each session in sessionList}}-->
+        <!--{{#each profile in profileList}}-->
+        <!--{{#if sizeded profile.owner}}-->
+        <tr>
+          <td>ICS312</td>
+          <td></td>
+          <td><i class="large green checkmark icon"></i></td>
+          <td>2017-03-25</td>
+          <td>1:00PM to 3:00PM</td>
+          <td><a href="{{pathFor 'Session_Page' _id=session._id }}">View</a></td>
+          <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <br />
+      <div class="two fields">
+        <div class="field" style="float: left" data-tooltip="Before is Create Profile Page" data-position="top left">
+          <a class="{{ isActiveRoute 'Tuto_Add_Profile_Page'}} item" href="{{ pathFor 'Tuto_Add_Profile_Page' }}">
+            <i class="huge purple pointing left icon"></i>
+          </a>
+        </div>
+        <div class="field" style="float: right" data-tooltip="Next is Create Study Session Page" data-position="top right">
+          <a class="{{ isActiveRoute 'Tuto_Add_Session_Page'}} item" href="{{ pathFor 'Tuto_Add_Session_Page' }}">
+            <i class="huge purple pointing right icon"></i>
+          </a>
+        </div>
+      </div>
+      <br /><br /><br />
+      <div class="ui one column center aligned page grid">
+        <div class="column twelve wide">
+          <a class="{{ isActiveRoute 'User_Schedule_Page'}} item" href="{{ pathFor 'User_Schedule_Page' }}">
+            <button class="ui purple basic button">Go to actual page</button></a>
+          <br />
+        </div>
+      </div>
+          <!--{{else}}-->
+          <!--<h3 class="ui centered header">You haven't create any study session yet</h3>-->
+          <!--<h4 class="ui centered header">Do you want to create session? <br /><br /> <button class="ui button" ><a class="{{ isActiveRoute 'Add_Session_Page'}} item" href="{{ pathFor 'Add_Session_Page' }}">Create Study Session</a></button></h4>-->
+          <!--{{/if}}-->
+      <!--{{else}}-->
+        <!--<h1 class="ui centered header">Thank you for logged in!!</h1>-->
+        <!--<h2 class="ui centered header">Let's create your profile so that you can study with fellows :)</h2>-->
+        <!--<div class="ui internally celled centered grid">-->
+          <!--<div class="ten wide column">-->
+            <!--<button class="ui button" ><a class="{{ isActiveRoute 'Add_Profile_Page'}} item" href="{{ pathFor 'Add_Profile_Page' }}">Create Profile</a></button>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<h2 class="ui centered header">Or, do you want to see tutorials?</h2>-->
+      <!--<div class="ui internally celled centered grid">-->
+        <!--<div class="ten wide column">-->
+          <!--<button class="ui button" ><a class="{{ isActiveRoute 'Tutp_Add_Profile_Page'}} item" href="{{ pathFor 'Tuto_Add_Profile_Page' }}">Go To Tutorials</a></button>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--{{/if}}-->
+      <!--{{else}}-->
+        <!--{{> Loading}}-->
+      <!--{{/if}}-->
+    </div>
+  <!--{{/If_Logged_In}}-->
+</template>

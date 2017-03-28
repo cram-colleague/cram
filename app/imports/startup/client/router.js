@@ -232,6 +232,13 @@ FlowRouter.route('/tuto-user-profile', {
   },
 });
 
+FlowRouter.route('/tuto-user-schedule', {
+  name: 'Tuto_User_Schedule_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tuto_User_Schedule_Page' });
+  },
+});
+
 FlowRouter.route('/tuto-add-session', {
   name: 'Tuto_Add_Session_Page',
   action() {
