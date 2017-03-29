@@ -66,6 +66,18 @@ Template.Session_Page.helpers({
     }
     return false;
   },
+  profileShowT: function (field) {
+    const session = SSession.findOne(FlowRouter.getParam('_id'));
+    const num = session.sensei.length;
+    // console.log(num);
+    for (var n = 0; n < num; n++) {
+      const teacher = session.sensei[n];
+      if (field === teacher) {
+        return true;
+      }
+    }
+    return false;
+  },
   profileS: function (field) {
     const session = SSession.findOne(FlowRouter.getParam('_id'));
     const num = session.students.length;
@@ -90,7 +102,18 @@ Template.Session_Page.helpers({
     let can = false;
     const session = SSession.findOne(FlowRouter.getParam('_id'));
     const num = session.students.length;
+    console.log(num);
     if (num < 5) {
+      can = true;
+    }
+    return can;
+  },
+  canTeach: function canShow() {
+    let can = false;
+    const session = SSession.findOne(FlowRouter.getParam('_id'));
+    const num = session.sensei.length;
+    // console.log(num);
+    if (num < 2) {
       can = true;
     }
     return can;
@@ -166,6 +189,56 @@ Template.Session_Page.events({
     // instance.context.validate(updateProfile);
     // if (instance.context.isValid()) {
     SSession.update(FlowRouter.getParam('_id'), { $pull: { students: student } });
+    instance.messageFlags.set(displayErrorMessages, false);
+    window.alert('You got canceled!');
+    // FlowRouter.go('List_Session_Page');
+    // } else {
+    //   instance.messageFlags.set(displayErrorMessages, true);
+    // }
+  },
+  'click .teaching'(event, instance) {
+    event.preventDefault();
+    // Get name (text field)
+    // const first = event.target.first.value;
+    // const last = event.target.last.value;
+    // const preCourse = event.target.preCourse.value;
+    // const currCourse = event.target.currCourse.value;
+    // const description = event.target.description.value;
+    const teacher = Meteor.userId();
+    // const updateProfile = { first, last, preCourse, currCourse, description, students };
+    // Clear out any old validation errors.
+    instance.context.resetValidation();
+    // Invoke clean so that newStudentData reflects what will be inserted.
+    // SessionSchema.clean(updateProfile);
+    // Determine validity.
+    // instance.context.validate(updateProfile);
+    // if (instance.context.isValid()) {
+    SSession.update(FlowRouter.getParam('_id'), { $push: { sensei: teacher } });
+    instance.messageFlags.set(displayErrorMessages, false);
+    window.alert('You are added!');
+    // FlowRouter.go('List_Session_Page');
+    // } else {
+    //   instance.messageFlags.set(displayErrorMessages, true);
+    // }
+  },
+  'click .notteaching'(event, instance) {
+    event.preventDefault();
+    // Get name (text field)
+    // const first = event.target.first.value;
+    // const last = event.target.last.value;
+    // const preCourse = event.target.preCourse.value;
+    // const currCourse = event.target.currCourse.value;
+    // const description = event.target.description.value;
+    const teacher = Meteor.userId();
+    // const updateProfile = { first, last, preCourse, currCourse, description, students };
+    // Clear out any old validation errors.
+    instance.context.resetValidation();
+    // Invoke clean so that newStudentData reflects what will be inserted.
+    // SessionSchema.clean(updateProfile);
+    // Determine validity.
+    // instance.context.validate(updateProfile);
+    // if (instance.context.isValid()) {
+    SSession.update(FlowRouter.getParam('_id'), { $pull: { sensei: teacher } });
     instance.messageFlags.set(displayErrorMessages, false);
     window.alert('You got canceled!');
     // FlowRouter.go('List_Session_Page');

@@ -63,9 +63,12 @@ export const SessionSchema = new SimpleSchema({
   },
   sensei: {
     label: 'sensei',
+    type: Array,
+    maxCount: 2,
+    optional: true,
+  },
+  "sensei.$": {
     type: String,
-    optional: false,
-    max: 200,
   },
   students: {
     label: 'students',

@@ -21,8 +21,8 @@
             <p></p><p></p>
             <a class="ui teal ribbon big label">Teacher</a>
             {{#each profile in profileList}}
-              {{#if profileShow profile.owner}}
-                <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ sessionField 'sensei' }}</a></h3>
+              {{#if profileShowT profile.owner}}
+                <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ profile.first }} {{ profile.last }}</a></h3>
               {{/if}}
             {{/each}}
             <p></p><p></p>
@@ -66,6 +66,15 @@
             <button class="ui button notgoing" type="button">Not Going</button>
           </div>
           {{/if}}
+
+          {{#if canTeach}}
+          <div class="ui big buttons">
+            <button class="ui blue button teaching" type="button">Will Teach</button>
+            <div class="or"></div>
+            <button class="ui button notteaching" type="button">Not Teach</button>
+          </div>
+          {{/if}}
+
           {{/if}}
           <div class="column twelve wide">
             <br /><br />
