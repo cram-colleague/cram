@@ -102,7 +102,7 @@ Template.Session_Page.helpers({
     let can = false;
     const session = SSession.findOne(FlowRouter.getParam('_id'));
     const num = session.students.length;
-    console.log(num);
+    // console.log(num);
     if (num < 5) {
       can = true;
     }
