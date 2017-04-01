@@ -66,23 +66,23 @@ Template.Session_Page.helpers({
     }
     return false;
   },
-  profileShowT: function (field) {
+  profileShowT: function (field1, field2) {
     const session = SSession.findOne(FlowRouter.getParam('_id'));
-    const num = session.sensei.length;
-    // console.log(num);
-    for (var n = 0; n < num; n++) {
-      const teacher = session.sensei[n];
-      if (field === teacher) {
-        return true;
-      }
+    const sensei = session.sensei;
+    const name = field1 + " " + field2;
+    // console.log(sensei);
+    // console.log(name);
+    if (sensei == name) {
+      return true;
     }
     return false;
   },
   profileS: function (field) {
     const session = SSession.findOne(FlowRouter.getParam('_id'));
     const num = session.students.length;
+    // console.log(num);
     for (var n = 0; n < num; n++) {
-      const student = session.students[n];
+      const student = session.students[0];
       if (field === student) {
         return true;
       }
@@ -104,20 +104,22 @@ Template.Session_Page.helpers({
     const num = session.students.length;
     // console.log(num);
     if (num < 5) {
+    // if (session > 0) {
       can = true;
+    // }
     }
     return can;
   },
-  canTeach: function canShow() {
-    let can = false;
-    const session = SSession.findOne(FlowRouter.getParam('_id'));
-    const num = session.sensei.length;
-    // console.log(num);
-    if (num < 2) {
-      can = true;
-    }
-    return can;
-  },
+  // canTeach: function canShow() {
+  //   let can = false;
+  //   const session = SSession.findOne(FlowRouter.getParam('_id'));
+  //   const num = session.sensei.length;
+  //   // console.log(num);
+  //   if (num < 2) {
+  //     can = true;
+  //   }
+  //   return can;
+  // },
 });
 
 // Template.Edit_Contact_Page.onRendered(function enableSemantic() {

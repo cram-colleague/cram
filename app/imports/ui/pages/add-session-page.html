@@ -178,34 +178,25 @@
 
       <br />
 
-      <!--{{#each profile in profileList}}-->
-      <!--<div class="field">-->
-        <!--<label style="font-size: large">Who will be teaching?</label>-->
-        <!--<input name="sensei" id="sensei" value="{{profile.first}} {{profile.last}}">-->
-        <!--{{#if displayFieldError 'sensei' }}-->
-          <!--<div class="ui error message">-->
-            <!--<p>You must specify the teacher</p>-->
-          <!--</div>-->
-        <!--{{/if}}-->
-      <!--</div>-->
-      <!--{{/each}}-->
-      <div class="ui form">
-        <div class="grouped fields">
-          <label style="font-size: large">You will be a ...</label>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="status" checked="checked">
-              <label style="font-size: large">Teacher</label>
-            </div>
+      {{#each profile in profileList}}
+      <div class="field">
+        <label style="font-size: large">Who will be teaching?</label>
+        <input name="sensei" id="sensei" value="{{profile.first}} {{profile.last}}">
+        {{#if displayFieldError 'sensei' }}
+          <div class="ui error message">
+            <p>You must specify the teacher</p>
           </div>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="status">
-              <label style="font-size: large">Student</label>
-            </div>
-          </div>
-        </div>
+        {{/if}}
       </div>
+      {{/each}}
+        <!--<div class="field">-->
+          <!--<label style="font-size: large">You will be a ...</label>-->
+          <!--<select class="ui fluid search dropdown" name="ts" id="ts">-->
+            <!--<option value="">Select status</option>-->
+            <!--<option value="1">Teacher</option>-->
+            <!--<option value="2">Student</option>-->
+          <!--</select>-->
+        <!--</div>-->
 
       <br />
 

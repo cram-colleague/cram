@@ -64,9 +64,9 @@ Template.Edit_Session_Page.events({
     const r = window.confirm('Do you really want to delete this entry?');
     if (r === true) {
       SSession.remove(FlowRouter.getParam('_id'));
-      FlowRouter.go('List_Session_Page');
+      FlowRouter.go('User_Schedule_Page');
     } else {
-      FlowRouter.go('List_Session_Page');
+      FlowRouter.go('User_Schedule_Page');
     }
   },
   'submit .session-data-form'(event, instance) {
@@ -101,7 +101,7 @@ Template.Edit_Session_Page.events({
       SSession.update(FlowRouter.getParam('_id'), { $set: updateSession });
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Your study session updated!');
-      FlowRouter.go('List_Session_Page');
+      FlowRouter.go('User_Schedule_Page');
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

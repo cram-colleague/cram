@@ -18,7 +18,7 @@ Template.User_Schedule_Page.helpers({
   },
   sessionList() {
     const owner = Meteor.userId();
-    return owner ? SSession.find({ owner }) : this.ready();
+    return owner ? SSession.find({ owner }, {sort: {sdate: 1}}) : this.ready();
   },
   canShowP: function canShow() {
     let find = false;
@@ -85,7 +85,7 @@ Template.User_Schedule_Page.helpers({
   // },
   sizeded: function (fieldname) {
     let ok = false;
-    console.log(SSession.find({ students: fieldname }).count());
+    // console.log(SSession.find({ students: fieldname }).count());
     if (SSession.find({ students: fieldname }).count() > 0) {
       ok = true;
     }
@@ -97,7 +97,7 @@ Template.User_Schedule_Page.helpers({
     // return SSession.find( {sensei: name} ).count();
     let ok = false;
     const name = first + " " + last;
-    console.log(SSession.find({ sensei: name }).count());
+    // console.log(SSession.find({ sensei: name }).count());
     if (SSession.find({ sensei: name }).count() > 0) {
       ok = true;
     }

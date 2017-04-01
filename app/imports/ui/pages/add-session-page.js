@@ -55,16 +55,19 @@ Template.Add_Session_Page.events({
     event.preventDefault();
     let newSession = Session.get('eventModal');
     // Get name (text field)
+    const sdate = event.target.sdate.value;
     const e = document.getElementById(event.target.name.id);
     const name = e.options[e.selectedIndex].value;
     // const time = newSessionTemp.date;
+    // const h = document.getElementById(event.target.ts.id);
+    // const ts = h.options[h.selectedIndex].value;
     const f = document.getElementById(event.target.start.id);
-    let start = newSession.date+"T"+f.options[f.selectedIndex].value+"-10:00";
+    let start = sdate+"T"+f.options[f.selectedIndex].value+"-10:00";
     const g = document.getElementById(event.target.end.id);
-    let end = newSession.date+"T"+g.options[g.selectedIndex].value+"-10:00";
+    let end = sdate+"T"+g.options[g.selectedIndex].value+"-10:00";
     const startV = parseInt(event.target.start.value);
     const endV = parseInt(event.target.end.value);
-    const sdate = event.target.sdate.value;
+    // const sdate = event.target.sdate.value;
     const startString = f.options[f.selectedIndex].text;
     const endString = g.options[g.selectedIndex].text;
     // const time = event.target.time.value;
