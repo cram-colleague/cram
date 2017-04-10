@@ -72,11 +72,17 @@ Template.Add_Session_Page.events({
     const endString = g.options[g.selectedIndex].text;
     // const time = event.target.time.value;
     const place = event.target.place.value;
-    const sensei = event.target.sensei.value;
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
     Meteor.call('newSess');
-    newSession = { name, sdate, start, end, startV, endV, startString, endString, place, sensei, detail, owner };
+    const h = document.getElementById(event.target.sensei.id);
+    const senseiinput = h.options[h.selectedIndex].value;
+    if (senseiinput == 1) {
+      const sensei = Meteor.userId();
+      newSession = { name, sdate, start, end, startV, endV, startString, endString, place, sensei, detail, owner };
+    } else {
+      newSession = { name, sdate, start, end, startV, endV, startString, endString, place, detail, owner };
+    }
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
@@ -84,7 +90,12 @@ Template.Add_Session_Page.events({
     // Determine validity.
     instance.context.validate(newSession);
     if (instance.context.isValid()) {
-      SSession.insert(newSession);
+      const id = SSession.insert(newSession);
+      // console.log(id);
+      if (senseiinput == 0) {
+        const student = Meteor.userId();
+        SSession.update(id, { $push: { students: student } });
+      }
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Thank you! Your study session added!');
       FlowRouter.go('Calendar_Page');

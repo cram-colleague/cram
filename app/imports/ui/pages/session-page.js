@@ -66,13 +66,13 @@ Template.Session_Page.helpers({
     }
     return false;
   },
-  profileShowT: function (field1, field2) {
+  profileShowT: function (field) {
     const session = SSession.findOne(FlowRouter.getParam('_id'));
     const sensei = session.sensei;
-    const name = field1 + " " + field2;
+    // const name = field1 + " " + field2;
     // console.log(sensei);
     // console.log(name);
-    if (sensei == name) {
+    if (sensei == field) {
       return true;
     }
     return false;
