@@ -83,26 +83,28 @@ Template.User_Schedule_Page.helpers({
   //   }
   //   return find;
   // },
-  sizeded: function (fieldname) {
-    let ok = false;
-    // console.log(SSession.find({ students: fieldname }).count());
-    if (SSession.find({ students: fieldname }).count() > 0) {
-      ok = true;
+  prostu: function (field1, field2) {
+    const session = SSession.findOne(field2);
+    const num = session.students.length;
+    // console.log(num);
+    for (var n = 0; n < num; n++) {
+      const student = session.students[n];
+      if (field1 == student) {
+        return true;
+      }
     }
-    return ok;
-    // return SSession.find( {students: fieldname}).count();
+    return false;
   },
-  sizedad: function (first, last) {
-    // const name = first + " " + last;
-    // return SSession.find( {sensei: name} ).count();
-    let ok = false;
-    const name = first + " " + last;
-    // console.log(SSession.find({ sensei: name }).count());
-    if (SSession.find({ sensei: name }).count() > 0) {
-      ok = true;
+  prote: function (field1, field2) {
+    const session = SSession.findOne(field2);
+    const sensei = session.sensei;
+    // const name = field1 + " " + field2;
+    // console.log(sensei);
+    // console.log(name);
+    if (sensei == field1) {
+      return true;
     }
-    // return SSession.find( {sensei: name} ).count();
-    return ok;
+    return false;
   },
 });
 
