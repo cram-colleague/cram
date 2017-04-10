@@ -187,17 +187,20 @@
         </div>
 
         <br />
-        {{#each profile in profileList}}
-          <div class="field">
-            <label  style="font-size: large">Who will be teaching?</label>
-            <input name="sensei" id="sensei" value="{{ sessionField 'sensei' }}">
-            {{#if displayFieldError 'sensei' }}
-              <div class="ui error message">
-                <p>You must specify the teacher</p>
-              </div>
-            {{/if}}
-          </div>
-        {{/each}}
+        <div class="field">
+          <label style="font-size: large">Do you want to be a teacher or student?</label>
+          <!--<input name="sensei" id="sensei">-->
+          <select class="ui fluid search dropdown" name="sensei" id="sensei">
+            <option value="1">Teacher</option>
+            <option value="0">Student</option>
+          </select>
+          <!--<input name="sensei" id="sensei" value="{{profile.first}} {{profile.last}}">-->
+          <!--{{#if displayFieldError 'sensei' }}-->
+          <!--<div class="ui error message">-->
+          <!--<p>You must specify the teacher</p>-->
+          <!--</div>-->
+          <!--{{/if}}-->
+        </div>
 
         <br />
 

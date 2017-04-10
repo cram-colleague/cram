@@ -72,6 +72,7 @@ Template.Edit_Session_Page.events({
   'submit .session-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
+    let updateSession = Session.get('eventModal');
     const e = document.getElementById(event.target.name.id);
     const name = e.options[e.selectedIndex].value;
     // const time = newSessionTemp.date;
@@ -90,7 +91,14 @@ Template.Edit_Session_Page.events({
     const detail = event.target.detail.value;
     const owner = Meteor.userId();
     Meteor.call('newSess');
-    let updateSession = { name, sdate, start, end, startV, endV, startString, endString, place, sensei, detail, owner };
+    const h = document.getElementById(event.target.sensei.id);
+    const senseiinput = h.options[h.selectedIndex].value;
+    if (senseiinput == 1) {
+      const sensei = Meteor.userId();
+      updateSession = { name, sdate, start, end, startV, endV, startString, endString, place, sensei, detail, owner };
+    } else {
+      updateSession = { name, sdate, start, end, startV, endV, startString, endString, place, detail, owner };
+    }
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
@@ -99,6 +107,10 @@ Template.Edit_Session_Page.events({
     instance.context.validate(updateSession);
     if (instance.context.isValid()) {
       SSession.update(FlowRouter.getParam('_id'), { $set: updateSession });
+      if (senseiinput == 1) {
+        const student = Meteor.userId();
+        SSession.update(FlowRouter.getParam('_id'), { $push: { students: student } });
+      }
       instance.messageFlags.set(displayErrorMessages, false);
       window.alert('Your study session updated!');
       FlowRouter.go('User_Schedule_Page');

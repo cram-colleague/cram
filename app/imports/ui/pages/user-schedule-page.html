@@ -91,7 +91,7 @@
         <tbody>
         {{#each session in sessionList}}
         {{#each profile in profileList}}
-        {{#if sizeded profile.owner}}
+        {{#if prostu profile.owner session._id}}
         <tr>
           <td>{{ session.name }}</td>
           <td></td>
@@ -102,7 +102,7 @@
           <td><a href="{{pathFor 'Edit_Session_Page' _id=session._id }}">Edit</a></td>
         </tr>
         {{/if}}
-        {{#if sizedad profile.first profile.last}}
+        {{#if prote profile.owner session._id}}
         <tr>
           <td>{{ session.name }}</td>
           <td><i class="large green checkmark icon"></i></td>
