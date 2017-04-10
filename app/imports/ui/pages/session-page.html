@@ -22,7 +22,7 @@
             <a class="ui teal ribbon big label">Teacher</a>
             {{#each profile in profileList}}
               <!--{{#if profileShowT profile.owner}}-->
-              {{#if profileShowT profile.first profile.last}}
+              {{#if profileShowT profile.owner}}
                 <h3 class="ui header" style="margin-left: 3em"><a href="{{pathFor 'Profile_Page' _id=profile._id }}">{{ profile.first }} {{ profile.last }}</a></h3>
               {{/if}}
             {{/each}}
